@@ -1,0 +1,14 @@
+/* TEAM */
+Developer: Marco Antonio Frias
+Site: https://about.me/marcoantoniofrias
+Twitter: @51114u9
+Location: Universe
+
+/* THANKS */
+Name: http://www.initializr.com/
+
+/* SITE */
+Last update: 2015/08/16
+Standards: HTML5, CSS3
+Components: Modernizr, jQuery, Leaflet
+Software: geany
