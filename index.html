@@ -4,7 +4,6 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"> <!--<![endif]-->
   <head>
-   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,9 +11,9 @@
     <meta name="MobileOptimized" content="320">
 
     <title>VioMap | Directorio de Servicios de Atención en Casos de Violencia y Trata en Bolivia</title>
-    <meta name="description" content="Directorio de Servicios de Atención en Casos de Violencia y Trata en Bolivia">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Mapa que muestra el directorio de servicios de atención en Casos de Violencia y Trata en Bolivia">
+    <meta name="keywords" content="map, mapa, violence, violencia, human trafficking, trata de personas, bolivia">
+    <meta name="author" content="Developed by @51114u9, @danicotillas in HackLab Cochabamba">
 
     <meta property="og:title" content="" />
     <meta property="og:description" content="" />
@@ -24,7 +23,10 @@
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
 
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
     <meta name="msapplication-config" content="ieconfig.xml" />
+
+    <link rel="localization" href="locales/manifest.json" />
 
     <link rel="stylesheet" href="css/leaflet.css" />
     <link rel="stylesheet" href="css/L.Control.Zoomslider.css" />
@@ -42,10 +44,11 @@
     <link rel="stylesheet" href="css/main.css">
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="js/l20n.min.js"></script>
   </head>
   <body>
     <!--[if lt IE 8]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <p class="browserupgrade" data-l10n-id="browser_upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- header -->
@@ -53,61 +56,59 @@
       <div class="hd-content">
 
         <div class="branding">
-          <img class="logo" src="img/logo_viomap.png" />
-          <h1 class="title">Directorio de Servicios de Atención<br>
-          en Casos de Violencia y Trata en Bolivia</h1>
-          <h3></h3>
+          <img class="logo" src="img/logo_viomap.png" alt="logo" />
+          <h3 data-l10n-id="header_branding_description">Directory of Assistance Services in Cases of Violence and Trafficking in Bolivia</h3>
         </div>
 
         <div class="search-form">
           <form class="form-inline">
             <div class="input-group">
-              <input id="addr" type="text" class="form-control" name="addr" value="" size="20" placeholder="Buscar">
+              <input id="addr" type="text" class="form-control" name="addr" value="" size="20" placeholder="_Find a place" data-l10n-id="header_search">
               <span class="input-group-btn">
                 <button type="submit" class="btn" id="search"><span class="fa fa-search"></span></button>
               </span>
             </div>
           </form>
         </div>
-<!-- COLLABORATE -->
 
- 
         <div class="navigation-bar">
-        
-        <div class="btn-group pull-right">
-            <a class="btn btn-success dropdown-toggle nav-primary" data-toggle="dropdown" href="#"><span class="nav-title">Compartir</span>&nbsp;<i class="fa fa-share-alt"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#" class="modal-events"><i class="fa fa-edit"></i> Úsalo en tu web</a></li>
-              <li class="divider"></li>
-              <li>
-                <a href="#" target="_blank"><i class="fa fa-twitter"></i>&nbsp; Comparte en Twitter</a>
-              </li>
-              <li>
-                <a href="#" target="_blank"><i class="fa fa-facebook"></i>&nbsp; Comparte en Facebook</a>
-              </li>              
-            </ul>
-          </div>
 
-
-        
-        
           <div class="btn-group pull-right">
 
             <a class="btn btn-primary dropdown-toggle nav-primary" data-toggle="dropdown" href="#">
-              <span class="nav-title">Iniciativa</span>&nbsp;<i class="fa fa-group"></i>
+              <span class="nav-title" data-l10n-id="nav_button_share">Share</span> <i class="fa fa-share-alt"></i>
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a data-toggle="modal" href="#modal-about" class="modal-about"><i class="fa fa-info"></i>&nbsp;Sobre VioMap</a>
-              </li>
-              <li>
-                <a data-toggle="modal" href="#modal-howto" class="modal-howto"><i class="fa fa-question"></i>&nbsp;¿Cómo está hecho? </a>
+                <a data-toggle="modal" href="#modal-share" class="modal-share" data-l10n-id="nav_button_share_use"><i class="fa fa-edit"></i> Use in your Web</a>
               </li>
               <li class="divider"></li>
               <li>
-                <a href="http://www.libressinviolencia.org" target="_blank"><i class="fa fa-link"></i>&nbsp;Web ALSV</a>
+                <a href="#" target="_blank" data-l10n-id="nav_button_share_twitter"><i class="fa fa-twitter"></i> Share in Twitter</a>
               </li>
-              
+              <li>
+                <a href="#" target="_blank" data-l10n-id="nav_button_share_facebook"><i class="fa fa-facebook"></i> Share in Facebook</a>
+              </li>
+            </ul>
+
+          </div>
+
+          <div class="btn-group pull-right">
+
+            <a class="btn btn-primary dropdown-toggle nav-primary" data-toggle="dropdown" href="#">
+              <span class="nav-title" data-l10n-id="nav_button_initiative">Initiative</span> <i class="fa fa-group"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a data-toggle="modal" href="#modal-about" class="modal-about" data-l10n-id="nav_button_initiative_about"><i class="fa fa-info"></i> About VioMap</a>
+              </li>
+              <li>
+                <a data-toggle="modal" href="#modal-howto" class="modal-howto" data-l10n-id="nav_button_initiative_howto"><i class="fa fa-question"></i> How it was made</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="http://www.libressinviolencia.org" target="_blank" data-l10n-id="nav_button_initiative_web"><i class="fa fa-home"></i> Web ALSV</a>
+              </li>
             </ul>
 
           </div>
@@ -118,31 +119,54 @@
 
     <div id="map"></div>
 
+    <div id="modal-share" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 id="myAboutModalLabel" class="modal-title" data-l10n-id="modal_share_title">Share VioMap</h3>
+          </div>
+
+          <div class="modal-body"  data-l10n-id="modal_share_body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal"  data-l10n-id="modal_button_close">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
     <div id="modal-about" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
 
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h3 id="myModalLabel" class="modal-title" >Sobre VioMap</h3>
+            <h3 id="myAboutModalLabel" class="modal-title" data-l10n-id="modal_about_title">About VioMap</h3>
           </div>
 
-          <div class="modal-body">
-          <img src="img/viomap.png" style="display: block; margin-left: auto; margin-right: auto;"/><br>
-            <p>VioMap es el Directorio de Servicios de Atención en Casos de Violencia y Trata en Bolivia.
-            Esta iniciativa está impulsada por la <a href="http://libressinviolencia.conexion.org.bo/" target="_blank">Alianza Libres Sin Violencia</a>
-            <br><br>
-            <img src="img/logo_alsv.png" style="float:left; margin-right:10px;" /> <p style="font-size:8pt;">La Alianza Libres Sin Violencia es una iniciativa interinstitucional conformada por más de 50 organizaciones e instituciones de la sociedad civil que llevan décadas luchando por los derechos de las mujeres bolivianas.<br>
+          <div class="modal-body"  data-l10n-id="modal_about_body">
+            <p class="img"><img src="img/viomap.png" alt="logo-viomap" /></p>
 
-Estas organizaciones e instituciones han unido esfuerzos para impulsar un proyecto conjunto denominado "Alianza Libres Sin Violencia" que se articula a través de 3 líneas de acción: 1) Vigilancia e investigación del accionar del sistema de servicios judiciales públicos (Watch Dog), 2) Gestión de Conocimientos y 3) Sensibilización y comunicación, para impulsar a que la población informada demande a las instancias públicas acciones a favor del ejercicio de los derechos a una vida libre de violencia y trata en Bolivia.<br>
+            <p>VioMap is the directory of care in cases of violence and trafficking in Bolivia. This initiative is powered by the <a href="http://libressinviolencia.conexion.org.bo/" target="_blank">Free Alliance Without Violence</a></p>
 
-La Alianza Libres Sin Violencia cuenta con el financiamiento de la Embajada Real de Dinamarca en Bolivia que a través del Ministerio de Relaciones Exteriores Danés (DANIDA) desarrolla en Bolivia el programa temático "Ejercicio de los derechos y acceso a la Justicia" cuyo objetivo es: Contribuir al fortalecimiento de la institucionalidad estatal orientado a la vigencia, protección, defensa y promoción del derecho a la identidad y acceso a la justicia.<br>
+            <p class="img"><img src="img/logo_alsv.png" alt="logo-alsv" /></p>
 
-La Alianza nace a partir de un Convenio de Cooperación entre la Embajada Real de Dinamarca en Bolivia e HIVOS en Bolivia, gestionado a través de Conexión Fondo de Emancipación para desarrollar este proyecto específico durante el periodo 2014 – 2018.</p></p>
+            <p>La Alianza Libres Sin Violencia es una iniciativa interinstitucional conformada por más de 50 organizaciones e instituciones de la sociedad civil que llevan décadas luchando por los derechos de las mujeres bolivianas.</p>
+
+            <p>Estas organizaciones e instituciones han unido esfuerzos para impulsar un proyecto conjunto denominado <strong>«Alianza Libres Sin Violencia»</strong> que se articula a través de 3 líneas de acción: <em>1) Vigilancia e investigación del accionar del sistema de servicios judiciales públicos (Watch Dog), 2) Gestión de Conocimientos y 3) Sensibilización y comunicación, para impulsar a que la población informada demande a las instancias públicas acciones a favor del ejercicio de los derechos a una vida libre de violencia y trata en Bolivia.</em></p>
+
+            <p>La Alianza Libres Sin Violencia cuenta con el financiamiento de la Embajada Real de Dinamarca en Bolivia que a través del Ministerio de Relaciones Exteriores Danés (DANIDA) desarrolla en Bolivia el programa temático «Ejercicio de los derechos y acceso a la Justicia» cuyo objetivo es: Contribuir al fortalecimiento de la institucionalidad estatal orientado a la vigencia, protección, defensa y promoción del derecho a la identidad y acceso a la justicia.</p>
+
+            <p>La Alianza nace a partir de un Convenio de Cooperación entre la Embajada Real de Dinamarca en Bolivia e HIVOS en Bolivia, gestionado a través de Conexión Fondo de Emancipación para desarrollar este proyecto específico durante el periodo 2014 – 2018.</p>
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"  data-l10n-id="modal_button_close">Close</button>
           </div>
 
         </div>
@@ -155,54 +179,42 @@ La Alianza nace a partir de un Convenio de Cooperación entre la Embajada Real d
 
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h3 id="myModalLabel" class="modal-title" >¿Cómo está hecho?</h3>
+            <h3 id="myHowToModalLabel" class="modal-title" data-l10n-id="modal_howto_title">How it was made</h3>
           </div>
 
-          <div class="modal-body">
+          <div class="modal-body" data-l10n-id="modal_howto_body">
+            <p class="img"><img src="img/logo_hacklabcbba.png" alt="logo-hacklab" /></p>
+
             <p>
-              Esta aplicación ha sido hecha con <span class="fa fa-heart"></span> por el 
-              <a href="http://hacklabcbba.org/" target="_blank">HackLab Cochabamba</a>.
+              This web mapping app was made with <span class="fa fa-heart"></span> in hacker space <a href="http://hacklabcbba.org/" target="_blank">HackLab Cochabamba</a> based in <a href="http://mapanica.net/" target="_blank">MapaNica.net</a> website.
             </p>
-            <p>Todo ello basado en el sistema libre de <a href="http://mapanica.net/" target="_blank">MapaNica.net</a></p>
             <p>
-              Hemos usado los siguientes <a href="https://es.wikipedia.org/wiki/Software_libre" target="_blank">Softwares Libres</a> y herramientas de <a href="https://es.wikipedia.org/wiki/Software_de_c%C3%B3digo_abierto" target="_blank">Código Abierto</a>:
-            <ul>
-                <li><a href="http://openstreetmap.org/" target="_blank">openstreetmap.org</a> <em>(el mapa de edición libre colaborativa del mundo)</em></li>
-                <li><a href="http://getbootstrap.com/" target="_blank">getbootstrap.com</a> <em>(herramientas <a href="https://es.wikipedia.org/wiki/Software_libre_y_de_código_abierto" target="_blank">foss</a> para crear aplicaciones web)</em></li>
-                <li><a href="http://leafletjs.com/" target="_blank">leafletjs.com</a> <em>(librería javascript utilizada para construir aplicaciones de mapeo web)</em></li>
-                <li><a href="http://leafletjs.com/plugins.html" target="_blank">leafletjs.com/plugins.html</a> <em>(TODO: lista de plugins)</em></li>
-                <li><a href="http://geany.org/" target="_blank">nano-editor.org</a> <em>(geany es un editor de texto)</em></li>
-                <li><a href="http://slackware.com/" target="_blank">slackware.com</a> <em>(sistema operativo gnu/linux)</em></li>
+              These are the <a href="https://en.wikipedia.org/wiki/Free_software" target="_blank">Free Software</a> and <a href="https://en.wikipedia.org/wiki/Open-source_software" target="_blank">Open Source</a> tools used:
+              <ul>
+                <li><a href="http://openstreetmap.org/" target="_blank">openstreetmap.org</a> <em>(collaborative free editable map of the world)</em></li>
+                <li><a href="http://fontawesome.io//" target="_blank">fontawesome.io</a> <em>(iconic font and css toolkit)</em></li>
+                <li><a href="http://getbootstrap.com/" target="_blank">getbootstrap.com</a> <em>(foss tools for creating web apps)</em></li>
+                <li><a href="http://leafletjs.com/" target="_blank">leafletjs.com</a> <em>(javascript library used to build web mapping apps)</em></li>
+                <li><a href="http://leafletjs.com/plugins.html" target="_blank">leafletjs.com/plugins.html</a> <em>(TODO: list of plugins)</em></li>
               </ul>
-              <br><br>
-              <a href="http://www.hacklabcbba.org" target="_blank"><img src="img/hacklab_cochabamba.png" style="display: block; margin-left: auto; margin-right: auto;" /></a>
             </p>
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" data-l10n-id="modal_button_close">Close</button>
           </div>
 
         </div>
       </div>
     </div>
 
-    <script src="js/leaflet.js"></script>
-    <script src="js/L.Control.Zoomslider.js" ></script>
-    <script src="js/L.Control.Locate.min.js" ></script>
-    <script src="js/leaflet-hash.js"></script>
     <script src="js/vendor/jquery-1.11.3.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/leaflet-hash.js"></script>
+    <script src="js/L.Control.Zoomslider.js"></script>
+    <script src="js/L.Control.Locate.min.js"></script>
     <script src="js/main.js"></script>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <!-- <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-    </script> -->
   </body>
 </html>

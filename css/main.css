@@ -1,7 +1,7 @@
 html, body {
-    height: 100%;
     padding: 0;
     margin: 0;
+    height: 100%;
 }
 
 h3 {
@@ -12,14 +12,14 @@ h3 {
     width: 100%;
     position: absolute;
     z-index: 10;
-    height: 70px;
+    height: 80px;
     background: rgba(3, 3, 3, 0.80) none repeat scroll 0% 0%;
 }
 
 /* branding */
 #header .branding {
     float: left;
-    margin: 10px 20px 0px 10px;
+    margin: 10px;
 }
 
 #header .branding .logo {
@@ -27,46 +27,18 @@ h3 {
     position: absolute;
 }
 
-#header .branding h1.title {
-    color: #f0cf1b;
-    font-size: 10pt;
-    margin-top: 7px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    font-weight: bold;
-}
-
-#header .branding h1.title span.downlight {
-    color: #2F96B4;
-}
-
-#header .branding h1.title span.label {
-    font-size: 11px;
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
-    padding: 1px 5px;
-}
-
-#header .label-inverse {
-    background-color: #AAA;
-}
-
 #header .branding h3 {
+    margin-left: 130px;
+    margin-top: 40px;
+    max-width: 200px;
     color: #FFF;
-    font-size: 13px;
-    margin: 0px 0px 5px;
-    padding: 0px;
-}
-
-#header .branding h1,
-#header .branding h3 {
-    margin-left: 320px;
+    font-size: 8pt;
 }
 
 /* search */
 #header .search-form {
-    margin: 18px 20px;
     float: left;
-    width: 300px;
+    margin: 23px 0px 23px 20px;
 }
 
 #header .search-form button {
@@ -75,15 +47,14 @@ h3 {
     color: #FFF;
 }
 
-#header .search-form button span {
-    padding: 0px;
-    margin: 0px;
+#header .search-form button:hover {
+    background-color: #4D4D4D;
 }
 
 /* navigation */
 #header .navigation-bar {
-    margin: 6px 0px 0px;
     float: right;
+    margin: 13px 0px;
 }
 
 #header .navigation-bar > div {
@@ -102,23 +73,93 @@ h3 {
 }
 
 .leaflet-top.leaflet-left {
-    margin-top: 130px;
+    margin-top: 80px;
 }
 
 .leaflet-top.leaflet-right {
-    margin-top: 70px;
+    margin-top: 80px;
 }
 
-.leaflet-bottom {
-    bottom: 10px;
+/* modal */
+.modal .modal-body p.img {
+    text-align: center;
 }
 
-.description{
-	color:#f0cf1b;
-	}
+/* responsive */
+@media screen and (max-width: 639px) {
 
-.btn-group, .btn-group-vertical {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
+    #header .search-form {
+        display: none;
+    }
+
+    .leaflet-bottom.leaflet-right {
+        width: 60%;
+        text-align: right;
+    }
+
+    .leaflet-container .leaflet-control-attribution {
+        font-size: 7pt;
+    }
+
 }
+
+@media screen and (max-width: 767px) {
+
+    #header {
+        height: 40px;
+    }
+
+    #header .branding {
+        margin: 5px;
+    }
+
+    #header .branding .logo {
+        height: 70%;
+    }
+
+    #header .branding h3 {
+        display: none;
+    }
+
+    #header .search-form {
+        margin: 7px 0px 0px 170px;
+    }
+
+    #header .search-form input.form-control {
+        height: 25px;
+    }
+
+    #header .search-form button {
+        padding: 2px 12px;
+    }
+
+    #header .navigation-bar {
+        margin: 5px 0px;
+    }
+
+    #header .navigation-bar > div {
+        margin: 0px 5px 0px 0px;
+    }
+
+    #header .navigation-bar > div a.btn {
+        padding: 2px 12px;
+    }
+
+    .leaflet-top.leaflet-left {
+        margin-top: 40px;
+    }
+
+    .leaflet-top.leaflet-right {
+        margin-top: 40px;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
+    #header .nav-title {
+        display: none;
+    }
+
+}
+

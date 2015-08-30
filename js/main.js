@@ -64,7 +64,7 @@ var map = new L.Map('map');
 // Adding layer functionality
 tileLayers[tileLayerDefault].addTo(map);
 L.control.layers(tileLayers).addTo(map);
-map.setView([-16.552, -65.830], 6);
+map.setView([-15.887, -66.292], 6);
 
 // Adding hash for position in url
 var hash = new L.Hash(map);

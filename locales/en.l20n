@@ -1,0 +1,71 @@
+/*
+ VioMap translation file [en] | MIT Licensed
+ translators : 51114u9
+*/
+
+<nameapp "VioMap">
+
+/* General */
+<browser_upgrade "You are using an <strong>outdated</strong> browser. Please <a>upgrade your browser</a> to improve your experience.">
+
+/* Branding */
+<header_branding_description "Directory of Assistance Services in Cases of Violence and Trafficking in Bolivia">
+
+<header_search placeholder:"_Find a place">
+
+/* Navigation Bar */
+<nav_button_share "Share">
+<nav_button_share_use "Use in your Web">
+<nav_button_share_twitter "<i></i> Share in Twitter">
+<nav_button_share_facebook "<i></i> Share in Facebook">
+
+<nav_button_initiative "Initiative">
+<nav_button_initiative_about "<i></i> About {{ nameapp }}">
+<nav_button_initiative_howto "<i></i> How it was made">
+<nav_button_initiative_web "<i></i> Web ASLV">
+
+/* Modal */
+<modal_button_close "Close">
+
+/* Modal Share */
+<modal_share_title "Share {{ nameapp }}">
+<modal_share_body """
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+""">
+
+/* Modal About */
+<modal_about_title "About {{ nameapp }}">
+<modal_about_body """
+    <p><img /></p>
+
+    <p>{{ nameapp }} is the directory of care in cases of violence and trafficking in Bolivia. This initiative is powered by the <a>Free Alliance Without Violence</a>.</p>
+
+    <p><img /></p>
+
+    <p>La Alianza Libres Sin Violencia es una iniciativa interinstitucional conformada por más de 50 organizaciones e instituciones de la sociedad civil que llevan décadas luchando por los derechos de las mujeres bolivianas.</p>
+
+    <p>Estas organizaciones e instituciones han unido esfuerzos para impulsar un proyecto conjunto denominado <strong>«Alianza Libres Sin Violencia»</strong> que se articula a través de 3 líneas de acción: <em>1) Vigilancia e investigación del accionar del sistema de servicios judiciales públicos (Watch Dog), 2) Gestión de Conocimientos y 3) Sensibilización y comunicación, para impulsar a que la población informada demande a las instancias públicas acciones a favor del ejercicio de los derechos a una vida libre de violencia y trata en Bolivia.</em></p>
+
+    <p>La Alianza Libres Sin Violencia cuenta con el financiamiento de la Embajada Real de Dinamarca en Bolivia que a través del Ministerio de Relaciones Exteriores Danés (DANIDA) desarrolla en Bolivia el programa temático «Ejercicio de los derechos y acceso a la Justicia» cuyo objetivo es: Contribuir al fortalecimiento de la institucionalidad estatal orientado a la vigencia, protección, defensa y promoción del derecho a la identidad y acceso a la justicia.</p>
+
+    <p>La Alianza nace a partir de un Convenio de Cooperación entre la Embajada Real de Dinamarca en Bolivia e HIVOS en Bolivia, gestionado a través de Conexión Fondo de Emancipación para desarrollar este proyecto específico durante el periodo 2014 – 2018.</p>
+""">
+
+/* Modal HowTo */
+<modal_howto_title "How it was made">
+<modal_howto_body """
+    <p><img /></p>
+    <p>
+      This web mapping app was made with <span></span> in hacker space <a>HackLab Cochabamba</a> based in <a>MapaNica.net</a> website.
+    </p>
+    <p>
+      These are the <a>Free Software</a> and <a>Open Source</a> tools used:
+      <ul>
+        <li><a>openstreetmap.org</a> <em>(collaborative free editable map of the world)</em></li>
+        <li><a>fontawesome.io</a> <em>(iconic font and css toolkit)</em></li>
+        <li><a>getbootstrap.com</a> <em>(foss tools for creating web apps)</em></li>
+        <li><a>leafletjs.com</a> <em>(javascript library used to build web mapping apps)</em></li>
+        <li><a>leafletjs.com/plugins.html</a> <em>(TODO: list of plugins)</em></li>
+      </ul>
+    </p>
+""">
