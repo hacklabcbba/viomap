@@ -1,0 +1,2183 @@
+{
+  "type":"FeatureCollection",
+  "features":[
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.0659,
+          -11.0053
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Beni",
+        "municipio":"Riberalta",
+        "direccion":"Avenida Nincanor Gonzales Salvatierra Nº 261",
+        "telefonos":"3-8522416",
+        "telefonos2":"3-8522674"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.90136,
+          -14.83984
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Beni",
+        "municipio":"Trinidad",
+        "direccion":"Calle Ibare frente a la plazuela de Pompeya",
+        "telefonos":"S/N",
+        "telefonos2":"3-4621477"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.0031,
+          -20.3678
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Huacareta",
+        "direccion":"Oficina GAM al frente de la Plaza 21 de Septiembre",
+        "telefonos":"4-6479212",
+        "telefonos2":"4-6479212"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -63.6647,
+          -20.7442
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Huacaya",
+        "direccion":"Oficina GAM sobre la Calle Comercio",
+        "telefonos":"S/N",
+        "telefonos2":"73622798"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.7921,
+          -19.3628
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Icla",
+        "direccion":"Oficina GAM al frente de la Plaza 10 de Diciembre",
+        "telefonos":"4-6939114",
+        "telefonos2":"4-6939114"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.86778,
+          -20.78001
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Inca Huasi",
+        "direccion":"En instalaciones del Mercado Central sobre la calle Junín",
+        "telefonos":"S/N",
+        "telefonos2":"4-6937724"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -63.3611,
+          -20.8155
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Macharetí",
+        "direccion":"Oficina GAM entre la calle 25 de mayo y la esq. 16 de julio",
+        "telefonos":"4-6937660",
+        "telefonos2":"4-6937660"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -63.9561,
+          -19.8032
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Monteagudo",
+        "direccion":"Oficina GAM en la calle Saúl Aldenur esq. Sucre",
+        "telefonos":"4-6472682",
+        "telefonos2":"4-6472682"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.3026,
+          -19.30781
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Padilla",
+        "direccion":"Calle Ayacucho S/N",
+        "telefonos":"4-6936007",
+        "telefonos2":"4-6936007"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.4267,
+          -18.5382
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Poroma",
+        "direccion":"En las instalaciones de la Alcaldía al frente de la plaza principal de Poroma",
+        "telefonos":"S/N",
+        "telefonos2":"46933589 / 4-6938090 Cabina"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.1333,
+          -20.1025
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"San Lucas",
+        "direccion":"Frente de a las instalaciones de la Alcaldía",
+        "telefonos":"S/N",
+        "telefonos2":"4-6937191"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.4736,
+          -19.4858
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Sopachuy",
+        "direccion":"Oficina GAM al frente de la plaza Narciso Campero esq. Calle Guerrillero Cueto",
+        "telefonos":"4-6936052",
+        "telefonos2":"4-6936052"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.2574,
+          -19.02989
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Sucre",
+        "direccion":"Calle Adolfo Vilar Nº181",
+        "telefonos":"4-6435843",
+        "telefonos2":"4-6461061"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.2634,
+          -19.0469
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Sucre",
+        "direccion":"Calle Olañeta Nº 249",
+        "telefonos":"S/N",
+        "telefonos2":"4-6461061"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.91488,
+          -19.18239
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Tarabuco",
+        "direccion":"En las instalaciones de la Alcaldía en la calle 1º de mayo esq. calle Potosí Nº 3",
+        "telefonos":"4-6969170",
+        "telefonos2":"4-6969170"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.57,
+          -19.9733
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Tarvita",
+        "direccion":"Calle Manuel Asencio Padilla al frente de la plaza principal",
+        "telefonos":"S/N",
+        "telefonos2":"46939843 / 4-6938179 Cabina"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.4614,
+          -19.1853
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Tomina",
+        "direccion":"Oficina GAM en la Avenida San Pablo esq. calle Avaroa Nº 1",
+        "telefonos":"4-6936098",
+        "telefonos2":"4-6936098"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.3905,
+          -19.3669
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Villa Alcalá",
+        "direccion":"Instalaciones del ex hospital",
+        "telefonos":"S/N",
+        "telefonos2":"4-6936042"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.4138,
+          -20.1061
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Villa Azurduy",
+        "direccion":"En instalaciones del Coliseo Central",
+        "telefonos":"S/N",
+        "telefonos2":"4-6938065"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.6189,
+          -18.8291
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Villa Mojocoya",
+        "direccion":"Oficina GAM al frente de la plaza Vélez Callejas",
+        "telefonos":"S/N",
+        "telefonos2":"4-6938131 Cabina"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.3236,
+          -19.1231
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Villa Serrano",
+        "direccion":"Oficina GAM al frente de la plaza Mariano Serrano Nº 1",
+        "telefonos":"4-6936033",
+        "telefonos2":"4-6936033"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -63.7503,
+          -19.8947
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Villa Vaca Guzmán",
+        "direccion":"En las instalaciones de la Alcaldía al frente de la plaza 6 de agosto",
+        "telefonos":"4-6479234",
+        "telefonos2":"4-6479234"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.621,
+          -18.7648
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Villa Zudáñez",
+        "direccion":"Oficina GAM al frente de la plaza 6 de agosto",
+        "telefonos":"4-6936116",
+        "telefonos2":"4-6936116"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.1214,
+          -19.1895
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Yamparaez",
+        "direccion":"Oficina GAM sobre la calle Sucre",
+        "telefonos":"4-6936104",
+        "telefonos2":"4-6936104"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.26476,
+          -19.16159
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Chuquisaca",
+        "municipio":"Yotala",
+        "direccion":"Calle Sucre Nº 80",
+        "telefonos":"4-6430590",
+        "telefonos2":"4-6430590"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.6239,
+          -17.7884
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Alalay",
+        "direccion":"Oficina GAM al frente de la plaza 21 de febrero",
+        "telefonos":"4-4554375",
+        "telefonos2":"4-4554375"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.9322,
+          -17.7789
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Anzaldo",
+        "direccion":"Oficina GAM al frente de la plaza 20 de octubre",
+        "telefonos":"4-4136516",
+        "telefonos2":"4-4136516"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.768,
+          -17.5732
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Arani",
+        "direccion":"Oficina GAM al frente de la plaza 24 de noviembre acera norte",
+        "telefonos":"4-4576251",
+        "telefonos2":"4-4576251"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.2628,
+          -17.7147
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Capinota",
+        "direccion":"En instalaciones del Mercado Central sobre la calle Ayacucho",
+        "telefonos":"4-4389014",
+        "telefonos2":"4-4389014"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.9371,
+          -16.5727
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Chimoré",
+        "direccion":"Oficina GAM al frente de la plaza principal Chimore acera oeste",
+        "telefonos":"4-4136218",
+        "telefonos2":"4-4136218"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.9338,
+          -17.5901
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Cliza",
+        "direccion":"Avenida Cívica Nº029",
+        "telefonos":"4-4574801",
+        "telefonos2":"4-4575029"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.17209,
+          -17.35891
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Cochabamba",
+        "direccion":"Avenida Circunvalación y Melchor Pérez O. Detrás del servicio de caminos.",
+        "telefonos":"4-4471298 int. 4379",
+        "telefonos2":"4-4258030"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.15528,
+          -17.38809
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Cochabamba",
+        "direccion":"Plaza Colon acera este Nº 482 (Planta Alta). Telf: 4258030 Int. 443",
+        "telefonos":"4-4283838 o 4-4251231 int.4350 / 4258030 Int. 443",
+        "telefonos2":"4-4258030"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.18515,
+          -17.39602
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Cochabamba",
+        "direccion":"Avenida Víctor Ustariz km. 3.5",
+        "telefonos":"4-4443371 o 4-4431926 int 4315",
+        "telefonos2":"4-4258030"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.13998,
+          -17.41931
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Cochabamba",
+        "direccion":"Mercado 10 de febrero entre las avenidas Siglo XX y Suecia",
+        "telefonos":"4-4752514 int. 4240",
+        "telefonos2":"4-4258030"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.1617,
+          -17.4364
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Cochabamba",
+        "direccion":"Avenida Panamericana 2840 (dos cuadras al sud del Templo Loreto)",
+        "telefonos":"4-4731971 int. 4378",
+        "telefonos2":"4-4258030"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.17233,
+          -17.49091
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Cochabamba",
+        "direccion":"Final Avenida Panamericana (dos cuadras al sud del matadero)",
+        "telefonos":"4-4445379 o 4-4447151",
+        "telefonos2":"4-4258030"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.24052,
+          -17.38849
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Colcapirhua",
+        "direccion":"Oficina GAM sobre la calle Sucre al frente de la plaza 15 de agosto",
+        "telefonos":"4-4269983",
+        "telefonos2":"4-4269983"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.8678,
+          -17.3383
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Colomi",
+        "direccion":"Oficina GAM al frente a la plaza 13 de noviembre",
+        "telefonos":"4-4340640",
+        "telefonos2":""
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.53535,
+          -17.19758
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Entre Ríos",
+        "direccion":"Oficina GAM al frente de la plaza 25 de septiembre",
+        "telefonos":"4-4136482",
+        "telefonos2":"4-4136482"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.67279,
+          -18.32398
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Pasorapa",
+        "direccion":"Oficina GAM al frente de la plaza 5 de marzo",
+        "telefonos":"4-4137044",
+        "telefonos2":"4-4137044"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.2404,
+          -17.38856
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Quillacollo",
+        "direccion":"En las instalaciones de la Alcaldía sobre la calle 6 de agosto",
+        "telefonos":"4-4260095 int. 222",
+        "telefonos2":"4-4260095"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.28181,
+          -17.39699
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Quillacollo",
+        "direccion":"En instalaciones de la Subalcaldía",
+        "telefonos":"",
+        "telefonos2":""
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.04174,
+          -17.40768
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Sacaba",
+        "direccion":"Calle Coronel Sánchez entre calles Sucre e Ingavi",
+        "telefonos":"4-4701329",
+        "telefonos2":"4-4702301"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.85124,
+          -17.76204
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Sacabamba",
+        "direccion":"En las instalaciones de la Alcaldía frente de la plaza 25 de abril",
+        "telefonos":"S/N",
+        "telefonos2":"4-4139295"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.5032,
+          -16.533
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"San Benito",
+        "direccion":"Frente a la plaza Principal Chimoré Moxos acera oeste",
+        "telefonos":"4-4786020",
+        "telefonos2":"4-4579146"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.2485,
+          -17.5502
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Santivañez",
+        "direccion":"Oficina GAM al frente de la plaza principal acera oeste, planta baja of 3",
+        "telefonos":"4-4780071",
+        "telefonos2":"4-4780071"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.3579,
+          -17.45394
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Sipe Sipe",
+        "direccion":"Edificio Teatro Municipal al frente de la plaza 30 de abril sobre la acera oeste",
+        "telefonos":"4-4381932",
+        "telefonos2":"4-4381932"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.21641,
+          -17.33752
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Tiquipaya",
+        "direccion":"Calle Toribio Torrico entre calles Junín y Francisco de Ribero S/N",
+        "telefonos":"4-4316512",
+        "telefonos2":"4-4317010"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.7226,
+          -17.4262
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Tiraque",
+        "direccion":"Oficina GAM al frente de la plaza 10 de octubre, acera oeste",
+        "telefonos":"4-4570198",
+        "telefonos2":"4-4570198"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.19186,
+          -17.73546
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Totora",
+        "direccion":"Oficina GAM sobre la Avenida Rodolfo Soriano",
+        "telefonos":"4-4341002",
+        "telefonos2":"4-4341002"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.62926,
+          -17.98561
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Vila Vila",
+        "direccion":"Al frente de la plaza 26 de noviembre",
+        "telefonos":"S/N",
+        "telefonos2":"4-4135699 Cabina"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.31379,
+          -17.39609
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Cochabamba",
+        "municipio":"Vinto",
+        "direccion":"Oficina GAM sobre la Avenida Albina Patiño Km 17.5",
+        "telefonos":"4-4260150",
+        "telefonos2":"4-4260150"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -68.6857,
+          -16.0448
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"Achacachi",
+        "direccion":"En instalaciones del Mercado Popular sobre la Avenida Sorata esq. Illampu S/N",
+        "telefonos":"S/N",
+        "telefonos2":"2-2136503"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -68.16359,
+          -16.57749
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"Achocalla",
+        "direccion":"Oficina GAM al frente de la plaza Pedro Domingo Murillo",
+        "telefonos":"2-2890099",
+        "telefonos2":"2-2890099"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -68.5316,
+          -16.2995
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"Batallas",
+        "direccion":"En instalaciones de ex - Sartawi al frente de la plaza de Batallas",
+        "telefonos":"S/N",
+        "telefonos2":"2-2895143"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.1709,
+          -16.7007
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"Cajuata",
+        "direccion":"En instalaciones del palacio consistorial, oficina 2",
+        "telefonos":"S/N",
+        "telefonos2":"2-2137438"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -68.606,
+          -17.0234
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"Caquiaviri",
+        "direccion":"Oficina GAM al frente de la plaza Melchor León de la Barra",
+        "telefonos":"2-2227542",
+        "telefonos2":"2-2227542"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.56015,
+          -15.83603
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"Caranavi",
+        "direccion":"Calle 16 de diciembre del barrio Utasa S/N",
+        "telefonos":"2-8232436",
+        "telefonos2":"2-8232020"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.52601,
+          -16.41005
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"Chulumani",
+        "direccion":"En instalaciones del ex - hospital en el patio interior",
+        "telefonos":"S/N",
+        "telefonos2":"2-2136120"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.1254,
+          -17.3927
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"Colquiri",
+        "direccion":"Al frente de la plaza 6 de agosto y de un taller eléctrico",
+        "telefonos":"S/N",
+        "telefonos2":"2-2136889 Cabina"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -69.08789,
+          -16.16508
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"Copacabana",
+        "direccion":"En instalaciones del Coliseo Cerrado al frente de la plaza Sucre",
+        "telefonos":"S/N",
+        "telefonos2":"2-8622624"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.6039,
+          -16.3133
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"Coripata",
+        "direccion":"En instalaciones de la ex - alcaldía sobre la calle Julio Gutiérrez S/N",
+        "telefonos":"S/N",
+        "telefonos2":"2-2896150"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.72701,
+          -16.18867
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"Coroico",
+        "direccion":"Edificio Integrado de Justicia sobre la calle Pando (ex centro de salud)",
+        "telefonos":"2-22136228",
+        "telefonos2":"2-2895514"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.87966,
+          -15.49778
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"Guanay",
+        "direccion":"Oficina GAM al frente de la plaza Gualberto Villaroel",
+        "telefonos":"2-2136282",
+        "telefonos2":"2-2136282"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.1371,
+          -16.9071
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"Inquisivi",
+        "direccion":"Calle Bolívar S/N",
+        "telefonos":"S/N",
+        "telefonos2":"2-2134228 cabina"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -68.20321,
+          -16.47841
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"La Paz",
+        "direccion":"Avenida Mariscal Santa Cruz, edificio Dante, bloque A, segundo piso",
+        "telefonos":"2-2317105",
+        "telefonos2":"2650000 ó 156"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -68.13927,
+          -16.49112
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"La Paz",
+        "direccion":"En instalaciones de la subalcaldía sobre la Avenida Montes esq. Uruguay",
+        "telefonos":"2-286700",
+        "telefonos2":"2650000 ó 156"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -68.13959,
+          -16.49274
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"La Paz",
+        "direccion":"Calle Chuquisaca Nº 132",
+        "telefonos":"2-460924 / 156",
+        "telefonos2":"2650000 ó 156"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -68.14944,
+          -16.49769
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"La Paz",
+        "direccion":"Avenida Chorolque y Los Andes (detrás del Cementerio General)",
+        "telefonos":"2-456242 / 2-454553",
+        "telefonos2":"2650000 ó 156"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -68.13951,
+          -16.51523
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"La Paz",
+        "direccion":"Avenida Jaimes Freyre esquina calle Jaime Zudáñez",
+        "telefonos":"2-421112",
+        "telefonos2":"2650000 ó 156"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -68.10571,
+          -16.52813
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"La Paz",
+        "direccion":"Plaza Cueto Vidaurre (Roma), calle 12, zona Obrajes",
+        "telefonos":"2-2788105",
+        "telefonos2":"2650000 ó 156"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -68.3854,
+          -16.5363
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"La Paz",
+        "municipio":"Laja",
+        "direccion":"En instalaciones del Complejo deportivo Laja sobre la Avenida La Paz",
+        "telefonos":"S/N",
+        "telefonos2":"2-2135333 Cabina"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.2088,
+          -17.6491
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Oruro",
+        "municipio":"Caracollo",
+        "direccion":"Edificio Independencia, 3º piso al frente de la plaza ferial",
+        "telefonos":"S/N",
+        "telefonos2":"2-5290001"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.11327,
+          -17.9696
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Oruro",
+        "municipio":"Cercado",
+        "direccion":"Entre las calles Adolfo Mier y Soria Galvarro S/N",
+        "telefonos":"S/N",
+        "telefonos2":""
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.77108,
+          -18.89978
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Oruro",
+        "municipio":"Challapata",
+        "direccion":"Entre las calles Ejército y la Bandera",
+        "telefonos":"S/N",
+        "telefonos2":"2-5572080"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.83474,
+          -18.28583
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Oruro",
+        "municipio":"Huanuni",
+        "direccion":"Oficina GAM al frente de la plaza Fermín López",
+        "telefonos":"S/N",
+        "telefonos2":"2-5520585"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.11091,
+          -17.95136
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Oruro",
+        "municipio":"Oruro",
+        "direccion":"Calle Sebastián Pagador en las instalaciones de ex bomberos 2º piso",
+        "telefonos":"2-5236780",
+        "telefonos2":"2-5250025"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.83782,
+          -18.28846
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Oruro",
+        "municipio":"Oruro",
+        "direccion":"Calle Camacho Nº 1460 en las instalaciones de COMIBOL",
+        "telefonos":"2-5250943",
+        "telefonos2":"2-5250025"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.9207,
+          -18.5977
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Oruro",
+        "municipio":"Pazña",
+        "direccion":"Oficina GAM al frente de la plaza 6 de enero",
+        "telefonos":"S/N",
+        "telefonos2":"2-5136109"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -68.37306,
+          -19.015
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Oruro",
+        "municipio":"Sabaya",
+        "direccion":"Oficina GAM al frente de la plaza 6 de agosto",
+        "telefonos":"S/N",
+        "telefonos2":"2-5139802"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.4061,
+          -18.1814
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Oruro",
+        "municipio":"Toledo",
+        "direccion":"Oficina GAM al frente de la plaza 28 de agosto",
+        "telefonos":"S/N",
+        "telefonos2":"2-5135817"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.92414,
+          -10.92776
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Pando",
+        "municipio":"Bella Flor",
+        "direccion":"Calle San Francisco Nº 059",
+        "telefonos":"S/N",
+        "telefonos2":"3-8424057/8421249"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -68.76624,
+          -11.02617
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Pando",
+        "municipio":"Cobija",
+        "direccion":"Al frente del Parque Piñata Nº 40",
+        "telefonos":"3-8423486",
+        "telefonos2":"3-8422223"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -68.76452,
+          -11.02258
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Pando",
+        "municipio":"Gonzalo Moreno",
+        "direccion":"Avenida Alberto Saenz Klinski s/n",
+        "telefonos":"S/N",
+        "telefonos2":"3-8572912 / 8572904 Cabina"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.5527,
+          -11.1054
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Pando",
+        "municipio":"Puerto Rico",
+        "direccion":"Calle 18 de Mayo, entre Manuripi y Alberto Sáenz",
+        "telefonos":"S/N",
+        "telefonos2":"3-8422757"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.22009,
+          -20.93473
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Atocha",
+        "direccion":"Avenida Bush frente a la parada de buses de Chorolque",
+        "telefonos":"2-6949100",
+        "telefonos2":"2-6949108"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.4532,
+          -19.5522
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Betanzos",
+        "direccion":"Calle Hermanos Pereira S/N Barrio Central",
+        "telefonos":"2-6279032 int. 122",
+        "telefonos2":"2-6279032"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.2434,
+          -20.052
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Chaqui",
+        "direccion":"En instalaciones del plaza de la Alcaldía al frente de la plaza principal",
+        "telefonos":"2-6136465",
+        "telefonos2":"2-6136465"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.3995,
+          -18.5726
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Chuquihuta",
+        "direccion":"Plaza Principal",
+        "telefonos":"S/N",
+        "telefonos2":"2-6132680"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -67.6607,
+          -20.7407
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Colcha K",
+        "direccion":"Oficina GAM al frente de la plaza 17 de agosto Nº2",
+        "telefonos":"2-6137309",
+        "telefonos2":"2-6137309"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.004,
+          -18.7003
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Colquechaca",
+        "direccion":"Calle Bolívar Nº 65",
+        "telefonos":"S/N",
+        "telefonos2":"2-6138112"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.65885,
+          -20.81669
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Cotagaita",
+        "direccion":"En instalaciones de la ex - alcaldía sobre la calle Junín",
+        "telefonos":"S/N",
+        "telefonos2":"2-6949155"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.5863,
+          -18.4231
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Llallagua",
+        "direccion":"En las instalaciones del Consejo Municipal sobre la Avenida 10 de noviembre Nº 109, planta baja",
+        "telefonos":"2-5822908",
+        "telefonos2":"2-5820158"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.79643,
+          -18.84196
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Ocuri",
+        "direccion":"Oficina GAM al frente de plaza principal",
+        "telefonos":"S/N",
+        "telefonos2":"2-6137327 Cabina"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.1633,
+          -18.6995
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Pocoata",
+        "direccion":"Oficina GAM al frente de la plaza 10 de noviembre",
+        "telefonos":"2-6132016",
+        "telefonos2":"2-6132016"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.9888,
+          -19.7989
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Porco",
+        "direccion":"Oficina GAM al frente de la plaza Libertad.",
+        "telefonos":"S/N",
+        "telefonos2":"2-6137119 Cabina"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.75044,
+          -19.59242
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Potosí",
+        "direccion":"Calle La Paz Nº1581 esq. de Betanzos en la casa de la Cultura primer piso",
+        "telefonos":"2-6229164",
+        "telefonos2":"2-6226200"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.5058,
+          -19.7944
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Puna",
+        "direccion":"En las instalaciones del Mercado central primer piso",
+        "telefonos":"S/N",
+        "telefonos2":"2-6136212"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.38489,
+          -18.07014
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Sacaca",
+        "direccion":"En instalaciones del GAM.",
+        "telefonos":"S/N",
+        "telefonos2":"2-6137323 Cabina"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.9825,
+          -18.26863
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"San Pedro de Buena Vista",
+        "direccion":"Oficina GAM al frente de la plaza 6 de agosto",
+        "telefonos":"S/N",
+        "telefonos2":"2-6137714 Cabina"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.82286,
+          -19.22038
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Tinquipaya",
+        "direccion":"Oficina GAM al frente de la plaza principal",
+        "telefonos":"S/N",
+        "telefonos2":"2-6136235"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.718,
+          -21.434
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Tupiza",
+        "direccion":"En las instalaciones de la Alcaldía al frente de la plaza Independencia Nº 387",
+        "telefonos":"2-6942305",
+        "telefonos2":"2-6942305"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.5732,
+          -18.4708
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Uncía",
+        "direccion":"Calle Sucre S/N a una cuadra de la plaza principal",
+        "telefonos":"S/N",
+        "telefonos2":"2-5820616"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -66.82424,
+          -20.46302
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Uyuni",
+        "direccion":"En instalaciones de la galería Municipal sobre la Avenida Potosí entre las calles Arce y Bolívar, ambiente 9",
+        "telefonos":"S/N",
+        "telefonos2":"2-6932073"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.60291,
+          -22.08469
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Villazón",
+        "direccion":"En las instalaciones de la Alcaldía al frente de la plaza 6 de agosto esq. Tarija",
+        "telefonos":"S/N",
+        "telefonos2":"2-5972120"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.4952,
+          -20.2058
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Vitichi",
+        "direccion":"Calle Bolívar",
+        "telefonos":"S/N",
+        "telefonos2":"2-6136238"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.9099,
+          -19.3892
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Potosí",
+        "municipio":"Yocalla",
+        "direccion":"Oficina GAM sobre la plaza 6 de agosto N º 1 , primera planta",
+        "telefonos":"2-6136459",
+        "telefonos2":"2-6136459"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -63.19209,
+          -15.89675
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Santa Cruz",
+        "municipio":"Ascensión de Guarayos",
+        "direccion":"Oficina GAM al frente de la plaza Gregorio Salvatierra",
+        "telefonos":"S/N",
+        "telefonos2":"3-9667029"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -63.2796,
+          -20.4316
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Santa Cruz",
+        "municipio":"Boyuibe",
+        "direccion":"Sobre la Juana Azurduy esq. Sucre",
+        "telefonos":"S/N",
+        "telefonos2":"3-6477126"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -63.66016,
+          -17.45993
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Santa Cruz",
+        "municipio":"Buena Vista",
+        "direccion":"En instalaciones del Consejo Municipal sobre la calle Celso Sandoval S/N",
+        "telefonos":"9322090",
+        "telefonos2":"3-9322032"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -63.3172,
+          -18.7871
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Santa Cruz",
+        "municipio":"Cabezas",
+        "direccion":"Oficina GAM sobre la Avenida Benigno Vaca esq. Calle Drangenville",
+        "telefonos":"S/N",
+        "telefonos2":"3-3135537"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -63.5203,
+          -20.0393
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Santa Cruz",
+        "municipio":"Camiri",
+        "direccion":"En las instalaciones del edificio del Consejo Municipal",
+        "telefonos":"S/N",
+        "telefonos2":"3-9522330"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -63.2059,
+          -17.7815
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Santa Cruz",
+        "municipio":"Santa Cruz",
+        "direccion":"3er Anillo Interno lado Sonilum",
+        "telefonos":"3-3455098",
+        "telefonos2":"3-3715303"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.3427,
+          -22.7323
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Tarija",
+        "municipio":"Bermejo",
+        "direccion":"En instalaciones de la ex - alcaldía sobre la calle Tarija esq. Barrientos",
+        "telefonos":"S/N",
+        "telefonos2":"4-6961095"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -63.7424,
+          -21.8282
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Tarija",
+        "municipio":"Carapari",
+        "direccion":"Oficina GAM sobre la calle Gral. Pando frente a la plaza principal",
+        "telefonos":"4-6136032 int. 108",
+        "telefonos2":"4-6136032"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -65.2052,
+          -21.2344
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Tarija",
+        "municipio":"El Puente",
+        "direccion":"Sobre la Avenida 29 de septiembre esq. 20 de abril",
+        "telefonos":"4-6133690",
+        "telefonos2":"4-6133690"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.1719,
+          -21.5258
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Tarija",
+        "municipio":"Entre Ríos",
+        "direccion":"En las instalaciones de la Alcaldía entre las calles Sucre y Alianza",
+        "telefonos":"4-6133304",
+        "telefonos2":"4-6133304"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.71212,
+          -21.88628
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Tarija",
+        "municipio":"Padcaya",
+        "direccion":"En las instalaciones de la Alcaldía al frente de la Plaza Aniceto Arce",
+        "telefonos":"4-6545008",
+        "telefonos2":"4-6545008"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.7498,
+          -21.4179
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Tarija",
+        "municipio":"San Lorenzo",
+        "direccion":"En las instalaciones de la Alcaldía al frente de la plaza principal",
+        "telefonos":"4-6641019",
+        "telefonos2":"4-6641019"
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          -64.72894,
+          -21.54016
+        ]
+      },
+      "properties":{
+        "institucion":"Servicio Legal Integral Municipal",
+        "departamento":"Tarija",
+        "municipio":"Tarija",
+        "direccion":"Avenida Víctor Paz Edil, en el Palacio de los Deportes final calle O´Connor, segundo piso",
+        "telefonos":"4-6643209 int 108, 109 y 110",
+        "telefonos2":"4-6643211"
+      }
+    }
+  ]
+}
