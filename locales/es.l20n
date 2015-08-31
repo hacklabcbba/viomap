@@ -27,6 +27,13 @@
 <nav_button_initiative_howto "<i></i> ¿Cómo fue hecho?">
 <nav_button_initiative_web "<i></i> Web ASLV">
 
+/* Sidebar */
+<sidebar_poi_1 "SLIMs">
+<sidebar_poi_2 "FELCVs">
+<sidebar_poi_3 "FELCCs">
+<sidebar_poi_4 "FEVAPs/IDIFs">
+<sidebar_poi_5 "Juzgados">
+
 /* Modal */
 <modal_button_close "Cerrar">
 

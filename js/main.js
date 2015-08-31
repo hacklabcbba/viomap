@@ -59,7 +59,9 @@ for (tile in tileLayerData) {
 }
 
 // Initialize map
-var map = new L.Map('map');
+var map = new L.Map('map', {
+  zoomControl: false
+});
 
 // Adding layer functionality
 tileLayers[tileLayerDefault].addTo(map);
@@ -69,13 +71,21 @@ map.setView([-15.887, -66.292], 6);
 // Adding hash for position in url
 var hash = new L.Hash(map);
 
+// Adding zoom control
+var zoomControl = L.control.zoom({
+  position: 'bottomright'
+}).addTo(map);
+
 // Adding location control
 L.control.locate({
+  position: 'bottomright',
   follow: false,
   setView: true,
   keepCurrentZoomLevel: false,
   stopFollowingOnDrag: true,
-  onLocationError: function(err) {alert('Sorry. There was an error when trying to locate your location.')},
+  icon: 'fa fa-location-arrow',
+  iconLoading: 'fa fa-spinner fa-spin',
+  onLocationError: function(err) {alert("Sorry. There was an error when trying to locate your location.")},
   showPopup: true,
   strings: {
     title: "Show me where I am",

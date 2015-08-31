@@ -8,6 +8,10 @@ h3 {
     font-weight: bold;
 }
 
+ol, ul, li {
+    list-style: outside none none;
+}
+
 #header {
     width: 100%;
     position: absolute;
@@ -73,12 +77,72 @@ h3 {
     z-index: 0;
 }
 
-.leaflet-top.leaflet-left {
-    margin-top: 80px;
+/* controls */
+.leaflet-bar a,
+.leaflet-bar a:hover {
+    background-color: #000;
+    color: #FFF;
+}
+
+.leaflet-control-layers-toggle {
+    background-image: url("../img/map-o.png");
+    background-color: #000;
 }
 
 .leaflet-top.leaflet-right {
     margin-top: 80px;
+}
+
+/* sidebar */
+#sidebar {
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+    width: 125px;
+    z-index: 10;
+}
+
+#sidebar #categories {
+    margin: 0px 0px 10px 10px;
+    padding: 0px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.65);
+}
+
+#sidebar #categories li {
+    border-bottom: 1px solid #CCC;
+}
+#sidebar #categories li:last-child {
+    border-bottom: none;
+}
+
+#sidebar #categories li a {
+    display: block;
+    background-color: #000;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 8pt;
+}
+
+#sidebar #categories li a#poi-1:hover {
+    background-color: #ed66e4;
+}
+#sidebar #categories li a#poi-2:hover {
+    background-color: #44ab11;
+}
+#sidebar #categories li a#poi-3:hover {
+    background-color: #c03639;
+}
+#sidebar #categories li a#poi-4:hover {
+    background-color: #a5e62b;
+}
+#sidebar #categories li a#poi-5:hover {
+    background-color: #1196de;
+}
+
+#sidebar #categories li a img {
+    height: 25px;
+    width: 25px;
+    margin: 5px;
 }
 
 /* modal */
@@ -87,6 +151,19 @@ h3 {
 }
 
 /* responsive */
+@media screen and (max-width: 320px) {
+
+    #sidebar {
+        width: 42px !important;
+    }
+
+    #sidebar #categories li a img {
+        height: 22px;
+        width: 22px;
+    }
+
+}
+
 @media screen and (max-width: 639px) {
 
     #header .search-form {
@@ -100,6 +177,14 @@ h3 {
 
     .leaflet-container .leaflet-control-attribution {
         font-size: 7pt;
+    }
+
+    #sidebar {
+        width: 45px;
+    }
+
+    #sidebar #categories li a span {
+        display: none;
     }
 
 }
@@ -146,10 +231,6 @@ h3 {
         padding: 2px 12px;
     }
 
-    .leaflet-top.leaflet-left {
-        margin-top: 40px;
-    }
-
     .leaflet-top.leaflet-right {
         margin-top: 40px;
     }
@@ -163,4 +244,3 @@ h3 {
     }
 
 }
-

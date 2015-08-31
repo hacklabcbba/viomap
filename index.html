@@ -42,12 +42,7 @@
     <meta name="msapplication-config" content="ieconfig.xml" />
 
     <link rel="stylesheet" href="css/leaflet.css" />
-    <link rel="stylesheet" href="css/L.Control.Zoomslider.css" />
-    <link rel="stylesheet" href="css/L.Control.Zoomslider.patch.css" />
     <link rel="stylesheet" href="css/L.Control.Locate.min.css" />
-    <!--[if lte IE 8]>
-      <link rel="stylesheet" href="css/L.Control.Zoomslider.ie.css" />
-    <![endif]-->
     <!--[if lt IE 9]>
       <link rel="stylesheet" href="css/L.Control.Locate.ie.min.css"/>
     <![endif]-->
@@ -131,6 +126,16 @@
     </div>
 
     <div id="map"></div>
+
+    <div id="sidebar">
+      <ul id="categories">
+        <li><a id="poi-1" href="#"><img src="img/mapicons/office-building.png" alt="poi-1" /><span data-l10n-id="sidebar_poi_1">SLIMs</span></a></li>
+        <li><a id="poi-2" href="#"><img src="img/mapicons/police2.png" alt="poi-2" /><span data-l10n-id="sidebar_poi_2">FELCVs</span></a></li>
+        <li><a id="poi-3" href="#"><img src="img/mapicons/rape.png" alt="poi-3" /><span data-l10n-id="sidebar_poi_3">FELCCs</span></a></li>
+        <li><a id="poi-4" href="#"><img src="img/mapicons/bigcity.png" alt="poi-4" /><span data-l10n-id="sidebar_poi_4">FEVAPs/IDIFs</span></a></li>
+        <li><a id="poi-5" href="#"><img src="img/mapicons/court.png" alt="poi-5" /><span data-l10n-id="sidebar_poi_5">Courts</span></a></li>
+      </ul>
+    </div>
 
     <div id="modal-share" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
@@ -225,7 +230,6 @@
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/leaflet.js"></script>
     <script src="js/leaflet-hash.js"></script>
-    <script src="js/L.Control.Zoomslider.js"></script>
     <script src="js/L.Control.Locate.min.js"></script>
     <script src="js/main.js"></script>
 
