@@ -30,7 +30,7 @@ h3 {
 #header .branding h3 {
     margin-left: 130px;
     margin-top: 40px;
-    max-width: 200px;
+    max-width: 250px;
     color: #FFF;
     font-size: 8pt;
 }
@@ -45,6 +45,7 @@ h3 {
     padding: 6px 12px;
     margin: 0px;
     color: #FFF;
+    background-color: #232323;
 }
 
 #header .search-form button:hover {

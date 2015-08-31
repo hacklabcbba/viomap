@@ -5,6 +5,9 @@
 
 <nameapp "VioMap">
 
+/* Header */
+<title "{{ nameapp }} | Directory of Assistance Services in Cases of Violence and Trafficking in Bolivia">
+
 /* General */
 <browser_upgrade "You are using an <strong>outdated</strong> browser. Please <a>upgrade your browser</a> to improve your experience.">
 
@@ -15,7 +18,7 @@
 
 /* Navigation Bar */
 <nav_button_share "Share">
-<nav_button_share_use "Use in your Web">
+<nav_button_share_use "<i></i> Use in your Web">
 <nav_button_share_twitter "<i></i> Share in Twitter">
 <nav_button_share_facebook "<i></i> Share in Facebook">
 
