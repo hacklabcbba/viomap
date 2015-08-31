@@ -43,6 +43,8 @@
 
     <link rel="stylesheet" href="css/leaflet.css" />
     <link rel="stylesheet" href="css/L.Control.Locate.min.css" />
+    <link rel="stylesheet" href="css/MarkerCluster.css" />
+    <link rel="stylesheet" href="css/MarkerCluster.Default.css" />
     <!--[if lt IE 9]>
       <link rel="stylesheet" href="css/L.Control.Locate.ie.min.css"/>
     <![endif]-->
@@ -151,7 +153,7 @@
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal"  data-l10n-id="modal_button_close">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" data-l10n-id="modal_button_close">Close</button>
           </div>
 
         </div>
@@ -184,7 +186,7 @@
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal"  data-l10n-id="modal_button_close">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" data-l10n-id="modal_button_close">Close</button>
           </div>
 
         </div>
@@ -226,11 +228,31 @@
       </div>
     </div>
 
+    <div id="featureModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 id="feature-title" class="modal-title"></h3>
+          </div>
+
+          <div id="feature-info" class="modal-body"></div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" data-l10n-id="modal_button_close">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
     <script src="js/vendor/jquery-1.11.3.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/leaflet.js"></script>
     <script src="js/leaflet-hash.js"></script>
     <script src="js/L.Control.Locate.min.js"></script>
+    <script src="js/leaflet.markercluster.js"></script>
     <script src="js/main.js"></script>
 
   </body>

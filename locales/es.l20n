@@ -79,3 +79,10 @@
       </ul>
     </p>
 """>
+
+/* Markers */
+<marker_address "Dirección">
+<marker_phone1 "Teléfonos">
+<marker_phone2 "Otros teléfonos">
+<marker_openinghours "Horario">
+<marker_website "Página Web">

@@ -1,5 +1,5 @@
 
-// config tiles services
+/* Basemap Layers */
 var tileLayerData = {
   mapsurfer: {
     name: 'OpenMapSurfer',
@@ -96,3 +96,69 @@ L.control.locate({
   },
   locateOptions: { maxZoom: 16 }
 }).addTo(map);
+
+/* Overlay Layers */
+var slims = L.geoJson(null, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, {
+      icon: L.icon({
+        iconUrl: "img/mapicons/office-building_poi.png",
+        iconSize: [32, 37],
+        iconAnchor: [16, 37],
+        popupAnchor: [0, -37]
+      }),
+      title: feature.properties.institucion,
+      riseOnHover: true
+    });
+  },
+  onEachFeature: function (feature, layer) {
+    var content = "<table class='table table-striped table-bordered table-condensed'>" +
+      "<tr><th data-l10n-id='marker_address'>Adress</th><td>" + feature.properties.direccion + ", " + feature.properties.municipio + ", " + feature.properties.departamento + "</td></tr>" +
+      "<tr><th data-l10n-id='marker_phone1'>Phones</th><td>" + feature.properties.telefonos + "</td></tr>" +
+      "<tr><th data-l10n-id='marker_phone2'>Other Phones</th><td>" + feature.properties.telefonos2 + "</td></tr>" +
+      "<table>";
+    layer.on({
+      click: function (e) {
+        $("#feature-title").html(feature.properties.institucion);
+        $("#feature-info").html(content);
+        $("#featureModal").modal("show");
+      }
+    });
+  }
+}).addTo(map);
+$.getJSON("data/slims.geojson", function (data) {
+  slims.addData(data);
+});
+
+var fevaps = L.geoJson(null, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, {
+      icon: L.icon({
+        iconUrl: "img/mapicons/bigcity_poi.png",
+        iconSize: [32, 37],
+        iconAnchor: [16, 37],
+        popupAnchor: [0, -37]
+      }),
+      title: feature.properties.institucion,
+      riseOnHover: true
+    });
+  },
+  onEachFeature: function (feature, layer) {
+    var content = "<table class='table table-striped table-bordered table-condensed'>" +
+      "<tr><th data-l10n-id='marker_address'>Adress</th><td>" + feature.properties.direccion + ", " + feature.properties.municipio + ", " + feature.properties.departamento + "</td></tr>" +
+      "<tr><th data-l10n-id='marker_phone1'>Phones</th><td>" + feature.properties.telefono + "</td></tr>" +
+      "<tr><th data-l10n-id='marker_openinghours'>Opening Hours</th><td>" + feature.properties.horario + "</td></tr>" +
+      "<tr><th data-l10n-id='marker_website'>Web Site</th><td>" + feature.properties.sitioweb + "</td></tr>" +
+      "<table>";
+    layer.on({
+      click: function (e) {
+        $("#feature-title").html(feature.properties.institucion);
+        $("#feature-info").html(content);
+        $("#featureModal").modal("show");
+      }
+    });
+  }
+}).addTo(map);
+$.getJSON("data/fevaps.geojson", function (data) {
+  fevaps.addData(data);
+});
