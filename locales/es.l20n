@@ -22,7 +22,7 @@
 <nav_button_share_twitter "<i></i> Compartir en Twitter">
 <nav_button_share_facebook "<i></i> Compartir en Facebook">
 
-<nav_button_initiative "Initiativa">
+<nav_button_initiative "Iniciativa">
 <nav_button_initiative_about "<i></i> Acerca de {{ nameapp }}">
 <nav_button_initiative_howto "<i></i> ¿Cómo fue hecho?">
 <nav_button_initiative_web "<i></i> Web ASLV">
