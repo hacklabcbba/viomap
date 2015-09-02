@@ -4,15 +4,16 @@
 */
 
 <nameapp "VioMap">
+<titleapp "Directory of Assistance Services in Cases of Violence towards Women and Trafficking in Bolivia">
 
 /* Header */
-<title "{{ nameapp }} | Directory of Assistance Services in Cases of Violence and Trafficking in Bolivia">
+<title "{{ nameapp }} | {{ titleapp }}">
 
 /* General */
 <browser_upgrade "You are using an <strong>outdated</strong> browser. Please <a>upgrade your browser</a> to improve your experience.">
 
 /* Branding */
-<header_branding_description "Directory of Assistance Services in Cases of Violence and Trafficking in Bolivia">
+<header_branding_description "{{ titleapp }}">
 
 <header_search placeholder:"_Find a place">
 
@@ -48,7 +49,7 @@
 <modal_about_body """
     <p><img /></p>
 
-    <p>{{ nameapp }} is the directory of care in cases of violence and trafficking in Bolivia. This initiative is powered by the <a>Free Alliance Without Violence</a>.</p>
+    <p>{{ nameapp }} is the {{ titleapp }}. This initiative is powered by the <a>Free Alliance Without Violence</a>.</p>
 
     <p><img /></p>
 

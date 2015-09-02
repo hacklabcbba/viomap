@@ -4,15 +4,16 @@
 */
 
 <nameapp "VioMap">
+<titleapp "Directorio de servicios de atención en Casos de Violencia hacia las Mujeres y Trata en Bolivia">
 
 /* Header */
-<title "{{ nameapp }} | Directorio de servicios de atención en Casos de Violencia y Trata en Bolivia">
+<title "{{ nameapp }} | {{ titleapp }}">
 
 /* General */
 <browser_upgrade "Está utilizando un navegador <strong>obsoleto</strong>. <a>Actualice su navegador</a> para mejorar la experiencia.">
 
 /* Branding */
-<header_branding_description "Directorio de servicios de atención en Casos de Violencia y Trata en Bolivia">
+<header_branding_description "{{ titleapp }}">
 
 <header_search placeholder:"_Buscar un lugar">
 
@@ -48,7 +49,7 @@
 <modal_about_body """
     <p><img /></p>
 
-    <p>{{ nameapp }} es el directorio de servicios de atención en Casos de Violencia y Trata en Bolivia. Esta iniciativa está impulsada por la <a>Alianza Libres Sin Violencia</a></p>
+    <p>{{ nameapp }} es el {{ titleapp }}. Esta iniciativa está impulsada por la <a>Alianza Libres Sin Violencia</a></p>
 
     <p><img /></p>
 
