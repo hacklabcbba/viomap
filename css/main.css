@@ -53,7 +53,7 @@ ol, ul, li {
 }
 
 #header .search-form button:hover {
-    background-color: #4D4D4D;
+    background-color: #4d4d4d;
 }
 
 /* navigation */
@@ -80,6 +80,15 @@ ol, ul, li {
 /* controls */
 .leaflet-bar a,
 .leaflet-bar a:hover {
+    background-color: #000;
+    color: #FFF;
+}
+
+.leaflet-bar a.leaflet-disabled {
+    background-color: #4d4d4d;
+}
+
+.leaflet-control-layers {
     background-color: #000;
     color: #FFF;
 }
