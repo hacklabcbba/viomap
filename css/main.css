@@ -159,6 +159,11 @@ ol, ul, li {
     text-align: center;
 }
 
+/* table */
+.table {
+    margin-bottom: 0px;
+}
+
 /* responsive */
 @media screen and (max-width: 320px) {
 

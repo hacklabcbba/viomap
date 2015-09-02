@@ -112,15 +112,14 @@ var slims = L.geoJson(null, {
     });
   },
   onEachFeature: function (feature, layer) {
-    var content = "<table class='table table-striped table-bordered table-condensed'>" +
-      "<tr><th data-l10n-id='marker_address'>Adress</th><td>" + feature.properties.direccion + ", " + feature.properties.municipio + ", " + feature.properties.departamento + "</td></tr>" +
-      "<tr><th data-l10n-id='marker_phone1'>Phones</th><td>" + feature.properties.telefonos + "</td></tr>" +
-      "<tr><th data-l10n-id='marker_phone2'>Other Phones</th><td>" + feature.properties.telefonos2 + "</td></tr>" +
-      "<table>";
+    var content =
+      "<tr><th data-l10n-id='marker_address'><i class='fa fa-map-signs'></i> Address</th><td>" + feature.properties.direccion + ", " + feature.properties.municipio + ", " + feature.properties.departamento + "</td></tr>" +
+      "<tr><th data-l10n-id='marker_phone1'><i class='fa fa-phone'></i> Phones</th><td>" + feature.properties.telefonos + "</td></tr>" +
+      "<tr><th data-l10n-id='marker_phone2'><i class='fa fa-phone'></i> Other Phones</th><td>" + feature.properties.telefonos2 + "</td></tr>";
     layer.on({
       click: function (e) {
         $("#feature-title").html(feature.properties.institucion);
-        $("#feature-info").html(content);
+        $("#feature-info").find("table").html(content);
         $("#featureModal").modal("show");
       }
     });
@@ -144,16 +143,15 @@ var fevaps = L.geoJson(null, {
     });
   },
   onEachFeature: function (feature, layer) {
-    var content = "<table class='table table-striped table-bordered table-condensed'>" +
-      "<tr><th data-l10n-id='marker_address'>Adress</th><td>" + feature.properties.direccion + ", " + feature.properties.municipio + ", " + feature.properties.departamento + "</td></tr>" +
-      "<tr><th data-l10n-id='marker_phone1'>Phones</th><td>" + feature.properties.telefono + "</td></tr>" +
-      "<tr><th data-l10n-id='marker_openinghours'>Opening Hours</th><td>" + feature.properties.horario + "</td></tr>" +
-      "<tr><th data-l10n-id='marker_website'>Web Site</th><td>" + feature.properties.sitioweb + "</td></tr>" +
-      "<table>";
+    var content =
+      "<tr><th data-l10n-id='marker_address'><i class='fa fa-map-signs'></i> Address</th><td>" + feature.properties.direccion + ", " + feature.properties.municipio + ", " + feature.properties.departamento + "</td></tr>" +
+      "<tr><th data-l10n-id='marker_phone1'><i class='fa fa-phone'></i> Phones</th><td>" + feature.properties.telefono + "</td></tr>" +
+      "<tr><th data-l10n-id='marker_openinghours'><i class='fa fa-clock-o'></i> Opening Hours</th><td>" + feature.properties.horario + "</td></tr>" +
+      "<tr><th data-l10n-id='marker_website'><i class='fa fa-globe'></i> Web Site</th><td>" + feature.properties.sitioweb + "</td></tr>";
     layer.on({
       click: function (e) {
         $("#feature-title").html(feature.properties.institucion);
-        $("#feature-info").html(content);
+        $("#feature-info").find("table").html(content);
         $("#featureModal").modal("show");
       }
     });
