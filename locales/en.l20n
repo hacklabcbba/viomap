@@ -29,11 +29,11 @@
 <nav_button_initiative_web "<i></i> Web ASLV">
 
 /* Sidebar */
-<sidebar_poi_1 "SLIMs">
-<sidebar_poi_2 "FELCVs">
-<sidebar_poi_3 "FELCCs">
-<sidebar_poi_4 "FEVAPs/IDIFs">
-<sidebar_poi_5 "Courts">
+<sidebar_poi_1 "SLIM">
+<sidebar_poi_2 "FELCV">
+<sidebar_poi_3 "FELCC">
+<sidebar_poi_4 "FEVAP/IDIF">
+<sidebar_poi_5 "Court">
 
 /* Modal */
 <modal_button_close "Close">
@@ -83,6 +83,8 @@
 
 /* Markers */
 <marker_address "Address">
+<marker_municipality "Municipality">
+<marker_state "State">
 <marker_phone1 "Phones">
 <marker_phone2 "Others Phones">
 <marker_openinghours "Opening Hours">

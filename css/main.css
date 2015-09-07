@@ -133,13 +133,13 @@ ol, ul, li {
 }
 
 #sidebar #categories li a#poi-1:hover {
-    background-color: #ed66e4;
+    background-color: #f7751e;
 }
 #sidebar #categories li a#poi-2:hover {
-    background-color: #44ab11;
+    background-color: #e612d8;
 }
 #sidebar #categories li a#poi-3:hover {
-    background-color: #c03639;
+    background-color: #44ab11;
 }
 #sidebar #categories li a#poi-4:hover {
     background-color: #a5e62b;
