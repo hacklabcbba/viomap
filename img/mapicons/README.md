@@ -4,8 +4,8 @@
 ```
 type: slim
 icon: office-building.png
-color: #ed66e4
-url: https://mapicons.mapsmarker.com/markers/offices/real-estate/office-building/?custom_color=ed66e4
+color: #f7751e
+url: https://mapicons.mapsmarker.com/markers/offices/real-estate/office-building/?custom_color=f7751e
 ```
 
 ### FELCV - Fuerza Especial de Lucha Contra la Violencia
@@ -13,17 +13,17 @@ url: https://mapicons.mapsmarker.com/markers/offices/real-estate/office-building
 ```
 type: felcv
 icon: police2.png
-color: #44ab11
-url: https://mapicons.mapsmarker.com/markers/offices/police/?custom_color=44ab11
+color: #e612d8
+url: https://mapicons.mapsmarker.com/markers/offices/police/?custom_color=e612d8
 ```
 
 ### FELCC - Fuerza Especial de Lucha Contra el Crimen
 
 ```
 type: felcc
-icon: rape.png
-color: #c03639
-url: https://mapicons.mapsmarker.com/markers/events/crime/rape/?custom_color=c03639
+icon: police2_1.png
+color: #44ab11
+url: https://mapicons.mapsmarker.com/markers/offices/police/?custom_color=44ab11
 ```
 
 ### FEVAP/IDIF - Ministerio Público con Fiscalía Especializada en Víctimas de Atención Prioritaria y Instituto de Investigaciones Forenses
@@ -35,10 +35,10 @@ color: #a5e62b
 url: https://mapicons.mapsmarker.com/markers/tourism/place-to-see/big-city/?custom_color=a5e62b
 ```
 
-### JUEZGADO - Juzgados
+### JUZGADO - Juzgados
 
 ```
-type: justice
+type: court
 icon: court.png
 color: #1196de
 url: https://mapicons.mapsmarker.com/markers/offices/court/?custom_color=1196de
