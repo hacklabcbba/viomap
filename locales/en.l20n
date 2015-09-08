@@ -29,11 +29,12 @@
 <nav_button_initiative_web "<i></i> Web ASLV">
 
 /* Sidebar */
+<sidebar_show "SHOW...">
 <sidebar_poi_1 "SLIM">
 <sidebar_poi_2 "FELCV">
 <sidebar_poi_3 "FELCC">
 <sidebar_poi_4 "FEVAP/IDIF">
-<sidebar_poi_5 "Court">
+<sidebar_poi_5 "COURT">
 
 /* Modal */
 <modal_button_close "Close">
