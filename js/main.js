@@ -1,10 +1,10 @@
 
 $(document).ready(function() {
 
-  var markersSlim;
+  var markersSlim, markersFELCV, markersFELCC, markersFEVAP, markersIDIF, markersSUT, markersJUD, markersSPT;
 
   var catBgColor = '#000';
-  var slimBgColor;
+  var slimBgColor, felcvBgColor, felccBgColor, fevapBgColor, idifBgColor, sutBgColor, judBgColor, sptBgColor;
 
   /* Basemap Layers */
   var tileLayerData = {
@@ -113,18 +113,53 @@ $(document).ready(function() {
         iconAnchor: [16, 37],
         popupAnchor: [0, -37]
       }),
-      title: feature.properties.institucion,
+      title: feature.properties.institucion + " of " + feature.properties.municipio,
       riseOnHover: true
     });
   }
 
   function onEachFeature (feature, layer) {
-    var content =
-      "<tr><th data-l10n-id='marker_address'><i class='fa fa-map-signs'></i> Address</th><td>" + feature.properties.direccion + "</td></tr>" +
-      "<tr><th data-l10n-id='marker_municipality'><i class='fa fa-map-signs'></i> Municipality</th><td>" + feature.properties.municipio + "</td></tr>" +
-      "<tr><th data-l10n-id='marker_state'><i class='fa fa-map-signs'></i> State</th><td>" + feature.properties.departamento + "</td></tr>" +
-      "<tr><th data-l10n-id='marker_phone1'><i class='fa fa-phone'></i> Phones</th><td>" + feature.properties.telefono1 + "</td></tr>" +
-      "<tr><th data-l10n-id='marker_phone2'><i class='fa fa-phone'></i> Other Phones</th><td>" + feature.properties.telefono2 + "</td></tr>";
+
+    var content = "";
+
+    for (property in feature.properties) {
+
+      var exclude = false;
+      var html = "<tr>";
+
+      switch (property) {
+        case 'direccion':
+          html += "<th data-l10n-id='marker_address'><i class='fa fa-map-signs'></i> Address</th>";
+          break;
+        case 'municipio':
+          html += "<th data-l10n-id='marker_municipality'><i class='fa fa-map-signs'></i> Municipality</th>";
+          break;
+        case 'departamento':
+          html += "<th data-l10n-id='marker_state'><i class='fa fa-map-signs'></i> State</th>";
+          break;
+        case 'telefono1':
+          html += "<th data-l10n-id='marker_phone1'><i class='fa fa-phone'></i> Phones</th>";
+          break;
+        case 'telefono2':
+          html += "<th data-l10n-id='marker_phone2'><i class='fa fa-phone'></i> Other Phones</th>";
+          break;
+        case 'fax1':
+          html += "<th data-l10n-id='marker_fax1'><i class='fa fa-fax'></i> Faxes</th>";
+          break;
+        case 'horario':
+          html += "<th data-l10n-id='marker_openinghours'><i class='fa fa-clock-o'></i> Opening Hours</th>";
+          break;
+        case 'paginaweb':
+          html += "<th data-l10n-id='marker_website'><i class='fa fa-globe'></i> Web Site</th>";
+          break;
+        default:
+          exclude = true;
+          break;
+      }
+
+      if (!exclude)
+        content += html + "<td>" + feature.properties[property] + "</td></tr>";
+    }
 
     layer.on({
       click: function (e) {
@@ -132,20 +167,20 @@ $(document).ready(function() {
         var lat = feature.geometry.coordinates[1];
         map.setView([lat, lng], 16);
 
-        $("#feature-title").html(feature.properties.institucion);
+        $("#feature-title").html(feature.properties.institucion + " of " + feature.properties.municipio);
         $("#feature-info").find('table').html(content);
         $("#featureModal").modal('show');
       }
     });
   }
 
-  $.getJSON("data/slims.geojson", function (data) {
-    var slimsLayer = L.geoJson(data, {
+  $.getJSON("data/slim.geojson", function (data) {
+    var layer = L.geoJson(data, {
       pointToLayer: pointToLayer,
       onEachFeature: onEachFeature
     });
 
-    markersSlims = L.markerClusterGroup({
+    markersSlim = L.markerClusterGroup({
       iconCreateFunction: function (cluster) {
         return new L.DivIcon({
           html: '<div><span>' + cluster.getChildCount() + '</span></div>',
@@ -156,32 +191,216 @@ $(document).ready(function() {
       zoomToBoundsOnClick: false
     });
 
-    markersSlims.on('clusterclick', function (a) {
+    markersSlim.on('clusterclick', function (a) {
       a.layer.zoomToBounds();
     });
 
-    markersSlims.addLayer(slimsLayer);
-    map.addLayer(markersSlims);
-    map.fitBounds(markersSlims.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+    markersSlim.addLayer(layer);
+    map.addLayer(markersSlim);
+    map.fitBounds(markersSlim.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
 
     slimBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
     $("#poi-1").css('background-color', slimBgColor);
     $("#poi-1").data('enabled', 1);
   });
 
+  $.getJSON("data/fevap.geojson", function (data) {
+    var layer = L.geoJson(data, {
+      pointToLayer: pointToLayer,
+      onEachFeature: onEachFeature
+    });
+
+    markersFEVAP = L.markerClusterGroup({
+      iconCreateFunction: function (cluster) {
+        return new L.DivIcon({
+          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
+          className: 'marker-cluster marker-cluster-poi-4',
+          iconSize: new L.Point(40, 40)
+        });
+      },
+      zoomToBoundsOnClick: false
+    });
+
+    markersFEVAP.on('clusterclick', function (a) {
+      a.layer.zoomToBounds();
+    });
+
+    markersFEVAP.addLayer(layer);
+    map.addLayer(markersFEVAP);
+    map.fitBounds(markersFEVAP.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+
+    fevapBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
+    $("#poi-4").css('background-color', fevapBgColor);
+    $("#poi-4").data('enabled', 1);
+  });
+
+  $.getJSON("data/supreme-tribunal.geojson", function (data) {
+    var layer = L.geoJson(data, {
+      pointToLayer: pointToLayer,
+      onEachFeature: onEachFeature
+    });
+
+    markersSUT = L.markerClusterGroup({
+      iconCreateFunction: function (cluster) {
+        return new L.DivIcon({
+          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
+          className: 'marker-cluster marker-cluster-poi-6',
+          iconSize: new L.Point(40, 40)
+        });
+      },
+      zoomToBoundsOnClick: false
+    });
+
+    markersSUT.on('clusterclick', function (a) {
+      a.layer.zoomToBounds();
+    });
+
+    markersSUT.addLayer(layer);
+    map.addLayer(markersSUT);
+    map.fitBounds(markersSUT.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+
+    sutBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
+    $("#poi-6").css('background-color', sutBgColor);
+    $("#poi-6").data('enabled', 1);
+  });
+
+  $.getJSON("data/judicial-district.geojson", function (data) {
+    var layer = L.geoJson(data, {
+      pointToLayer: pointToLayer,
+      onEachFeature: onEachFeature
+    });
+
+    markersJUD = L.markerClusterGroup({
+      iconCreateFunction: function (cluster) {
+        return new L.DivIcon({
+          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
+          className: 'marker-cluster marker-cluster-poi-7',
+          iconSize: new L.Point(40, 40)
+        });
+      },
+      zoomToBoundsOnClick: false
+    });
+
+    markersJUD.on('clusterclick', function (a) {
+      a.layer.zoomToBounds();
+    });
+
+    markersJUD.addLayer(layer);
+    map.addLayer(markersJUD);
+    map.fitBounds(markersJUD.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+
+    judBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
+    $("#poi-7").css('background-color', judBgColor);
+    $("#poi-7").data('enabled', 1);
+  });
+
+  $.getJSON("data/specialized-tribunal.geojson", function (data) {
+    var layer = L.geoJson(data, {
+      pointToLayer: pointToLayer,
+      onEachFeature: onEachFeature
+    });
+
+    markersSPT = L.markerClusterGroup({
+      iconCreateFunction: function (cluster) {
+        return new L.DivIcon({
+          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
+          className: 'marker-cluster marker-cluster-poi-8',
+          iconSize: new L.Point(40, 40)
+        });
+      },
+      zoomToBoundsOnClick: false
+    });
+
+    markersSPT.on('clusterclick', function (a) {
+      a.layer.zoomToBounds();
+    });
+
+    markersSPT.addLayer(layer);
+    map.addLayer(markersSPT);
+    map.fitBounds(markersSPT.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+
+    sptBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
+    $("#poi-8").css('background-color', sptBgColor);
+    $("#poi-8").data('enabled', 1);
+  });
+
   /* Events */
   $("#poi-1").click(function (e) {
     if ($(this).data('enabled') == 1) {
-      map.removeLayer(markersSlims);
+      map.removeLayer(markersSlim);
 
       $(this).css('background-color', catBgColor);
       $(this).data('enabled', 0);
 
     } else {
-      map.addLayer(markersSlims);
-      map.fitBounds(markersSlims.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+      map.addLayer(markersSlim);
+      map.fitBounds(markersSlim.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
 
       $(this).css('background-color', slimBgColor);
+      $(this).data('enabled', 1);
+    }
+  });
+
+  $("#poi-4").click(function (e) {
+    if ($(this).data('enabled') == 1) {
+      map.removeLayer(markersFEVAP);
+
+      $(this).css('background-color', catBgColor);
+      $(this).data('enabled', 0);
+
+    } else {
+      map.addLayer(markersFEVAP);
+      map.fitBounds(markersFEVAP.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+
+      $(this).css('background-color', fevapBgColor);
+      $(this).data('enabled', 1);
+    }
+  });
+
+  $("#poi-6").click(function (e) {
+    if ($(this).data('enabled') == 1) {
+      map.removeLayer(markersSUT);
+
+      $(this).css('background-color', catBgColor);
+      $(this).data('enabled', 0);
+
+    } else {
+      map.addLayer(markersSUT);
+      map.fitBounds(markersSUT.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+
+      $(this).css('background-color', sutBgColor);
+      $(this).data('enabled', 1);
+    }
+  });
+
+  $("#poi-7").click(function (e) {
+    if ($(this).data('enabled') == 1) {
+      map.removeLayer(markersJUD);
+
+      $(this).css('background-color', catBgColor);
+      $(this).data('enabled', 0);
+
+    } else {
+      map.addLayer(markersJUD);
+      map.fitBounds(markersJUD.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+
+      $(this).css('background-color', judBgColor);
+      $(this).data('enabled', 1);
+    }
+  });
+
+  $("#poi-8").click(function (e) {
+    if ($(this).data('enabled') == 1) {
+      map.removeLayer(markersSPT);
+
+      $(this).css('background-color', catBgColor);
+      $(this).data('enabled', 0);
+
+    } else {
+      map.addLayer(markersSPT);
+      map.fitBounds(markersSPT.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+
+      $(this).css('background-color', sptBgColor);
       $(this).data('enabled', 1);
     }
   });

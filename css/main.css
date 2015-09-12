@@ -2,9 +2,10 @@ html, body {
     padding: 0;
     margin: 0;
     height: 100%;
+    font-family: "Arial", "Liberation Sans", "FreeSans", "sans-serif";
 }
 
-h3 {
+h4 {
     font-weight: bold;
 }
 
@@ -183,7 +184,7 @@ ol, ul, li {
 /* markercluster */
 .marker-cluster-poi-1,
 .marker-cluster-poi-1 div {
-    background-color: rgba(247, 117, 30, 0.6);
+    background-color: rgba(247, 117, 30, 0.8);
 }
 
 .marker-cluster-poi-2,
@@ -203,7 +204,22 @@ ol, ul, li {
 
 .marker-cluster-poi-5,
 .marker-cluster-poi-5 div {
+    background-color: rgba(230, 214, 43, 0.6);
+}
+
+.marker-cluster-poi-6,
+.marker-cluster-poi-6 div {
     background-color: rgba(17, 150, 222, 0.6);
+}
+
+.marker-cluster-poi-7,
+.marker-cluster-poi-7 div {
+    background-color: rgba(242, 100, 128, 0.6);
+}
+
+.marker-cluster-poi-8,
+.marker-cluster-poi-8 div {
+    background-color: rgba(209, 195, 39, 0.6);
 }
 
 /* responsive */
