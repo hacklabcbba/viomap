@@ -13,11 +13,14 @@
 <browser_upgrade "Está utilizando un navegador <strong>obsoleto</strong>. <a>Actualice su navegador</a> para mejorar la experiencia.">
 
 /* Branding */
+<header_logo "brandlogo" alt:"{{ titleapp }}" title:"{{ titleapp }}">
 <header_branding_description "{{ titleapp }}">
 
 <header_search placeholder:"_Buscar un lugar">
 
 /* Navigation Bar */
+<nav_logo "navlogo" alt:"{{ nameapp }} | Alianza Libres sin Violencia" title:"{{ nameapp }} | Alianza Libres sin Violencia">
+
 <nav_button_share "Compartir">
 <nav_button_share_use "<i></i> Úsalo en tu Web">
 <nav_button_share_twitter "<i></i> Compartir en Twitter">

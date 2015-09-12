@@ -60,11 +60,15 @@ ol, ul, li {
 /* navigation */
 #header .navigation-bar {
     float: right;
-    margin: 13px 0px;
+    margin: 0px;
+}
+
+#header .navigation-bar > div:first-child {
+    margin: 8px 10px;
 }
 
 #header .navigation-bar > div {
-    margin: 10px;
+    margin: 23px 10px;
 }
 
 /* map */
