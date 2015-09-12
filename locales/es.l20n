@@ -33,8 +33,11 @@
 <sidebar_poi_1 "SLIM">
 <sidebar_poi_2 "FELCV">
 <sidebar_poi_3 "FELCC">
-<sidebar_poi_4 "FEVAP/IDIF">
-<sidebar_poi_5 "JUZGADO">
+<sidebar_poi_4 "FEVAP">
+<sidebar_poi_5 "IDIF">
+<sidebar_poi_6 "TRIBUNAL SUPREMO">
+<sidebar_poi_7 "DISTRITO JUDICIAL">
+<sidebar_poi_8 "TRIBUNAL ESPECIAL">
 
 /* Modal */
 <modal_button_close "Cerrar">

@@ -107,7 +107,7 @@ ol, ul, li {
     bottom: 0px;
     left: 0px;
     position: absolute;
-    width: 125px;
+    width: 165px;
     z-index: 10;
 }
 
@@ -146,7 +146,16 @@ ol, ul, li {
     background-color: #a5e62b;
 }
 #sidebar #categories li a#poi-5:hover {
+    background-color: #e6d62b;
+}
+#sidebar #categories li a#poi-6:hover {
     background-color: #1196de;
+}
+#sidebar #categories li a#poi-7:hover {
+    background-color: #f26480;
+}
+#sidebar #categories li a#poi-8:hover {
+    background-color: #d1c327;
 }
 
 #sidebar #categories li > span {

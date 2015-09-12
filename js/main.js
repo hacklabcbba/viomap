@@ -133,8 +133,8 @@ $(document).ready(function() {
         map.setView([lat, lng], 16);
 
         $("#feature-title").html(feature.properties.institucion);
-        $("#feature-info").find("table").html(content);
-        $("#featureModal").modal("show");
+        $("#feature-info").find('table').html(content);
+        $("#featureModal").modal('show');
       }
     });
   }
@@ -162,28 +162,27 @@ $(document).ready(function() {
 
     markersSlims.addLayer(slimsLayer);
     map.addLayer(markersSlims);
-    console.log($(window).width());
     map.fitBounds(markersSlims.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
 
     slimBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
     $("#poi-1").css('background-color', slimBgColor);
-    $("#poi-1").data("enabled", 1);
+    $("#poi-1").data('enabled', 1);
   });
 
   /* Events */
   $("#poi-1").click(function (e) {
-    if ($(this).data("enabled") == 1) {
+    if ($(this).data('enabled') == 1) {
       map.removeLayer(markersSlims);
 
       $(this).css('background-color', catBgColor);
-      $(this).data("enabled", 0);
+      $(this).data('enabled', 0);
 
     } else {
       map.addLayer(markersSlims);
       map.fitBounds(markersSlims.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
 
       $(this).css('background-color', slimBgColor);
-      $(this).data("enabled", 1);
+      $(this).data('enabled', 1);
     }
   });
 
