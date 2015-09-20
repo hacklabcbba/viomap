@@ -15,33 +15,33 @@ $(document).ready(function() {
       zoom: 19
     },
     satellite: {
-      name: 'Satellite',
+      name: 'Fotos satelitales',
       url: 'http://{s}.tiles.mapbox.com/v3/51114u9.kogin3jb/{z}/{x}/{y}.png',
       attribution: '<a href="http://mapbox.com/" target="_blank">MapBox</a>',
       zoom: 17
     },
     hotosm: {
-      name: 'Humanitarian',
+      name: 'Estilo humanitario',
       url: 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
-      attribution: '<a href="http://hot.openstreetmap.org/" target="_blank">HOT Team</a>',
+      attribution: '<a href="http://hot.openstreetmap.org/" target="_blank">Equipo HOT</a>',
       zoom: 20,
       default: true
     },
     osmfr: {
-      name: 'OSM France',
+      name: 'Estilo francés',
       url: 'http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
-      attribution: '<a href="http://openstreetmap.fr/" target="_blank">OSM France</a>',
+      attribution: '<a href="http://openstreetmap.fr/" target="_blank">OSM Francia</a>',
       zoom: 20
     },
     transport: {
-      name: 'Public Transport',
+      name: 'Transporte Público',
       url: 'http://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png',
       attribution: '<a href="http://thunderforest.com/transport/" target="_blank">ThunderForest</a>',
       zoom: 20
     }
   };
 
-  var attribution = 'Map data &#169; <a href="http://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors';
+  var attribution = 'Datos del mapa &#169; contribuidores <a href="http://osm.org/copyright" target="_blank">OpenStreetMap</a>';
 
   var tileLayers = {};
   var tileLayerDefault = '';
@@ -52,7 +52,7 @@ $(document).ready(function() {
     if (tileLayerData[tile].default)
       tileLayerDefault = tileLayerData[tile].name;
 
-    var tileAttribution = attribution + ' &mdash; ' + 'Tiles from ' + tileLayerData[tile].attribution;
+    var tileAttribution = attribution + ' &mdash; ' + 'Teselas de ' + tileLayerData[tile].attribution;
     var tileSubDomains = tileLayerData[tile].subdomains ? tileLayerData[tile].subdomains : 'abc';
     var tileMaxZoom = tileLayerData[tile].zoom;
 
@@ -92,14 +92,14 @@ $(document).ready(function() {
     stopFollowingOnDrag: true,
     icon: 'fa fa-location-arrow',
     iconLoading: 'fa fa-spinner fa-spin',
-    onLocationError: function(err) {alert("Sorry. There was an error when trying to locate your location.")},
+    onLocationError: function(err) {alert("Lo sentimos. Se produjo un error al intentar localizar su ubicación.")},
     showPopup: true,
     strings: {
-      title: "Show me where I am",
-      metersUnit: "meters",
-      feetUnit: "feet",
-      popup: "You are within {distance} {unit} from this point",
-      outsideMapBoundsMsg: "You seem located outside the boundaries of the map"
+      title: "Le muestra dónde esta",
+      metersUnit: "metros",
+      feetUnit: "pies",
+      popup: "Está a {distance} {unit} desde éste punto",
+      outsideMapBoundsMsg: "Parece que se encuentra fuera de los límites del mapa"
     },
     locateOptions: { maxZoom: 16 }
   }).addTo(map);
@@ -113,7 +113,7 @@ $(document).ready(function() {
         iconAnchor: [16, 37],
         popupAnchor: [0, -37]
       }),
-      title: feature.properties.institucion + " of " + feature.properties.municipio,
+      title: feature.properties.institucion + " de " + feature.properties.municipio,
       riseOnHover: true
     });
   }
@@ -129,28 +129,28 @@ $(document).ready(function() {
 
       switch (property) {
         case 'direccion':
-          html += "<th data-l10n-id='marker_address'><i class='fa fa-map-signs'></i> Address</th>";
+          html += "<th data-l10n-id='marker_address'><i class='fa fa-map-signs'></i> Dirección</th>";
           break;
         case 'municipio':
-          html += "<th data-l10n-id='marker_municipality'><i class='fa fa-map-signs'></i> Municipality</th>";
+          html += "<th data-l10n-id='marker_municipality'><i class='fa fa-map-signs'></i> Municipio</th>";
           break;
         case 'departamento':
-          html += "<th data-l10n-id='marker_state'><i class='fa fa-map-signs'></i> State</th>";
+          html += "<th data-l10n-id='marker_state'><i class='fa fa-map-signs'></i> Departamento</th>";
           break;
         case 'telefono1':
-          html += "<th data-l10n-id='marker_phone1'><i class='fa fa-phone'></i> Phones</th>";
+          html += "<th data-l10n-id='marker_phone1'><i class='fa fa-phone'></i> Teléfonos</th>";
           break;
         case 'telefono2':
-          html += "<th data-l10n-id='marker_phone2'><i class='fa fa-phone'></i> Other Phones</th>";
+          html += "<th data-l10n-id='marker_phone2'><i class='fa fa-phone'></i> Otros teléfonos</th>";
           break;
         case 'fax1':
-          html += "<th data-l10n-id='marker_fax1'><i class='fa fa-fax'></i> Faxes</th>";
+          html += "<th data-l10n-id='marker_fax1'><i class='fa fa-fax'></i> Fax</th>";
           break;
         case 'horario':
-          html += "<th data-l10n-id='marker_openinghours'><i class='fa fa-clock-o'></i> Opening Hours</th>";
+          html += "<th data-l10n-id='marker_openinghours'><i class='fa fa-clock-o'></i> Horario de atención</th>";
           break;
         case 'paginaweb':
-          html += "<th data-l10n-id='marker_website'><i class='fa fa-globe'></i> Web Site</th>";
+          html += "<th data-l10n-id='marker_website'><i class='fa fa-globe'></i> Página web</th>";
           break;
         default:
           exclude = true;
@@ -174,6 +174,7 @@ $(document).ready(function() {
     });
   }
 
+  /* Get Data */
   $.getJSON("data/slim.geojson", function (data) {
     var layer = L.geoJson(data, {
       pointToLayer: pointToLayer,
