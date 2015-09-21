@@ -168,7 +168,7 @@ $(document).ready(function() {
         var lat = feature.geometry.coordinates[1];
         map.setView([lat, lng], 16);
 
-        $("#feature-title").html(feature.properties.institucion + " of " + feature.properties.municipio);
+        $("#feature-title").html(feature.properties.institucion + " de " + feature.properties.municipio);
         $("#feature-info").find('table').html(content);
         $("#featureModal").modal('show');
       }
