@@ -213,6 +213,13 @@ ol, ul, li {
     background-color: rgba(209, 195, 39, 0.6);
 }
 
+.text-categ {
+	background-color:#CCC;
+	font-size:8pt;
+	font-weight:bolder;
+	padding-left:10px;
+	}
+
 /* responsive */
 @media screen and (max-width: 639px) {
 
@@ -228,6 +235,14 @@ ol, ul, li {
     .leaflet-container .leaflet-control-attribution {
         font-size: 7pt;
     }
+	
+	.text-categ {
+	background-color:#CCC;
+	font-size:5pt;
+	font-weight:bolder;
+	padding-left:3px;
+	}
+
 
 }
 
@@ -301,6 +316,14 @@ ol, ul, li {
         height: 20px;
         width: 20px;
     }
+	
+	.text-categ {
+	background-color:#CCC;
+	font-size:5pt;
+	font-weight:bolder;
+	padding-left:3px;
+	}
+
 
 }
 
@@ -318,4 +341,6 @@ ol, ul, li {
         display: none;
     }
 
+
 }
+
