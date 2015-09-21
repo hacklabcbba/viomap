@@ -5,6 +5,9 @@ $(document).ready(function() {
   var mapBounds, latNE = -90, lngNE = -180, latSW = 0, lngSW = 0;
   var paddingTL = [0, $(window).width() >= 768 ? 120 : 60];
 
+  /* ToolTip */
+  $("[data-toggle='tooltip']").tooltip();
+
   /* Basemap Layers */
   var tileLayerData = {
     mapsurfer: {
@@ -168,7 +171,7 @@ $(document).ready(function() {
 
         $("#feature-title").html(feature.properties.institucion + " de " + feature.properties.municipio);
         $("#feature-info").find('table').html(content);
-        $("#featureModal").modal('show');
+        $("#modal-feature").modal('show');
       }
     });
   }
