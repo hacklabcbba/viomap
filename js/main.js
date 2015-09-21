@@ -2,6 +2,7 @@
 $(document).ready(function() {
 
   var markersSlim, markersFELCV, markersFELCC, markersFEVAP, markersIDIF, markersSUT, markersJUD, markersSPT;
+  var mapBounds, latNE = -90, lngNE = -180, latSW = 0, lngSW = 0;
 
   var catBgColor = '#000';
   var slimBgColor, felcvBgColor, felccBgColor, fevapBgColor, idifBgColor, sutBgColor, judBgColor, sptBgColor;
@@ -34,14 +35,14 @@ $(document).ready(function() {
       zoom: 20
     },
     transport: {
-      name: 'Transporte Público',
+      name: 'Transporte público',
       url: 'http://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png',
       attribution: '<a href="http://thunderforest.com/transport/" target="_blank">ThunderForest</a>',
       zoom: 20
     }
   };
 
-  var attribution = 'Datos del mapa &#169; contribuidores <a href="http://osm.org/copyright" target="_blank">OpenStreetMap</a>';
+  var attribution = 'Datos &#169; contribuidores <a href="http://osm.org/copyright" target="_blank">OpenStreetMap</a>';
 
   var tileLayers = {};
   var tileLayerDefault = '';
@@ -52,7 +53,7 @@ $(document).ready(function() {
     if (tileLayerData[tile].default)
       tileLayerDefault = tileLayerData[tile].name;
 
-    var tileAttribution = attribution + ' &mdash; ' + 'Teselas de ' + tileLayerData[tile].attribution;
+    var tileAttribution = attribution + ' &mdash; ' + 'Teselas ' + tileLayerData[tile].attribution;
     var tileSubDomains = tileLayerData[tile].subdomains ? tileLayerData[tile].subdomains : 'abc';
     var tileMaxZoom = tileLayerData[tile].zoom;
 
@@ -98,7 +99,7 @@ $(document).ready(function() {
       title: "Le muestra dónde esta",
       metersUnit: "metros",
       feetUnit: "pies",
-      popup: "Está a {distance} {unit} desde éste punto",
+      popup: "Está a {distance} {unit} de éste punto",
       outsideMapBoundsMsg: "Parece que se encuentra fuera de los límites del mapa"
     },
     locateOptions: { maxZoom: 16 }
@@ -174,6 +175,21 @@ $(document).ready(function() {
     });
   }
 
+  function setMapBounds (latlngBounds) {
+
+    if (latlngBounds.getNorthEast().lat > latNE)
+      latNE = latlngBounds.getNorthEast().lat;
+    if (latlngBounds.getNorthEast().lng > lngNE)
+      lngNE = latlngBounds.getNorthEast().lng;
+
+    if (latlngBounds.getSouthWest().lat < latSW)
+      latSW = latlngBounds.getSouthWest().lat;
+    if (latlngBounds.getSouthWest().lng < lngSW)
+      lngSW = latlngBounds.getSouthWest().lng;
+
+    mapBounds = L.latLngBounds(L.latLng(latSW,lngSW), L.latLng(latNE,lngNE));
+  }
+
   /* Get Data */
   $.getJSON("data/slim.geojson", function (data) {
     var layer = L.geoJson(data, {
@@ -198,7 +214,8 @@ $(document).ready(function() {
 
     markersSlim.addLayer(layer);
     map.addLayer(markersSlim);
-    map.fitBounds(markersSlim.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+    setMapBounds(markersSlim.getBounds());
+    map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
 
     slimBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
     $("#poi-1").css('background-color', slimBgColor);
@@ -228,7 +245,8 @@ $(document).ready(function() {
 
     markersFEVAP.addLayer(layer);
     map.addLayer(markersFEVAP);
-    map.fitBounds(markersFEVAP.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+    setMapBounds(markersFEVAP.getBounds());
+    map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
 
     fevapBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
     $("#poi-4").css('background-color', fevapBgColor);
@@ -258,7 +276,8 @@ $(document).ready(function() {
 
     markersSUT.addLayer(layer);
     map.addLayer(markersSUT);
-    map.fitBounds(markersSUT.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+    setMapBounds(markersSUT.getBounds());
+    map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
 
     sutBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
     $("#poi-6").css('background-color', sutBgColor);
@@ -288,7 +307,8 @@ $(document).ready(function() {
 
     markersJUD.addLayer(layer);
     map.addLayer(markersJUD);
-    map.fitBounds(markersJUD.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+    setMapBounds(markersJUD.getBounds());
+    map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
 
     judBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
     $("#poi-7").css('background-color', judBgColor);
@@ -318,7 +338,8 @@ $(document).ready(function() {
 
     markersSPT.addLayer(layer);
     map.addLayer(markersSPT);
-    map.fitBounds(markersSPT.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+    setMapBounds(markersSPT.getBounds());
+    map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
 
     sptBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
     $("#poi-8").css('background-color', sptBgColor);
@@ -335,7 +356,7 @@ $(document).ready(function() {
 
     } else {
       map.addLayer(markersSlim);
-      map.fitBounds(markersSlim.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+      map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
 
       $(this).css('background-color', slimBgColor);
       $(this).data('enabled', 1);
@@ -351,7 +372,7 @@ $(document).ready(function() {
 
     } else {
       map.addLayer(markersFEVAP);
-      map.fitBounds(markersFEVAP.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+      map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
 
       $(this).css('background-color', fevapBgColor);
       $(this).data('enabled', 1);
@@ -367,7 +388,7 @@ $(document).ready(function() {
 
     } else {
       map.addLayer(markersSUT);
-      map.fitBounds(markersSUT.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+      map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
 
       $(this).css('background-color', sutBgColor);
       $(this).data('enabled', 1);
@@ -383,7 +404,7 @@ $(document).ready(function() {
 
     } else {
       map.addLayer(markersJUD);
-      map.fitBounds(markersJUD.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+      map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
 
       $(this).css('background-color', judBgColor);
       $(this).data('enabled', 1);
@@ -399,7 +420,7 @@ $(document).ready(function() {
 
     } else {
       map.addLayer(markersSPT);
-      map.fitBounds(markersSPT.getBounds(), { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+      map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
 
       $(this).css('background-color', sptBgColor);
       $(this).data('enabled', 1);
