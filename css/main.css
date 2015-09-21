@@ -112,13 +112,14 @@ ol, ul, li {
     bottom: 0px;
     left: 0px;
     position: absolute;
-    width: 195px;
+    width: 200px;
     z-index: 10;
 }
 
 #sidebar #categories {
     margin: 0px 0px 10px 10px;
     padding: 0px;
+    background-color: #000;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.65);
 }
 
@@ -129,38 +130,17 @@ ol, ul, li {
     border-bottom: none;
 }
 
-#sidebar #categories li > span,
-#sidebar #categories li > a {
-    display: block;
-    background-color: #000;
-    color: #FFF;
-    text-decoration: none;
-    font-size: 8pt;
+#sidebar #categories li > input[type=checkbox] {
+    margin: 0px 3px 0px 5px;
+    cursor: pointer;
 }
 
-#sidebar #categories li a#poi-1:hover {
-    background-color: #f7751e;
-}
-#sidebar #categories li a#poi-2:hover {
-    background-color: #e612d8;
-}
-#sidebar #categories li a#poi-3:hover {
-    background-color: #44ab11;
-}
-#sidebar #categories li a#poi-4:hover {
-    background-color: #a5e62b;
-}
-#sidebar #categories li a#poi-5:hover {
-    background-color: #e6d62b;
-}
-#sidebar #categories li a#poi-6:hover {
-    background-color: #1196de;
-}
-#sidebar #categories li a#poi-7:hover {
-    background-color: #f26480;
-}
-#sidebar #categories li a#poi-8:hover {
-    background-color: #d1c327;
+#sidebar #categories li > span,
+#sidebar #categories li > a {
+    display: inline-block;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 9pt;
 }
 
 #sidebar #categories li > span {
@@ -169,10 +149,10 @@ ol, ul, li {
     padding-left: 5px;
 }
 
-#sidebar #categories li a img {
+#sidebar #categories li > a img {
     height: 25px;
     width: 25px;
-    margin: 5px;
+    margin: 5px 5px 5px 0px;
 }
 
 /* modal */
@@ -227,19 +207,6 @@ ol, ul, li {
 }
 
 /* responsive */
-@media screen and (max-width: 320px) {
-
-    #sidebar {
-        width: 42px !important;
-    }
-
-    #sidebar #categories li a img {
-        height: 22px;
-        width: 22px;
-    }
-
-}
-
 @media screen and (max-width: 639px) {
 
     #header .search-form {
@@ -253,18 +220,6 @@ ol, ul, li {
 
     .leaflet-container .leaflet-control-attribution {
         font-size: 7pt;
-    }
-
-    #sidebar {
-        width: 45px;
-    }
-
-    #sidebar #categories li:first-child {
-        display: none;
-    }
-
-    #sidebar #categories li a span {
-        display: none;
     }
 
 }
@@ -313,6 +268,31 @@ ol, ul, li {
 
     .leaflet-top.leaflet-right {
         margin-top: 40px;
+    }
+
+    #sidebar {
+        width: 46px;
+    }
+
+    #sidebar #categories {
+        margin: 0px;
+    }
+
+    #sidebar #categories li:first-child {
+        display: none;
+    }
+
+    #sidebar #categories li > input[type="checkbox"] {
+        margin: 0px 2px 0px 2px;
+    }
+
+    #sidebar #categories li > a span {
+        display: none;
+    }
+
+    #sidebar #categories li > a img {
+        height: 20px;
+        width: 20px;
     }
 
 }

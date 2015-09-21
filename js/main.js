@@ -3,9 +3,7 @@ $(document).ready(function() {
 
   var markersSlim, markersFELCV, markersFELCC, markersFEVAP, markersIDIF, markersSUT, markersJUD, markersSPT;
   var mapBounds, latNE = -90, lngNE = -180, latSW = 0, lngSW = 0;
-
-  var catBgColor = '#000';
-  var slimBgColor, felcvBgColor, felccBgColor, fevapBgColor, idifBgColor, sutBgColor, judBgColor, sptBgColor;
+  var paddingTL = [0, $(window).width() >= 768 ? 120 : 60];
 
   /* Basemap Layers */
   var tileLayerData = {
@@ -215,11 +213,9 @@ $(document).ready(function() {
     markersSlim.addLayer(layer);
     map.addLayer(markersSlim);
     setMapBounds(markersSlim.getBounds());
-    map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
-    slimBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
-    $("#poi-1").css('background-color', slimBgColor);
-    $("#poi-1").data('enabled', 1);
+    $("#checkbox1").prop('checked', true);
   });
 
   $.getJSON("data/fevap.geojson", function (data) {
@@ -246,11 +242,9 @@ $(document).ready(function() {
     markersFEVAP.addLayer(layer);
     map.addLayer(markersFEVAP);
     setMapBounds(markersFEVAP.getBounds());
-    map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
-    fevapBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
-    $("#poi-4").css('background-color', fevapBgColor);
-    $("#poi-4").data('enabled', 1);
+    $("#checkbox4").prop('checked', true);
   });
 
   $.getJSON("data/supreme-tribunal.geojson", function (data) {
@@ -277,11 +271,9 @@ $(document).ready(function() {
     markersSUT.addLayer(layer);
     map.addLayer(markersSUT);
     setMapBounds(markersSUT.getBounds());
-    map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
-    sutBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
-    $("#poi-6").css('background-color', sutBgColor);
-    $("#poi-6").data('enabled', 1);
+    $("#checkbox6").prop('checked', true);
   });
 
   $.getJSON("data/judicial-district.geojson", function (data) {
@@ -308,11 +300,9 @@ $(document).ready(function() {
     markersJUD.addLayer(layer);
     map.addLayer(markersJUD);
     setMapBounds(markersJUD.getBounds());
-    map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
-    judBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
-    $("#poi-7").css('background-color', judBgColor);
-    $("#poi-7").data('enabled', 1);
+    $("#checkbox7").prop('checked', true);
   });
 
   $.getJSON("data/specialized-tribunal.geojson", function (data) {
@@ -339,92 +329,60 @@ $(document).ready(function() {
     markersSPT.addLayer(layer);
     map.addLayer(markersSPT);
     setMapBounds(markersSPT.getBounds());
-    map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
+    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
-    sptBgColor = data.features.length > 0 ? data.features[0].properties.color : catBgColor;
-    $("#poi-8").css('background-color', sptBgColor);
-    $("#poi-8").data('enabled', 1);
+    $("#checkbox8").prop('checked', true);
   });
 
   /* Events */
-  $("#poi-1").click(function (e) {
-    if ($(this).data('enabled') == 1) {
-      map.removeLayer(markersSlim);
-
-      $(this).css('background-color', catBgColor);
-      $(this).data('enabled', 0);
-
-    } else {
+  $("#checkbox1").change(function (e) {
+    if ($(this).is(':checked')) {
       map.addLayer(markersSlim);
-      map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
-
-      $(this).css('background-color', slimBgColor);
-      $(this).data('enabled', 1);
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    } else {
+      map.removeLayer(markersSlim);
     }
+    $(this).prop('checked');
   });
 
-  $("#poi-4").click(function (e) {
-    if ($(this).data('enabled') == 1) {
-      map.removeLayer(markersFEVAP);
-
-      $(this).css('background-color', catBgColor);
-      $(this).data('enabled', 0);
-
-    } else {
+  $("#checkbox4").change(function (e) {
+    if ($(this).is(':checked')) {
       map.addLayer(markersFEVAP);
-      map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
-
-      $(this).css('background-color', fevapBgColor);
-      $(this).data('enabled', 1);
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    } else {
+      map.removeLayer(markersFEVAP);
     }
+    $(this).prop('checked');
   });
 
-  $("#poi-6").click(function (e) {
-    if ($(this).data('enabled') == 1) {
-      map.removeLayer(markersSUT);
-
-      $(this).css('background-color', catBgColor);
-      $(this).data('enabled', 0);
-
-    } else {
+  $("#checkbox6").change(function (e) {
+    if ($(this).is(':checked')) {
       map.addLayer(markersSUT);
-      map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
-
-      $(this).css('background-color', sutBgColor);
-      $(this).data('enabled', 1);
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    } else {
+      map.removeLayer(markersSUT);
     }
+    $(this).prop('checked');
   });
 
-  $("#poi-7").click(function (e) {
-    if ($(this).data('enabled') == 1) {
-      map.removeLayer(markersJUD);
-
-      $(this).css('background-color', catBgColor);
-      $(this).data('enabled', 0);
-
-    } else {
+  $("#checkbox7").change(function (e) {
+    if ($(this).is(':checked')) {
       map.addLayer(markersJUD);
-      map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
-
-      $(this).css('background-color', judBgColor);
-      $(this).data('enabled', 1);
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    } else {
+     map.removeLayer(markersJUD);
     }
+    $(this).prop('checked');
   });
 
-  $("#poi-8").click(function (e) {
-    if ($(this).data('enabled') == 1) {
-      map.removeLayer(markersSPT);
-
-      $(this).css('background-color', catBgColor);
-      $(this).data('enabled', 0);
-
-    } else {
+  $("#checkbox8").change(function (e) {
+    if ($(this).is(':checked')) {
       map.addLayer(markersSPT);
-      map.fitBounds(mapBounds, { paddingTopLeft: [0, $(window).width() > 768 ? 120 : 60] });
-
-      $(this).css('background-color', sptBgColor);
-      $(this).data('enabled', 1);
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    } else {
+      map.removeLayer(markersSPT);
     }
+    $(this).prop('checked');
   });
 
 });
