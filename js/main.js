@@ -110,7 +110,7 @@ $(document).ready(function() {
   function pointToLayer (feature, latlng) {
     return L.marker(latlng, {
       icon: L.icon({
-        iconUrl: 'img/mapicons/' + feature.properties.symbol + '_poi.png',
+        iconUrl: 'img/mapicons/' + feature.properties.symbol + '.png',
         iconSize: [32, 37],
         iconAnchor: [16, 37],
         popupAnchor: [0, -37]

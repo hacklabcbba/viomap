@@ -112,7 +112,7 @@ ol, ul, li {
     bottom: 0px;
     left: 0px;
     position: absolute;
-    width: 200px;
+    width: 185px;
     z-index: 10;
 }
 
@@ -121,13 +121,19 @@ ol, ul, li {
     padding: 0px;
     background-color: #000;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.65);
+    font-size: 8pt;
+    font-weight: bold;
 }
 
 #sidebar #categories li {
     border-bottom: 1px solid #CCC;
 }
+
+#sidebar #categories li.category {
+    background-color: #CCC;
+}
 #sidebar #categories li:last-child {
-    border-bottom: none;
+    border-bottom: medium none;
 }
 
 #sidebar #categories li > input[type=checkbox] {
@@ -140,7 +146,6 @@ ol, ul, li {
     display: inline-block;
     color: #FFF;
     text-decoration: none;
-    font-size: 9pt;
 }
 
 #sidebar #categories li > span {
@@ -149,9 +154,16 @@ ol, ul, li {
     padding-left: 5px;
 }
 
+#sidebar #categories li > span.category {
+    margin: 0px 0px 0px 5px;
+    padding: 0px;
+    height: auto;
+    color: inherit;
+}
+
 #sidebar #categories li > a img {
     height: 25px;
-    width: 25px;
+    width: 22px;
     margin: 5px 5px 5px 0px;
 }
 
@@ -213,13 +225,6 @@ ol, ul, li {
     background-color: rgba(209, 195, 39, 0.6);
 }
 
-.text-categ {
-	background-color:#CCC;
-	font-size:8pt;
-	font-weight:bolder;
-	padding-left:10px;
-	}
-
 /* responsive */
 @media screen and (max-width: 639px) {
 
@@ -235,14 +240,6 @@ ol, ul, li {
     .leaflet-container .leaflet-control-attribution {
         font-size: 7pt;
     }
-	
-	.text-categ {
-	background-color:#CCC;
-	font-size:5pt;
-	font-weight:bolder;
-	padding-left:3px;
-	}
-
 
 }
 
@@ -293,14 +290,15 @@ ol, ul, li {
     }
 
     #sidebar {
-        width: 46px;
+        width: 47px;
     }
 
     #sidebar #categories {
         margin: 0px;
     }
 
-    #sidebar #categories li:first-child {
+    #sidebar #categories li:first-child,
+    #sidebar #categories li.category {
         display: none;
     }
 
@@ -311,19 +309,6 @@ ol, ul, li {
     #sidebar #categories li > a span {
         display: none;
     }
-
-    #sidebar #categories li > a img {
-        height: 20px;
-        width: 20px;
-    }
-	
-	.text-categ {
-	background-color:#CCC;
-	font-size:5pt;
-	font-weight:bolder;
-	padding-left:3px;
-	}
-
 
 }
 
@@ -341,6 +326,4 @@ ol, ul, li {
         display: none;
     }
 
-
 }
-
