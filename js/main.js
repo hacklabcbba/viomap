@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-  var markersSlim, markersFELCV, markersFELCC, markersFEVAP, markersIDIF, markersSUT, markersJUD, markersSPT;
+  var markersSlim, markersFELCV, markersFELCC, markersPM, markersFEVAP, markersIDIF, markersSUT, markersJUD, markersSPT;
   var mapBounds, latNE = -90, lngNE = -180, latSW = 0, lngSW = 0;
   var paddingTL = [0, $(window).width() >= 768 ? 120 : 60];
 
@@ -107,7 +107,7 @@ $(document).ready(function() {
   }).addTo(map);
 
   /* Overlay Layers */
-  function pointToLayer (feature, latlng) {
+  function pointToLayer(feature, latlng) {
     return L.marker(latlng, {
       icon: L.icon({
         iconUrl: 'img/mapicons/' + feature.properties.symbol + '.png',
@@ -115,44 +115,95 @@ $(document).ready(function() {
         iconAnchor: [16, 37],
         popupAnchor: [0, -37]
       }),
-      title: feature.properties.institucion + " de " + feature.properties.municipio,
+      title: feature.properties.institucion + " en el Municipio de " + feature.properties.municipio,
       riseOnHover: true
     });
   }
 
-  function onEachFeature (feature, layer) {
+  function onEachFeature(feature, layer) {
 
     var content = "";
 
     for (property in feature.properties) {
-
       var exclude = false;
       var html = "<tr>";
+      var value = feature.properties[property].trim();
 
       switch (property) {
         case 'direccion':
-          html += "<th data-l10n-id='marker_address'><i class='fa fa-map-signs'></i> Dirección</th>";
+          html += "<th><i class='fa fa-map-signs'></i> Dirección</th>";
+          html += "<td>" + value + "</td>";
           break;
         case 'municipio':
-          html += "<th data-l10n-id='marker_municipality'><i class='fa fa-map-signs'></i> Municipio</th>";
+          html += "<th><i class='fa fa-map-signs'></i> Municipio</th>";
+          html += "<td>" + value + "</td>";
           break;
         case 'departamento':
-          html += "<th data-l10n-id='marker_state'><i class='fa fa-map-signs'></i> Departamento</th>";
+          html += "<th><i class='fa fa-map-signs'></i> Departamento</th>";
+          html += "<td>" + value + "</td>";
           break;
         case 'telefono1':
-          html += "<th data-l10n-id='marker_phone1'><i class='fa fa-phone'></i> Teléfonos</th>";
+          if (value) {
+            html += "<th><i class='fa fa-phone'></i> Teléfonos</th>";
+            html += "<td>";
+            var phones = value.split(',');
+            for (var index in phones) {
+              if (index > 0) { html += ', '; }
+              var str = phones[index].replace(/-/gi, '').trim();
+              if (str.length == 8) {
+                html += "<a href='tel:+591" + str + "'>+591 " + phones[index].trim() + "</a>";
+              } else {
+                html += str;
+              }
+            }
+            html += "</td>";
+          }
           break;
         case 'telefono2':
-          html += "<th data-l10n-id='marker_phone2'><i class='fa fa-phone'></i> Otros teléfonos</th>";
+          if (value) {
+            html += "<th><i class='fa fa-phone'></i> Otros teléfonos</th>";
+            html += "<td>";
+            var phones = value.split(',');
+            for (var index in phones) {
+              if (index > 0) { html += ', '; }
+              var str = phones[index].replace(/-/gi, '').trim();
+              if (str.length == 8) {
+                html += "<a href='tel:+591" + str + "'>+591 " + phones[index].trim() + "</a>";
+              } else {
+                html += str;
+              }
+            }
+            html += "</td>";
+          }
           break;
         case 'fax1':
-          html += "<th data-l10n-id='marker_fax1'><i class='fa fa-fax'></i> Fax</th>";
+          if (value) {
+            html += "<th><i class='fa fa-fax'></i> Fax</th>";
+            html += "<td>";
+            var phones = value.split(',');
+            for (var index in phones) {
+              if (index > 0) { html += ', '; }
+              var str = phones[index].replace(/-/gi, '').trim();
+              if (str.length == 8) {
+                html += "<a href='tel:+591" + str + "'>+591 " + phones[index].trim() + "</a>";
+              } else {
+                html += str;
+              }
+            }
+            html += "</td>";
+          }
           break;
         case 'horario':
-          html += "<th data-l10n-id='marker_openinghours'><i class='fa fa-clock-o'></i> Horario de atención</th>";
+          if (value) {
+            html += "<th><i class='fa fa-clock-o'></i> Horario</th>";
+            html += "<td>" + value + "</td>";
+          }
           break;
         case 'paginaweb':
-          html += "<th data-l10n-id='marker_website'><i class='fa fa-globe'></i> Página web</th>";
+          if (value) {
+            html += "<th><i class='fa fa-globe'></i> Página web</th>";
+            html += "<td><a href='" + value + "' target='_blank'>" + value + "</a></td>";
+          }
           break;
         default:
           exclude = true;
@@ -160,7 +211,7 @@ $(document).ready(function() {
       }
 
       if (!exclude)
-        content += html + "<td>" + feature.properties[property] + "</td></tr>";
+        content += html + "</tr>";
     }
 
     layer.on({
@@ -169,14 +220,27 @@ $(document).ready(function() {
         var lat = feature.geometry.coordinates[1];
         map.setView([lat, lng], 16);
 
-        $("#feature-title").html(feature.properties.institucion + " de " + feature.properties.municipio);
+        $("#feature-title").html("");
+        $("#feature-desc").find('p').html("");
+        $("#feature-info").find('table').html("");
+
+        var title = feature.properties.institucion + " en el Municipio de " + feature.properties.municipio;
+        if (feature.properties.nombre) {
+            title += ' - ' + feature.properties.nombre;
+        }
+        $("#feature-title").html(title);
+
+        if (feature.properties.info) {
+          $("#feature-desc").find('p').html(feature.properties.info);
+        }
+
         $("#feature-info").find('table').html(content);
         $("#modal-feature").modal('show');
       }
     });
   }
 
-  function setMapBounds (latlngBounds) {
+  function setMapBounds(latlngBounds) {
 
     if (latlngBounds.getNorthEast().lat > latNE)
       latNE = latlngBounds.getNorthEast().lat;
@@ -221,6 +285,93 @@ $(document).ready(function() {
     $("#checkbox1").prop('checked', true);
   });
 
+  $.getJSON("data/felcv.geojson", function (data) {
+    var layer = L.geoJson(data, {
+      pointToLayer: pointToLayer,
+      onEachFeature: onEachFeature
+    });
+
+    markersFELCV = L.markerClusterGroup({
+      iconCreateFunction: function (cluster) {
+        return new L.DivIcon({
+          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
+          className: 'marker-cluster marker-cluster-poi-2',
+          iconSize: new L.Point(40, 40)
+        });
+      },
+      zoomToBoundsOnClick: false
+    });
+
+    markersFELCV.on('clusterclick', function (a) {
+      a.layer.zoomToBounds();
+    });
+
+    markersFELCV.addLayer(layer);
+    map.addLayer(markersFELCV);
+    setMapBounds(markersFELCV.getBounds());
+    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+
+    $("#checkbox2").prop('checked', true);
+  });
+
+  $.getJSON("data/felcc.geojson", function (data) {
+    var layer = L.geoJson(data, {
+      pointToLayer: pointToLayer,
+      onEachFeature: onEachFeature
+    });
+
+    markersFELCC = L.markerClusterGroup({
+      iconCreateFunction: function (cluster) {
+        return new L.DivIcon({
+          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
+          className: 'marker-cluster marker-cluster-poi-3',
+          iconSize: new L.Point(40, 40)
+        });
+      },
+      zoomToBoundsOnClick: false
+    });
+
+    markersFELCC.on('clusterclick', function (a) {
+      a.layer.zoomToBounds();
+    });
+
+    markersFELCC.addLayer(layer);
+    map.addLayer(markersFELCC);
+    setMapBounds(markersFELCC.getBounds());
+    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+
+    $("#checkbox3").prop('checked', true);
+  });
+
+  $.getJSON("data/public-ministry.geojson", function (data) {
+    var layer = L.geoJson(data, {
+      pointToLayer: pointToLayer,
+      onEachFeature: onEachFeature
+    });
+
+    markersPM = L.markerClusterGroup({
+      iconCreateFunction: function (cluster) {
+        return new L.DivIcon({
+          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
+          className: 'marker-cluster marker-cluster-poi-9',
+          iconSize: new L.Point(40, 40)
+        });
+      },
+      zoomToBoundsOnClick: false
+    });
+
+    markersPM.on('clusterclick', function (a) {
+      a.layer.zoomToBounds();
+    });
+
+    markersPM.addLayer(layer);
+    map.addLayer(markersPM);
+    setMapBounds(markersPM.getBounds());
+    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+
+    $("#checkbox9").prop('checked', true);
+  });
+
   $.getJSON("data/fevap.geojson", function (data) {
     var layer = L.geoJson(data, {
       pointToLayer: pointToLayer,
@@ -248,6 +399,35 @@ $(document).ready(function() {
     map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
     $("#checkbox4").prop('checked', true);
+  });
+
+  $.getJSON("data/idif.geojson", function (data) {
+    var layer = L.geoJson(data, {
+      pointToLayer: pointToLayer,
+      onEachFeature: onEachFeature
+    });
+
+    markersIDIF = L.markerClusterGroup({
+      iconCreateFunction: function (cluster) {
+        return new L.DivIcon({
+          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
+          className: 'marker-cluster marker-cluster-poi-5',
+          iconSize: new L.Point(40, 40)
+        });
+      },
+      zoomToBoundsOnClick: false
+    });
+
+    markersIDIF.on('clusterclick', function (a) {
+      a.layer.zoomToBounds();
+    });
+
+    markersIDIF.addLayer(layer);
+    map.addLayer(markersIDIF);
+    setMapBounds(markersIDIF.getBounds());
+    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+
+    $("#checkbox5").prop('checked', true);
   });
 
   $.getJSON("data/supreme-tribunal.geojson", function (data) {
@@ -348,12 +528,52 @@ $(document).ready(function() {
     $(this).prop('checked');
   });
 
+  $("#checkbox2").change(function (e) {
+    if ($(this).is(':checked')) {
+      map.addLayer(markersFELCV);
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    } else {
+      map.removeLayer(markersFELCV);
+    }
+    $(this).prop('checked');
+  });
+
+  $("#checkbox3").change(function (e) {
+    if ($(this).is(':checked')) {
+      map.addLayer(markersFELCC);
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    } else {
+      map.removeLayer(markersFELCC);
+    }
+    $(this).prop('checked');
+  });
+
+  $("#checkbox9").change(function (e) {
+    if ($(this).is(':checked')) {
+      map.addLayer(markersPM);
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    } else {
+      map.removeLayer(markersPM);
+    }
+    $(this).prop('checked');
+  });
+
   $("#checkbox4").change(function (e) {
     if ($(this).is(':checked')) {
       map.addLayer(markersFEVAP);
       map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
     } else {
       map.removeLayer(markersFEVAP);
+    }
+    $(this).prop('checked');
+  });
+
+  $("#checkbox5").change(function (e) {
+    if ($(this).is(':checked')) {
+      map.addLayer(markersIDIF);
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    } else {
+      map.removeLayer(markersIDIF);
     }
     $(this).prop('checked');
   });
