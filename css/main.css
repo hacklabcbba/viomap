@@ -184,10 +184,14 @@ ol, ul, li {
     margin-bottom: 0px;
 }
 
+.table th {
+    width: 25%;
+}
+
 /* markercluster */
 .marker-cluster-poi-1,
 .marker-cluster-poi-1 div {
-    background-color: rgba(247, 117, 30, 0.8);
+    background-color: rgba(247, 117, 30, 0.6);
 }
 
 .marker-cluster-poi-2,
@@ -223,6 +227,11 @@ ol, ul, li {
 .marker-cluster-poi-8,
 .marker-cluster-poi-8 div {
     background-color: rgba(209, 195, 39, 0.6);
+}
+
+.marker-cluster-poi-9,
+.marker-cluster-poi-9 div {
+    background-color: rgba(240, 58, 45, 0.6);
 }
 
 /* responsive */
