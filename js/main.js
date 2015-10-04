@@ -106,9 +106,32 @@ $(document).ready(function() {
     locateOptions: { maxZoom: 16 }
   }).addTo(map);
 
+  // Adding Fuse Search Control
+  var fuseSearchCtrl = L.control.fuseSearch({
+    position: 'topright',
+    title: 'Buscar',
+    placeholder: 'Ejemplo: servicio municipal',
+    maxResultLength: 15,
+    threshold: 0.5,
+    showInvisibleFeatures: true,
+    showResultFct: function(feature, container) {
+      var name = L.DomUtil.create('b', 'title', container);
+      name.innerHTML = feature.properties.institucion;
+
+      container.appendChild(L.DomUtil.create('br', '', container));
+
+      var info = feature.properties.direccion +
+        ', Municipio ' + feature.properties.municipio + ', Departamento ' + feature.properties.departamento;
+      container.appendChild(document.createTextNode(info));
+    }
+  });
+  map.addControl(fuseSearchCtrl);
+
+  var fuseIndexFeatures = ['institucion', 'departamento', 'municipio', 'direccion'];
+
   /* Overlay Layers */
   function pointToLayer(feature, latlng) {
-    return L.marker(latlng, {
+    var marker = L.marker(latlng, {
       icon: L.icon({
         iconUrl: 'img/mapicons/' + feature.properties.symbol + '.png',
         iconSize: [32, 37],
@@ -118,10 +141,10 @@ $(document).ready(function() {
       title: feature.properties.institucion + " en el Municipio de " + feature.properties.municipio,
       riseOnHover: true
     });
+    return marker;
   }
 
   function onEachFeature(feature, layer) {
-
     var content = "";
 
     for (property in feature.properties) {
@@ -214,7 +237,10 @@ $(document).ready(function() {
         content += html + "</tr>";
     }
 
-    layer.on({
+    // Keep track of the layer (cluster marker)
+    feature.layer = layer;
+
+    feature.layer.on({
       click: function (e) {
         var lng = feature.geometry.coordinates[0];
         var lat = feature.geometry.coordinates[1];
@@ -283,6 +309,8 @@ $(document).ready(function() {
     map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
     $("#checkbox1").prop('checked', true);
+
+    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
   });
 
   $.getJSON("data/felcv.geojson", function (data) {
@@ -312,6 +340,8 @@ $(document).ready(function() {
     map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
     $("#checkbox2").prop('checked', true);
+
+    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
   });
 
   $.getJSON("data/felcc.geojson", function (data) {
@@ -341,6 +371,8 @@ $(document).ready(function() {
     map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
     $("#checkbox3").prop('checked', true);
+
+    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
   });
 
   $.getJSON("data/public-ministry.geojson", function (data) {
@@ -370,6 +402,8 @@ $(document).ready(function() {
     map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
     $("#checkbox9").prop('checked', true);
+
+    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
   });
 
   $.getJSON("data/fevap.geojson", function (data) {
@@ -399,6 +433,8 @@ $(document).ready(function() {
     map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
     $("#checkbox4").prop('checked', true);
+
+    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
   });
 
   $.getJSON("data/idif.geojson", function (data) {
@@ -428,6 +464,8 @@ $(document).ready(function() {
     map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
     $("#checkbox5").prop('checked', true);
+
+    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
   });
 
   $.getJSON("data/supreme-tribunal.geojson", function (data) {
@@ -457,6 +495,8 @@ $(document).ready(function() {
     map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
     $("#checkbox6").prop('checked', true);
+
+    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
   });
 
   $.getJSON("data/judicial-district.geojson", function (data) {
@@ -486,6 +526,8 @@ $(document).ready(function() {
     map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
     $("#checkbox7").prop('checked', true);
+
+    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
   });
 
   $.getJSON("data/specialized-tribunal.geojson", function (data) {
@@ -515,6 +557,8 @@ $(document).ready(function() {
     map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
 
     $("#checkbox8").prop('checked', true);
+
+    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
   });
 
   /* Events */

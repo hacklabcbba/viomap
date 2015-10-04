@@ -39,6 +39,7 @@
     <meta name="msapplication-config" content="ieconfig.xml" />
 
     <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/leaflet.fusesearch.css" />
     <link rel="stylesheet" href="css/L.Control.Locate.min.css" />
     <link rel="stylesheet" href="css/MarkerCluster.css" />
     <link rel="stylesheet" href="css/MarkerCluster.Default.css" />
@@ -66,17 +67,6 @@
             <img class="logo" src="img/logo_viomap_b.png" alt="branding viomap" title="Directorio de servicios de atención en Casos de Violencia hacia las Mujeres y Trata en Bolivia" />
           </a>
           <h3>Directorio de servicios de atención en casos de<br/>Violencia hacia las Mujeres y Trata en Bolivia</h3>
-        </div>
-
-        <div class="search-form">
-          <form class="form-inline">
-            <div class="input-group">
-              <input id="addr" type="text" class="form-control" name="addr" value="" size="20" placeholder="_Buscar un lugar">
-              <span class="input-group-btn">
-                <button type="submit" class="btn" id="search"><span class="fa fa-search"></span></button>
-              </span>
-            </div>
-          </form>
         </div>
 
         <div class="navigation-bar">
@@ -321,6 +311,8 @@
     <script src="js/leaflet-hash.js"></script>
     <script src="js/L.Control.Locate.min.js"></script>
     <script src="js/leaflet.markercluster.js"></script>
+    <script src="js/fuse.min.js"></script>
+    <script src="js/leaflet.fusesearch.js"></script>
     <script src="js/main.js"></script>
 
   </body>

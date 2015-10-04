@@ -107,6 +107,38 @@ ol, ul, li {
     margin-top: 80px;
 }
 
+/* fuse search */
+.leaflet-fusesearch-control .button {
+    background-image: url("../img/search.png");
+    background-color: #000;
+}
+
+.leaflet-fusesearch-panel {
+    top: 80px;
+    height: calc(100% - 80px);
+    height: -moz-calc(100% - 80px);
+    height: -webkit-calc(100% - 80px);
+}
+
+.leaflet-fusesearch-panel .header {
+    height: 46px;
+}
+
+.leaflet-fusesearch-panel .search-image {
+    top: 5px;
+    width: 25px;
+    height: 26px;
+    background-image: url("../img/search_1.png");
+    background-size: 25px 26px;
+}
+
+.leaflet-fusesearch-panel input.search-input {
+    top: 5px;
+    left: 5px;
+    width: 80%;
+    height: 26px;
+}
+
 /* sidebar */
 #sidebar {
     bottom: 0px;
