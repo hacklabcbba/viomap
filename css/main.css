@@ -139,6 +139,10 @@ ol, ul, li {
     height: 26px;
 }
 
+.leaflet-fusesearch-panel p.result-item {
+    cursor: pointer;
+}
+
 /* sidebar */
 #sidebar {
     bottom: 0px;

@@ -115,14 +115,27 @@ $(document).ready(function() {
     threshold: 0.5,
     showInvisibleFeatures: true,
     showResultFct: function(feature, container) {
-      var name = L.DomUtil.create('b', 'title', container);
-      name.innerHTML = feature.properties.institucion;
+      var lng = feature.geometry.coordinates[0];
+      var lat = feature.geometry.coordinates[1];
+      container.setAttribute('data-marker-id', feature.layer._leaflet_id);
+      container.setAttribute('data-lat', lat);
+      container.setAttribute('data-lng', lng);
 
-      container.appendChild(L.DomUtil.create('br', '', container));
+      var node = document.createElement('strong');
+      node.setAttribute('class', 'title');
+      var text = document.createTextNode(feature.properties.institucion);
+      node.appendChild(text);
+      container.appendChild(node);
 
-      var info = feature.properties.direccion +
-        ', Municipio ' + feature.properties.municipio + ', Departamento ' + feature.properties.departamento;
-      container.appendChild(document.createTextNode(info));
+      node = document.createElement('br');
+      container.appendChild(node);
+
+      text = document.createTextNode(
+        feature.properties.direccion +
+        ', Municipio ' + feature.properties.municipio +
+        ', Departamento ' + feature.properties.departamento
+      );
+      container.appendChild(text);
     }
   });
   map.addControl(fuseSearchCtrl);
@@ -296,7 +309,14 @@ $(document).ready(function() {
           iconSize: new L.Point(40, 40)
         });
       },
-      zoomToBoundsOnClick: false
+      zoomToBoundsOnClick: false,
+      polygonOptions: {
+        fillColor: '#F7751E',
+        color: '#F7751E',
+        weight: 1,
+        opacity: 0.7,
+        fillOpacity: 0.5
+      }
     });
 
     markersSlim.on('clusterclick', function (a) {
@@ -310,7 +330,7 @@ $(document).ready(function() {
 
     $("#checkbox1").prop('checked', true);
 
-    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
+    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
   });
 
   $.getJSON("data/felcv.geojson", function (data) {
@@ -327,7 +347,14 @@ $(document).ready(function() {
           iconSize: new L.Point(40, 40)
         });
       },
-      zoomToBoundsOnClick: false
+      zoomToBoundsOnClick: false,
+      polygonOptions: {
+        fillColor: '#E612D8',
+        color: '#E612D8',
+        weight: 1,
+        opacity: 0.7,
+        fillOpacity: 0.5
+      }
     });
 
     markersFELCV.on('clusterclick', function (a) {
@@ -341,7 +368,7 @@ $(document).ready(function() {
 
     $("#checkbox2").prop('checked', true);
 
-    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
+    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
   });
 
   $.getJSON("data/felcc.geojson", function (data) {
@@ -358,7 +385,14 @@ $(document).ready(function() {
           iconSize: new L.Point(40, 40)
         });
       },
-      zoomToBoundsOnClick: false
+      zoomToBoundsOnClick: false,
+      polygonOptions: {
+        fillColor: '#44AB11',
+        color: '#44AB11',
+        weight: 1,
+        opacity: 0.7,
+        fillOpacity: 0.5
+      }
     });
 
     markersFELCC.on('clusterclick', function (a) {
@@ -372,7 +406,7 @@ $(document).ready(function() {
 
     $("#checkbox3").prop('checked', true);
 
-    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
+    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
   });
 
   $.getJSON("data/public-ministry.geojson", function (data) {
@@ -389,7 +423,14 @@ $(document).ready(function() {
           iconSize: new L.Point(40, 40)
         });
       },
-      zoomToBoundsOnClick: false
+      zoomToBoundsOnClick: false,
+      polygonOptions: {
+        fillColor: '#F03A2D',
+        color: '#F03A2D',
+        weight: 1,
+        opacity: 0.7,
+        fillOpacity: 0.5
+      }
     });
 
     markersPM.on('clusterclick', function (a) {
@@ -403,7 +444,7 @@ $(document).ready(function() {
 
     $("#checkbox9").prop('checked', true);
 
-    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
+    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
   });
 
   $.getJSON("data/fevap.geojson", function (data) {
@@ -420,7 +461,14 @@ $(document).ready(function() {
           iconSize: new L.Point(40, 40)
         });
       },
-      zoomToBoundsOnClick: false
+      zoomToBoundsOnClick: false,
+      polygonOptions: {
+        fillColor: '#A5E62B',
+        color: '#A5E62B',
+        weight: 1,
+        opacity: 0.7,
+        fillOpacity: 0.5
+      }
     });
 
     markersFEVAP.on('clusterclick', function (a) {
@@ -434,7 +482,7 @@ $(document).ready(function() {
 
     $("#checkbox4").prop('checked', true);
 
-    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
+    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
   });
 
   $.getJSON("data/idif.geojson", function (data) {
@@ -451,7 +499,14 @@ $(document).ready(function() {
           iconSize: new L.Point(40, 40)
         });
       },
-      zoomToBoundsOnClick: false
+      zoomToBoundsOnClick: false,
+      polygonOptions: {
+        fillColor: '#E6D62B',
+        color: '#E6D62B',
+        weight: 1,
+        opacity: 0.7,
+        fillOpacity: 0.5
+      }
     });
 
     markersIDIF.on('clusterclick', function (a) {
@@ -465,7 +520,7 @@ $(document).ready(function() {
 
     $("#checkbox5").prop('checked', true);
 
-    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
+    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
   });
 
   $.getJSON("data/supreme-tribunal.geojson", function (data) {
@@ -482,7 +537,14 @@ $(document).ready(function() {
           iconSize: new L.Point(40, 40)
         });
       },
-      zoomToBoundsOnClick: false
+      zoomToBoundsOnClick: false,
+      polygonOptions: {
+        fillColor: '#1196DE',
+        color: '#1196DE',
+        weight: 1,
+        opacity: 0.7,
+        fillOpacity: 0.5
+      }
     });
 
     markersSUT.on('clusterclick', function (a) {
@@ -496,7 +558,7 @@ $(document).ready(function() {
 
     $("#checkbox6").prop('checked', true);
 
-    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
+    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
   });
 
   $.getJSON("data/judicial-district.geojson", function (data) {
@@ -513,7 +575,14 @@ $(document).ready(function() {
           iconSize: new L.Point(40, 40)
         });
       },
-      zoomToBoundsOnClick: false
+      zoomToBoundsOnClick: false,
+      polygonOptions: {
+        fillColor: '#F26480',
+        color: '#F26480',
+        weight: 1,
+        opacity: 0.7,
+        fillOpacity: 0.5
+      }
     });
 
     markersJUD.on('clusterclick', function (a) {
@@ -527,7 +596,7 @@ $(document).ready(function() {
 
     $("#checkbox7").prop('checked', true);
 
-    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
+    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
   });
 
   $.getJSON("data/specialized-tribunal.geojson", function (data) {
@@ -544,7 +613,14 @@ $(document).ready(function() {
           iconSize: new L.Point(40, 40)
         });
       },
-      zoomToBoundsOnClick: false
+      zoomToBoundsOnClick: false,
+      polygonOptions: {
+        fillColor: '#D1C327',
+        color: '#D1C327',
+        weight: 1,
+        opacity: 0.7,
+        fillOpacity: 0.5
+      }
     });
 
     markersSPT.on('clusterclick', function (a) {
@@ -558,7 +634,7 @@ $(document).ready(function() {
 
     $("#checkbox8").prop('checked', true);
 
-    fuseSearchCtrl.indexFeatures(data.features, fuseIndexFeatures);
+    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
   });
 
   /* Events */
