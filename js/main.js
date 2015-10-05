@@ -121,6 +121,13 @@ $(document).ready(function() {
       container.setAttribute('data-lat', lat);
       container.setAttribute('data-lng', lng);
 
+      container.addEventListener('click', function() {
+        map.setView([lat, lng], 16);
+        if (map._layers[feature.layer._leaflet_id]) {
+          map._layers[feature.layer._leaflet_id].fire('click');
+        }
+      }, false);
+
       var node = document.createElement('strong');
       node.setAttribute('class', 'title');
       var text = document.createTextNode(feature.properties.institucion);
