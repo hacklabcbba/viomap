@@ -111,8 +111,7 @@ $(document).ready(function() {
     position: 'topright',
     title: 'Buscar',
     placeholder: 'Ejemplo: servicio municipal',
-    maxResultLength: 15,
-    threshold: 0.5,
+    threshold: 0.3,
     showInvisibleFeatures: true,
     showResultFct: function(feature, container) {
       var lng = feature.geometry.coordinates[0];
@@ -126,7 +125,7 @@ $(document).ready(function() {
         if (map._layers[feature.layer._leaflet_id]) {
           map._layers[feature.layer._leaflet_id].fire('click');
         }
-      }, false);
+      });
 
       var node = document.createElement('strong');
       node.setAttribute('class', 'title');
@@ -147,7 +146,7 @@ $(document).ready(function() {
   });
   map.addControl(fuseSearchCtrl);
 
-  var fuseIndexFeatures = ['institucion', 'departamento', 'municipio', 'direccion'];
+  var fuseIndexFeatures = ['departamento', 'municipio', 'direccion'];
 
   /* Overlay Layers */
   function pointToLayer(feature, latlng) {
@@ -165,6 +164,8 @@ $(document).ready(function() {
   }
 
   function onEachFeature(feature, layer) {
+    feature.layer = layer;
+
     var content = "";
 
     for (property in feature.properties) {
@@ -257,10 +258,7 @@ $(document).ready(function() {
         content += html + "</tr>";
     }
 
-    // Keep track of the layer (cluster marker)
-    feature.layer = layer;
-
-    feature.layer.on({
+    layer.on({
       click: function (e) {
         var lng = feature.geometry.coordinates[0];
         var lat = feature.geometry.coordinates[1];
