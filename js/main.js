@@ -130,7 +130,7 @@ $(document).ready(function() {
   var fuseSearchCtrl = L.control.fuseSearch({
     position: 'topright',
     title: 'Buscar',
-    placeholder: 'Ejemplo: servicio municipal',
+    placeholder: 'Busca tu municipio',
     threshold: 0.3,
     showInvisibleFeatures: true,
     showResultFct: function(feature, container) {
