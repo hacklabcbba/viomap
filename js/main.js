@@ -4,7 +4,7 @@ $(document).ready(function() {
   var markersSlim, markersFELCV, markersFELCC, markersPM, markersFEVAP, markersIDIF, markersSUT, markersJUD, markersSPT;
   var mapBounds, latNE = -90, lngNE = -180, latSW = 0, lngSW = 0;
   var paddingTL = [0, $(window).width() >= 768 ? 120 : 60];
-  var url = "<iframe width='@Wpx' height='@Hpx' frameBorder='0' src='@SRC'></iframe>" +
+  var url = "<iframe width='@W' height='@H' frameBorder='0' src='@SRC'></iframe>" +
      "<p><a href='@SRC'>Ver este mapa en pantalla completa</a></p>";
 
   /* ToolTip */
