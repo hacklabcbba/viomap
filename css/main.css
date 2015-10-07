@@ -13,6 +13,12 @@ ol, ul, li {
     list-style: outside none none;
 }
 
+input.form-control,
+textarea.form-control {
+    font-family: monospace;
+    font-size: 8pt;
+}
+
 #header {
     width: 100%;
     position: absolute;
@@ -84,7 +90,9 @@ ol, ul, li {
 
 /* controls */
 .leaflet-bar a,
-.leaflet-bar a:hover {
+.leaflet-bar a:hover,
+.leaflet-bar button,
+.leaflet-bar button:hover {
     background-color: #000;
     color: #FFF;
 }

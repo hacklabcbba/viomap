@@ -4,6 +4,8 @@ $(document).ready(function() {
   var markersSlim, markersFELCV, markersFELCC, markersPM, markersFEVAP, markersIDIF, markersSUT, markersJUD, markersSPT;
   var mapBounds, latNE = -90, lngNE = -180, latSW = 0, lngSW = 0;
   var paddingTL = [0, $(window).width() >= 768 ? 120 : 60];
+  var url = "<iframe width='@Wpx' height='@Hpx' frameBorder='0' src='@SRC'></iframe>" +
+     "<p><a href='@SRC'>Ver este mapa en pantalla completa</a></p>";
 
   /* ToolTip */
   $("[data-toggle='tooltip']").tooltip();
@@ -104,6 +106,24 @@ $(document).ready(function() {
       outsideMapBoundsMsg: "Parece que se encuentra fuera de los límites del mapa"
     },
     locateOptions: { maxZoom: 16 }
+  }).addTo(map);
+
+  // Adding Share Icon
+  L.easyButton({
+    position: 'bottomright',
+    states:[{
+      icon: 'fa-share-alt',
+      title: 'Compartir',
+      onClick: function(){
+        $("#url-share").prop('value', location);
+        $("#iframe-html").html(url
+          .replace(/@W/g, '960')
+          .replace(/@H/g, '600')
+          .replace(/@SRC/g, location.protocol + '//' + location.hostname)
+        );
+        $("#modal-share").modal('show');
+      }
+    }]
   }).addTo(map);
 
   // Adding Fuse Search Control
@@ -731,6 +751,51 @@ $(document).ready(function() {
       map.removeLayer(markersSPT);
     }
     $(this).prop('checked');
+  });
+
+  $("#iframe-size").change(function(e) {
+    if ($(this).val() == '1') {
+      $("#iframe-width").val('960');
+      $("#iframe-height").val('600');
+      $("#iframe-width").attr('disabled', 'disabled');
+      $("#iframe-height").attr('disabled', 'disabled');
+    } else if ($(this).val() == '2') {
+      $("#iframe-width").val('800');
+      $("#iframe-height").val('600');
+      $("#iframe-width").attr('disabled', 'disabled');
+      $("#iframe-height").attr('disabled', 'disabled');
+    } else if ($(this).val() == '3') {
+      $("#iframe-width").val('600');
+      $("#iframe-height").val('600');
+      $("#iframe-width").attr('disabled', 'disabled');
+      $("#iframe-height").attr('disabled', 'disabled');
+    } else if ($(this).val() == '4') {
+      $("#iframe-width").removeAttr('disabled');
+      $("#iframe-height").removeAttr('disabled');
+      $("#iframe-width").focus();
+    }
+
+    $("#iframe-html").html(url
+      .replace(/@W/g, $("#iframe-width").val())
+      .replace(/@H/g, $("#iframe-height").val())
+      .replace(/@SRC/g, location.protocol + '//' + location.hostname)
+    );
+  });
+
+  $("#iframe-width").change(function(e) {
+    $("#iframe-html").html(url
+      .replace(/@W/g, $("#iframe-width").val())
+      .replace(/@H/g, $("#iframe-height").val())
+      .replace(/@SRC/g, location.protocol + '//' + location.hostname)
+    );
+  });
+
+  $("#iframe-height").change(function(e) {
+    $("#iframe-html").html(url
+      .replace(/@W/g, $("#iframe-width").val())
+      .replace(/@H/g, $("#iframe-height").val())
+      .replace(/@SRC/g, location.protocol + '//' + location.hostname)
+    );
   });
 
 });
