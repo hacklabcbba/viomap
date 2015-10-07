@@ -34,47 +34,26 @@ textarea.form-control {
 }
 
 #header .branding .logo {
-    float: left;
     position: absolute;
 }
 
 #header .branding h3 {
     margin-left: 130px;
     margin-top: 40px;
+    margin-bottom: 0px;
     max-width: 280px;
     color: #FFF;
     font-size: 8pt;
 }
 
-/* search */
-#header .search-form {
-    float: left;
-    margin: 23px 0px 23px 20px;
-}
-
-#header .search-form button {
-    padding: 6px 12px;
-    margin: 0px;
-    color: #FFF;
-    background-color: #232323;
-}
-
-#header .search-form button:hover {
-    background-color: #4d4d4d;
-}
-
 /* navigation */
 #header .navigation-bar {
     float: right;
-    margin: 0px;
+    margin: 10px;
 }
 
-#header .navigation-bar > div:first-child {
-    margin: 8px 10px;
-}
-
-#header .navigation-bar > div {
-    margin: 23px 10px;
+#header .navigation-bar div:first-child {
+    margin-right: 10px;
 }
 
 /* map */
@@ -280,11 +259,23 @@ textarea.form-control {
 }
 
 /* responsive */
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 320px) and (orientation:portrait) {
 
-    #header .search-form {
+    #header .navigation-bar div:first-child {
         display: none;
     }
+
+}
+
+@media screen and (max-width: 480px) and (orientation:landscape) {
+
+    #sidebar #categories li > a img {
+        margin: 0px;
+    }
+
+}
+
+@media screen and (max-width: 639px) {
 
     .leaflet-bottom.leaflet-right {
         width: 60%;
@@ -307,40 +298,29 @@ textarea.form-control {
         margin: 5px;
     }
 
-    #header .branding .logo {
-        height: 70%;
+    #header img.logo {
+        height: 29px;
     }
 
     #header .branding h3 {
         display: none;
     }
 
-    #header .search-form {
-        margin: 7px 0px 0px 170px;
-    }
-
-    #header .search-form input.form-control {
-        height: 25px;
-    }
-
-    #header .search-form button {
-        padding: 2px 12px;
-    }
-
     #header .navigation-bar {
-        margin: 5px 0px;
+        margin: 5px;
     }
 
-    #header .navigation-bar > div {
-        margin: 0px 5px 0px 0px;
-    }
-
-    #header .navigation-bar > div a.btn {
-        padding: 2px 12px;
+    #header .navigation-bar a.btn {
+        padding: 3px 6px;
     }
 
     .leaflet-top.leaflet-right {
         margin-top: 40px;
+    }
+
+    a.close {
+        height: 15px;
+        width: 15px;
     }
 
     #sidebar {
@@ -370,14 +350,6 @@ textarea.form-control {
 
     .tooltip.right {
         left: 200px !important;
-    }
-
-}
-
-@media screen and (max-width: 800px) {
-
-    #header .nav-title {
-        display: none;
     }
 
 }
