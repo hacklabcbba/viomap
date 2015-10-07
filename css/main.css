@@ -219,8 +219,9 @@ textarea.form-control {
 }
 
 /* modal */
-.modal .modal-body p.img {
-    text-align: center;
+.modal .modal-body img.img-responsive {
+    margin: 0px auto;
+    padding: 10px 0px;
 }
 
 /* table */
