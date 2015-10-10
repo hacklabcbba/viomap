@@ -77,7 +77,9 @@ $(document).ready(function() {
   // Adding layer functionality
   tileLayers[tileLayerDefault].addTo(map);
   L.control.layers(tileLayers).addTo(map);
-  map.setView([-15.887, -66.292], 6);
+  if (!map.restoreView()) {
+    map.setView([-15.887, -66.292], 6);
+  }
 
   // Adding hash for position in url
   var hash = new L.Hash(map);
@@ -351,7 +353,9 @@ $(document).ready(function() {
     markersSlim.addLayer(layer);
     map.addLayer(markersSlim);
     setMapBounds(markersSlim.getBounds());
-    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    if (!map.restoreView()) {
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    }
 
     $("#checkbox1").prop('checked', true);
 
@@ -389,7 +393,9 @@ $(document).ready(function() {
     markersFELCV.addLayer(layer);
     map.addLayer(markersFELCV);
     setMapBounds(markersFELCV.getBounds());
-    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    if (!map.restoreView()) {
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    }
 
     $("#checkbox2").prop('checked', true);
 
@@ -427,7 +433,9 @@ $(document).ready(function() {
     markersFELCC.addLayer(layer);
     map.addLayer(markersFELCC);
     setMapBounds(markersFELCC.getBounds());
-    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    if (!map.restoreView()) {
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    }
 
     $("#checkbox3").prop('checked', true);
 
@@ -465,7 +473,9 @@ $(document).ready(function() {
     markersPM.addLayer(layer);
     map.addLayer(markersPM);
     setMapBounds(markersPM.getBounds());
-    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    if (!map.restoreView()) {
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    }
 
     $("#checkbox9").prop('checked', true);
 
@@ -503,7 +513,9 @@ $(document).ready(function() {
     markersFEVAP.addLayer(layer);
     map.addLayer(markersFEVAP);
     setMapBounds(markersFEVAP.getBounds());
-    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    if (!map.restoreView()) {
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    }
 
     $("#checkbox4").prop('checked', true);
 
@@ -541,7 +553,9 @@ $(document).ready(function() {
     markersIDIF.addLayer(layer);
     map.addLayer(markersIDIF);
     setMapBounds(markersIDIF.getBounds());
-    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    if (!map.restoreView()) {
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    }
 
     $("#checkbox5").prop('checked', true);
 
@@ -579,7 +593,9 @@ $(document).ready(function() {
     markersSUT.addLayer(layer);
     map.addLayer(markersSUT);
     setMapBounds(markersSUT.getBounds());
-    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    if (!map.restoreView()) {
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    }
 
     $("#checkbox6").prop('checked', true);
 
@@ -617,7 +633,9 @@ $(document).ready(function() {
     markersJUD.addLayer(layer);
     map.addLayer(markersJUD);
     setMapBounds(markersJUD.getBounds());
-    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    if (!map.restoreView()) {
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    }
 
     $("#checkbox7").prop('checked', true);
 
@@ -655,7 +673,9 @@ $(document).ready(function() {
     markersSPT.addLayer(layer);
     map.addLayer(markersSPT);
     setMapBounds(markersSPT.getBounds());
-    map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    if (!map.restoreView()) {
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+    }
 
     $("#checkbox8").prop('checked', true);
 
