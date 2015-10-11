@@ -19,41 +19,32 @@ textarea.form-control {
     font-size: 8pt;
 }
 
-#header {
-    width: 100%;
-    position: absolute;
-    z-index: 10;
-    height: 80px;
-    background: rgba(3, 3, 3, 0.80) none repeat scroll 0% 0%;
+/* navbar */
+.navbar .navbar-header a.navbar-brand {
+    padding: 2px;
+}
+.navbar .navbar-collapse a.navbar-brand {
+    padding: 5px;
 }
 
-/* branding */
-#header .branding {
-    float: left;
-    margin: 10px;
+.navbar .navbar-header a.navbar-brand img,
+.navbar .navbar-collapse a.navbar-brand img {
+    height: 40px;
 }
 
-#header .branding .logo {
-    position: absolute;
-}
-
-#header .branding h3 {
-    margin-left: 130px;
-    margin-top: 40px;
-    margin-bottom: 0px;
-    max-width: 280px;
-    color: #FFF;
+.navbar .navbar-header a.navbar-brand h3 {
+    margin: -15px 0px 0px 100px;
+    padding: 0px;
     font-size: 8pt;
+    color: #FFF;
 }
 
-/* navigation */
-#header .navigation-bar {
-    float: right;
-    margin: 10px;
+.white {
+    color: #FFF;
 }
 
-#header .navigation-bar div:first-child {
-    margin-right: 10px;
+.media .media-left {
+    font-size: 16px;
 }
 
 /* map */
@@ -91,7 +82,7 @@ textarea.form-control {
 }
 
 .leaflet-top.leaflet-right {
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
 /* fuse search */
@@ -101,10 +92,10 @@ textarea.form-control {
 }
 
 .leaflet-fusesearch-panel {
-    top: 80px;
-    height: calc(100% - 80px);
-    height: -moz-calc(100% - 80px);
-    height: -webkit-calc(100% - 80px);
+    top: 50px;
+    height: calc(100% - 50px);
+    height: -moz-calc(100% - 50px);
+    height: -webkit-calc(100% - 50px);
 }
 
 .leaflet-fusesearch-panel .header {
@@ -145,7 +136,6 @@ textarea.form-control {
     background-color: #000;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.65);
     font-size: 8pt;
-    font-weight: bold;
 }
 
 #sidebar #categories li {
@@ -155,7 +145,8 @@ textarea.form-control {
 #sidebar #categories li.category {
     background-color: #CCC;
 }
-#sidebar #categories li:last-child {
+#sidebar #categories li:last-child,
+#sidebar #categories li:last-child:hover {
     border-bottom: medium none;
 }
 
@@ -259,24 +250,27 @@ textarea.form-control {
 }
 
 /* responsive */
-@media screen and (max-width: 320px) and (orientation:portrait) {
-
-    #header .navigation-bar div:first-child {
-        display: none;
+@media screen and (max-width: 480px) and (orientation:portrait) {
+    .navbar .navbar-header a.navbar-brand {
+        padding: 10px;
     }
 
+    .navbar .navbar-header a.navbar-brand img {
+        height: 30px;
+    }
+
+    .navbar .navbar-header a.navbar-brand h3 {
+        display: none;
+    }
 }
 
-@media screen and (max-width: 480px) and (orientation:landscape) {
-
+@media screen and (max-width: 640px) and (orientation:landscape) {
     #sidebar #categories li > a img {
         margin: 0px;
     }
-
 }
 
-@media screen and (max-width: 639px) {
-
+@media screen and (max-width: 767px) {
     .leaflet-bottom.leaflet-right {
         width: 60%;
         text-align: right;
@@ -284,43 +278,6 @@ textarea.form-control {
 
     .leaflet-container .leaflet-control-attribution {
         font-size: 7pt;
-    }
-
-}
-
-@media screen and (max-width: 767px) {
-
-    #header {
-        height: 40px;
-    }
-
-    #header .branding {
-        margin: 5px;
-    }
-
-    #header img.logo {
-        height: 29px;
-    }
-
-    #header .branding h3 {
-        display: none;
-    }
-
-    #header .navigation-bar {
-        margin: 5px;
-    }
-
-    #header .navigation-bar a.btn {
-        padding: 3px 6px;
-    }
-
-    .leaflet-top.leaflet-right {
-        margin-top: 40px;
-    }
-
-    a.close {
-        height: 15px;
-        width: 15px;
     }
 
     #sidebar {
@@ -343,13 +300,10 @@ textarea.form-control {
     #sidebar #categories li > a span {
         display: none;
     }
-
 }
 
 @media screen and (min-width: 768px) {
-
     .tooltip.right {
         left: 200px !important;
     }
-
 }

@@ -60,40 +60,60 @@
     <![endif]-->
 
     <!-- header -->
-    <div id="header">
-      <div class="hd-content">
-
-        <div class="branding">
-          <a href="http://viomap.alianzalibressinviolencia.org">
-            <img src="img/logo_viomap_b.png" class="logo img-responsive" alt="branding viomap" title="Directorio de servicios de atención en Casos de Violencia hacia las Mujeres y Trata en Bolivia" />
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://viomap.alianzalibressinviolencia.org">
+            <img alt="brand viomap" src="img/logo_viomap_b.png" title="Directorio de servicios de atención en casos de Violencia hacia las Mujeres y Trata en Bolivia">
+            <h3>Directorio de servicios de atención en casos de<br/>Violencia hacia las Mujeres y Trata en Bolivia</h3>
           </a>
-          <h3>Directorio de servicios de atención en casos de<br/>Violencia hacia las Mujeres y Trata en Bolivia</h3>
         </div>
 
-        <div class="navigation-bar">
-          <div class="btn-group">
-            <a class="btn btn-primary dropdown-toggle nav-primary" data-toggle="dropdown" href="#">
-              <span class="nav-title">Acerca de</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a data-toggle="modal" href="#modal-about" class="modal-about"><i class="fa fa-info"></i> Acerca de VioMap</a>
-              </li>
-              <li>
-                <a data-toggle="modal" href="#modal-howto" class="modal-howto"><i class="fa fa-question"></i> ¿Cómo fue hecho?</a>
-              </li>
-            </ul>
-          </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" data-toggle="modal" data-target="#modal-about">
+                <i class="fa fa-question-circle white"></i>&nbsp;&nbsp;Acerca de
+              </a>
+            </li>
+            <li class="dropdown">
+              <a id="download-lnk" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-cloud-download white"></i>&nbsp;&nbsp;Descargar&nbsp;<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu"aria-labelledby="download-lnk">
+                <li class="dropdown-header">En formato binarios</li>
+                <li class="disabled"><a href="#" download="mapa-genero.ods" target="_blank"><i class="fa fa-file-text-o"></i>&nbsp;&nbsp;Documento Abierto</a></li>
+                <li class="disabled"><a href="#" download="mapa-genero.xlsx" target="_blank"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Microsoft Excel</a></li>
+                <li class="disabled"><a href="#" download="mapa-genero.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;Documento PDF</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">En formato geojson</li>
+                <li><a href="data/slim.geojson" download="slim.geojson" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;SLIM</a></li>
+                <li><a href="data/felcv.geojson" download="felcv.geojson" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;FELCV</a></li>
+                <li><a href="data/felcc.geojson" download="felcc.geojson" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;FELCC</a></li>
+                <li><a href="data/public-ministry.geojson" download="public-ministry.geojson" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;Min. Público</a></li>
+                <li><a href="data/fevap.geojson" download="fevap.geojson" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;FEVAP</a></li>
+                <li><a href="data/idif.geojson" download="idif.geojson" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;IDIF</a></li>
+                <li><a href="data/supreme-tribunal.geojson" download="supreme-tribunal.geojson" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;Trib. Supremo</a></li>
+                <li><a href="data/judicial-district.geojson" download="judicial-district.geojson" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;Distrito Judicial</a></li>
+                <li><a href="data/specialized-tribunal.geojson" download="specialized-tribunal.geojson" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;Trib. Especializado</a></li>
+              </ul>
+            </li>
+          </ul>
 
-          <div class="btn-group">
-            <a href="http://alianzalibressinviolencia.org" target="_blank">
-              <img src="img/alsv_menu.png" class="logo img-responsive" alt="logo alsv" title="Alianza Libre Sin Violencia" />
+          <ul class="nav navbar-nav navbar-right">
+            <a class="navbar-brand" href="http://alianzalibressinviolencia.org" target="_blank">
+              <img src="img/alsv_menu.png" alt="logo alsv" title="Alianza Libre Sin Violencia">
             </a>
-          </div>
+          </ul>
         </div>
-
       </div>
-    </div>
+    </nav>
 
     <div id="map"></div>
 
@@ -168,88 +188,148 @@
     </div>
 
     <div id="modal-about" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
-
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-            <h4 id="myAboutModalLabel" class="modal-title">Acerca de VioMap</h4>
+            <h4 id="myAboutModalLabel" class="modal-title">¡Bienvenida a VioMap!</h4>
           </div>
-
           <div class="modal-body">
-            <img src="img/viomap.png" class="img-responsive" alt="logo viomap" />
-            <p>
-              VioMap es el Directorio de servicios de atención en Casos de Violencia
-              hacia las Mujeres y Trata en Bolivia. Esta iniciativa está impulsada por la
-              <a href="http://libressinviolencia.conexion.org.bo/" target="_blank">Alianza Libres Sin Violencia</a>.
-            </p>
-            <img src="img/logo_alsv.png" class="img-responsive" alt="logo alsv" />
-            <p>
-              La Alianza Libres Sin Violencia es una iniciativa interinstitucional
-              conformada por más de 50 organizaciones e instituciones de la sociedad civil
-              que llevan décadas luchando por los derechos de las mujeres bolivianas.
-            </p>
-            <p>
-              Estas organizaciones e instituciones han unido esfuerzos para impulsar un
-              proyecto conjunto denominado <strong>«Alianza Libres Sin Violencia»</strong>
-              que se articula a través de 3 líneas de acción: <em>1) Vigilancia e investigación
-              del accionar del sistema de servicios judiciales públicos (Watch Dog), 2) Gestión
-              de Conocimientos y 3) Sensibilización y comunicación, para impulsar a que la
-              población informada demande a las instancias públicas acciones a favor del
-              ejercicio de los derechos a una vida libre de violencia y trata en Bolivia.</em>
-            </p>
-            <p>
-              La Alianza Libres Sin Violencia cuenta con el financiamiento de la Embajada Real
-              de Dinamarca en Bolivia que a través del Ministerio de Relaciones Exteriores Danés
-              (DANIDA) desarrolla en Bolivia el programa temático «Ejercicio de los derechos y
-              acceso a la Justicia» cuyo objetivo es: Contribuir al fortalecimiento de la
-              institucionalidad estatal orientado a la vigencia, protección, defensa y promoción
-              del derecho a la identidad y acceso a la justicia.
-            </p>
-            <p>
-              La Alianza nace a partir de un Convenio de Cooperación entre la Embajada Real de
-              Dinamarca en Bolivia e HIVOS en Bolivia, gestionado a través de Conexión Fondo de
-              Emancipación para desarrollar este proyecto específico durante el periodo 2014 – 2018.
-            </p>
-          </div>
+            <div class="row">
+              <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked" id="aboutTabs">
+                  <li class="active"><a href="#modalAboutTabAbout" data-toggle="tab"><i class="fa fa-question-circle"></i>&nbsp;Acerca de</a></li>
+                  <li><a href="#modalAboutTabContribute" data-toggle="tab"><i class="fa fa-globe"></i>&nbsp;Contribuir</a></li>
+                  <li><a href="#modalAboutTabCredits" data-toggle="tab"><i class="fa fa-group"></i>&nbsp;Créditos</a></li>
+                </ul>
+              </div>
+              <div class="col-md-9">
+                <div class="tab-content" id="aboutTabsContent">
+                  <div class="tab-pane fade active in" id="modalAboutTabAbout">
+                    <img src="img/viomap.png" class="img-responsive" alt="logo viomap">
+                    <p>
+                      <strong>VioMap</strong> es un mapa que muestra el Directorio de servicios
+                      de atención en Casos de Violencia hacia las Mujeres y Trata en Bolivia.
+                      Esta iniciativa está impulsada por la <a href="http://libressinviolencia.conexion.org.bo/" target="_blank">Alianza Libres Sin Violencia</a>.
+                    </p>
+                    <img src="img/logo_alsv.png" class="img-responsive" alt="logo alsv">
+                    <p>
+                      La Alianza Libres Sin Violencia es una iniciativa interinstitucional
+                      conformada por más de 50 organizaciones e instituciones de la sociedad civil
+                      que llevan décadas luchando por los derechos de las mujeres bolivianas.
+                    </p>
+                    <p>
+                      Estas organizaciones e instituciones han unido esfuerzos para impulsar un
+                      proyecto conjunto denominado <strong>«Alianza Libres Sin Violencia»</strong>
+                      que se articula a través de 3 líneas de acción: <em>1) Vigilancia e investigación
+                      del accionar del sistema de servicios judiciales públicos (Watch Dog), 2) Gestión
+                      de Conocimientos y 3) Sensibilización y comunicación, para impulsar a que la
+                      población informada demande a las instancias públicas acciones a favor del
+                      ejercicio de los derechos a una vida libre de violencia y trata en Bolivia.</em>
+                    </p>
+                    <p>
+                      La Alianza Libres Sin Violencia cuenta con el financiamiento de la Embajada Real
+                      de Dinamarca en Bolivia que a través del Ministerio de Relaciones Exteriores Danés
+                      (DANIDA) desarrolla en Bolivia el programa temático «Ejercicio de los derechos y
+                      acceso a la Justicia» cuyo objetivo es: Contribuir al fortalecimiento de la
+                      institucionalidad estatal orientado a la vigencia, protección, defensa y promoción
+                      del derecho a la identidad y acceso a la justicia.
+                    </p>
+                    <p>
+                      La Alianza nace a partir de un Convenio de Cooperación entre la Embajada Real de
+                      Dinamarca en Bolivia e HIVOS en Bolivia, gestionado a través de Conexión Fondo de
+                      Emancipación para desarrollar este proyecto específico durante el periodo 2014 – 2018.
+                    </p>
+                  </div>
 
-        </div>
-      </div>
-    </div>
+                  <div class="tab-pane fade" id="modalAboutTabContribute">
+                    <div class="media">
+                      <div class="media-left">
+                        <i class="fa fa-plus"></i>
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">Añadir o corregir una oficina</h4>
+                        <div>
+                          Si encuentras omisiones y/o errores en los datos o la ubicación
+                          de las oficinas ayúdanos reportando este problema
+                          <a href="#">AQUÍ</a>
+                        </div>
+                      </div>
+                    </div>
 
-    <div id="modal-howto" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
+                    <div class="media">
+                      <div class="media-left">
+                        <i class="fa fa-envelope-o"></i>
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">Haznos sugerencias</h4>
+                        <div>
+                          Escribe un correo electrónico a <strong>alianzalibressinviolencia [@] gmail [.] com</strong>.
+                        </div>
+                      </div>
+                    </div>
 
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-            <h4 id="myHowToModalLabel" class="modal-title">¿Cómo fue hecho?</h4>
-          </div>
+                    <div class="media">
+                      <div class="media-left">
+                        <i class="fa fa-code"></i>
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">Código fuente</h4>
+                        <div>
+                          Si deseas aprender cómo está hecho, mejorar, y/o reutilizar
+                          libremente en algún proyecto visita el
+                          <a href="https://github.com/hacklabcbba/viomap" target="_blank">repositorio</a>
+                          hospedado en GitHub. Recuerda mencionar la autoría
+                          con el enlace a <strong>http://viomap.alianzalibressinviolencia.org</strong>.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-          <div class="modal-body">
-            <img src="img/logo_hacklabcbba.png" class="img-responsive" alt="logo hacklab" />
-            <p>
-              Esta aplicación de cartografía web fue hecho con <span class="fa fa-heart"></span>
-              en el espacio hacker <a href="http://hacklabcbba.org/" target="_blank">HackLab Cochabamba</a>
-              basado en la web <a href="http://mapanica.net/" target="_blank">MapaNica.net</a>.
-            </p>
-            <p>
-              Las herramientas de <a href="https://es.wikipedia.org/wiki/Software_libre" target="_blank">Software Libre</a>
-              y <a href="https://es.wikipedia.org/wiki/C%C3%B3digo_abierto" target="_blank">Código Abierto</a> utilizadas fueron:
-              <ul>
-                <li><a href="http://openstreetmap.org/" target="_blank">openstreetmap.org</a> <em>(mapa libre, colaborativo y editable del mundo)</em></li>
-                <li><a href="http://fontawesome.io//" target="_blank">fontawesome.io</a> <em>(fuente icónice y kit de herramientas css)</em></li>
-                <li><a href="http://getbootstrap.com/" target="_blank">getbootstrap.com</a> <em>(herramientas foss para la creación de apps web)</em></li>
-                <li><a href="http://leafletjs.com/" target="_blank">leafletjs.com</a> <em>(biblioteca js utilizada para construir apps de cartografía web)</em></li>
-              </ul>
-            </p>
-            <p>
-              Puedes consultar y reutilizar el código fuente libremente,
-              todo el código fuente está disponible en el
-              <a href="https://github.com/hacklabcbba/viomap" target="_blank">repositorio del código</a>
-              del HackLab de Cochabamba siempre y cuando menciones la autoría
-              con enlace a <strong>viomap.alianzalibressinviolencia.org</strong>.
-            </p>
+                  <div class="tab-pane fade" id="modalAboutTabCredits">
+                    <img src="img/logo_hacklabcbba.png" class="img-responsive" alt="logo hacklab">
+                    <p>
+                      Esta aplicación de cartografía web fue hecha con <span class="fa fa-heart"></span>
+                      utilizando <a href="https://es.wikipedia.org/wiki/Software_libre" target="_blank">Software Libre</a>
+                      y <a href="https://es.wikipedia.org/wiki/C%C3%B3digo_abierto" target="_blank">Código Abierto</a>
+                      en el espacio hacker <a href="http://hacklabcbba.org/" target="_blank">HackLab Cochabamba</a>.
+                    </p>
+
+                    <div class="media">
+                      <div class="media-left">
+                        <i class="fa fa-map"></i>
+                      </div>
+                      <div class="media-body">
+                          <h4 class="media-heading">Mapa</h4>
+                          <div>
+                            Los datos del mapa son creados y mejorados constantemente por los
+                            contribuidores <a href="http://www.openstreetmap.org" target="_blank">OpenStreetMap</a>,
+                            y las teselas son cortesía de
+                            <a href="http://hot.openstreetmap.org" target="_blank">El equipo HOTOSM</a>,
+                            <a href="http://giscience.uni-hd.de" target="_blank">GIScience</a>,
+                            <a href="http://openstreetmap.fr" target="_blank">OSM Francia</a>,
+                            <a href="http://thunderforest.com/transport" target="_blank">ThunderForest</a>, y
+                            <a href="http://mapbox.com" target="_blank">Mapbox Satellite</a>.
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="media">
+                      <div class="media-left">
+                        <i class="fa fa-database"></i>
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">Datos</h4>
+                        <div>
+                          Todos los datos fueron recopilados por
+                          <a href="http://libressinviolencia.conexion.org.bo/" target="_blank">Alianza Libres Sin Violencia</a>.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
