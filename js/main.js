@@ -197,11 +197,11 @@ $(document).ready(function() {
 
       switch (property) {
         case 'direccion':
-          html += "<th><i class='fa fa-map-signs'></i> Dirección</th>";
+          html += "<th><i class='fa fa-home'></i> Dirección</th>";
           html += "<td>" + value + "</td>";
           break;
         case 'municipio':
-          html += "<th><i class='fa fa-map-signs'></i> Municipio</th>";
+          html += "<th><i class='fa fa-building'></i> Municipio</th>";
           html += "<td>" + value + "</td>";
           break;
         case 'departamento':
