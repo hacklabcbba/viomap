@@ -87,10 +87,10 @@
                 <i class="fa fa-cloud-download white"></i>&nbsp;&nbsp;Descargar&nbsp;<span class="caret"></span>
               </a>
               <ul class="dropdown-menu"aria-labelledby="download-lnk">
-                <li class="dropdown-header">En formato binarios</li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1Q4j24vIGZvobDvk7PHbX_jNtlp3TrAp_buLeJnkkJU8/pub?output=ods" download="viomap.ods" target="_blank"><i class="fa fa-file-text-o"></i>&nbsp;&nbsp;Documento Abierto</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1Q4j24vIGZvobDvk7PHbX_jNtlp3TrAp_buLeJnkkJU8/pub?output=xlsx" download="viomap.xlsx" target="_blank"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Microsoft Excel</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1Q4j24vIGZvobDvk7PHbX_jNtlp3TrAp_buLeJnkkJU8/pub?output=pdf" download="viomap.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;Documento PDF</a></li>
+                <li class="dropdown-header">En formato binario</li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1Q4j24vIGZvobDvk7PHbX_jNtlp3TrAp_buLeJnkkJU8/pub?output=ods" target="_blank"><i class="fa fa-file-text-o"></i>&nbsp;&nbsp;Documento Abierto (ODS)</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1Q4j24vIGZvobDvk7PHbX_jNtlp3TrAp_buLeJnkkJU8/pub?output=xlsx" target="_blank"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Microsoft Excel (XLSX)</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1Q4j24vIGZvobDvk7PHbX_jNtlp3TrAp_buLeJnkkJU8/pub?output=pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;Documento PDF</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">En formato geojson</li>
                 <li><a href="data/slim.geojson" download="slim.geojson" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;SLIM</a></li>
@@ -103,6 +103,11 @@
                 <li><a href="data/judicial-district.geojson" download="judicial-district.geojson" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;Distrito Judicial</a></li>
                 <li><a href="data/specialized-tribunal.geojson" download="specialized-tribunal.geojson" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;Trib. Especializado</a></li>
               </ul>
+            </li>
+            <li>
+              <a href="#" data-toggle="modal" data-target="#modal-form">
+                <i class="fa fa-plus white"></i>&nbsp;&nbsp;Sugerencias / Reportes
+              </a>
             </li>
           </ul>
 
@@ -187,6 +192,7 @@
       </ul>
     </div>
 
+    <!-- modal about -->
     <div id="modal-about" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -245,33 +251,34 @@
                   <div class="tab-pane fade" id="modalAboutTabContribute">
                     <div class="media">
                       <div class="media-left">
-                        <i class="fa fa-plus"></i>
+                        <i class="fa fa-plus fa-lg"></i>
                       </div>
                       <div class="media-body">
-                        <h4 class="media-heading">Añadir o corregir una oficina</h4>
+                        <h4 class="media-heading">Sugerencias / Reportes</h4>
                         <div>
-                          Si encuentras omisiones y/o errores en los datos o la ubicación
-                          de las oficinas ayúdanos reportando este problema
-                          <a href="#">AQUÍ</a>
+                          Si encontraste algún error o alguna información que se pueda añadir o mejorar,
+                          te agradecemos rellenes con todos los detalles posibles en
+                          <a href="#" data-toggle="modal" data-target="#modal-form">este formulario</a>.
                         </div>
                       </div>
                     </div>
 
                     <div class="media">
                       <div class="media-left">
-                        <i class="fa fa-envelope-o"></i>
+                        <i class="fa fa-envelope fa-lg"></i>
                       </div>
                       <div class="media-body">
-                        <h4 class="media-heading">Haznos sugerencias</h4>
+                        <h4 class="media-heading">Escríbenos</h4>
                         <div>
-                          Escribe un correo electrónico a <strong>alianzalibressinviolencia [@] gmail [.] com</strong>.
+                          Si necesitas comunicarte con nosotras escribenos un correo electrónico a
+                          <strong>alianzalibressinviolencia [@] gmail [.] com</strong>.
                         </div>
                       </div>
                     </div>
 
                     <div class="media">
                       <div class="media-left">
-                        <i class="fa fa-code"></i>
+                        <i class="fa fa-code fa-lg"></i>
                       </div>
                       <div class="media-body">
                         <h4 class="media-heading">Código fuente</h4>
@@ -297,7 +304,7 @@
 
                     <div class="media">
                       <div class="media-left">
-                        <i class="fa fa-map"></i>
+                        <i class="fa fa-map fa-lg"></i>
                       </div>
                       <div class="media-body">
                           <h4 class="media-heading">Mapa</h4>
@@ -316,7 +323,7 @@
 
                     <div class="media">
                       <div class="media-left">
-                        <i class="fa fa-database"></i>
+                        <i class="fa fa-database fa-lg"></i>
                       </div>
                       <div class="media-body">
                         <h4 class="media-heading">Datos</h4>
@@ -335,32 +342,60 @@
       </div>
     </div>
 
-    <!-- modal poi feature -->
-    <div id="modal-feature" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- modal form -->
+    <div id="modal-form" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-            <h4 id="feature-title" class="modal-title"></h4>
+            <h4 id="myFormModalLabel" class="modal-title">Sugerencias / Reportes al VioMap</h4>
           </div>
-
-          <div id="feature-info" class="modal-body">
-            <div class="form-group">
-              <div id="feature-desc"><p></p></div>
-            </div>
-            <div class="form-group">
-              <div class="table-responsive">
-                <table class="table table-striped table-bordered table-condensed"></table>
-              </div>
-            </div>
+          <div class="modal-body">
+            <p>
+              A través de este formulario ayudarás a contar con más y mejores datos,
+              accesibles para toda la ciudadanía. Si has encontrado algún <em>error</em> o
+              alguna información que se pueda <em>añadir o mejorar</em>, te agradecemos lo
+              rellenes con todos los detalles posibles. <strong>¡Gracias!</strong>
+            </p>
+            <iframe src="https://docs.google.com/forms/d/1odNkiuABeCki4hv06js9eFG1pT4ZEvllOd5WQh02cvA/viewform?embedded=true" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0">Cargando...</iframe>
           </div>
-
         </div>
       </div>
     </div>
 
-    <!-- modal share & insert -->
+    <!-- modal poi feature -->
+    <div id="modal-feature" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+            <h4 id="feature-title" class="modal-title"></h4>
+          </div>
+          <div id="feature-info" class="modal-body">
+            <div id="feature-desc"><p></p></div>
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered table-hover table-condensed"></table>
+            </div>
+
+            <div class="alert alert-info" role="alert">
+              <ul class="fa-ul">
+                <li>
+                  <i class="fa fa-info-circle fa-lg fa-li"></i>
+                  <p class="small">
+                    Si encontraste algún error o alguna información que se pueda añadir o mejorar,
+                    te agradecemos rellenes con todos los detalles posibles en
+                    <a href="#" data-toggle="modal" data-target="#modal-form"><strong>este formulario</strong></a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal share -->
     <div id="modal-share" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
