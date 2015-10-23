@@ -683,6 +683,34 @@ $(document).ready(function() {
   });
 
   /* Events */
+  $("#cb0").click(function (e) {
+    if ($(this).is(':checked')) {
+      map.addLayer(markersSlim);
+      map.addLayer(markersFELCV);
+      map.addLayer(markersFELCC);
+      map.addLayer(markersPM);
+      map.addLayer(markersFEVAP);
+      map.addLayer(markersIDIF);
+      map.addLayer(markersSUT);
+      map.addLayer(markersJUD);
+      map.addLayer(markersSPT);
+      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+      $("input:checkbox[id^=checkbox]").prop('checked', true);
+    } else {
+      map.removeLayer(markersSlim);
+      map.removeLayer(markersFELCV);
+      map.removeLayer(markersFELCC);
+      map.removeLayer(markersPM);
+      map.removeLayer(markersFEVAP);
+      map.removeLayer(markersIDIF);
+      map.removeLayer(markersSUT);
+      map.removeLayer(markersJUD);
+      map.removeLayer(markersSPT);
+      $("input:checkbox[id^=checkbox]").prop('checked', false);
+    }
+    $(this).prop('checked');
+  });
+
   $("#checkbox1").change(function (e) {
     if ($(this).is(':checked')) {
       map.addLayer(markersSlim);
@@ -771,6 +799,20 @@ $(document).ready(function() {
       map.removeLayer(markersSPT);
     }
     $(this).prop('checked');
+  });
+
+  $("input:checkbox[id^=checkbox]").change(function (e) {
+    count = 0;
+
+    $("input:checkbox[id^=checkbox]:checked").each(function () {
+      count++;
+    });
+
+    if (count == 9) {
+      $("#cb0").prop('checked', true);
+    } else {
+      $("#cb0").prop('checked', false);
+    }
   });
 
   $("#iframe-size").change(function(e) {

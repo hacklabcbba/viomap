@@ -145,27 +145,24 @@ textarea.form-control {
 #sidebar #categories li.category {
     background-color: #CCC;
 }
-#sidebar #categories li:last-child,
-#sidebar #categories li:last-child:hover {
-    border-bottom: medium none;
-}
 
 #sidebar #categories li > input[type=checkbox] {
     margin: 0px 3px 0px 5px;
     cursor: pointer;
 }
 
-#sidebar #categories li > span,
-#sidebar #categories li > a {
-    display: inline-block;
-    color: #FFF;
-    text-decoration: none;
+#sidebar #categories li:first-child > input[type=checkbox] {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
 #sidebar #categories li > span {
+    display: inline-block;
     height: 35px;
     padding-top: 10px;
     padding-left: 5px;
+    color: #FFF;
 }
 
 #sidebar #categories li > span.category {
@@ -175,7 +172,7 @@ textarea.form-control {
     color: inherit;
 }
 
-#sidebar #categories li > a img {
+#sidebar #categories li > img {
     height: 25px;
     width: 22px;
     margin: 5px 5px 5px 0px;
