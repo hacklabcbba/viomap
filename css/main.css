@@ -261,8 +261,22 @@ textarea.form-control {
     }
 }
 
+@media screen and (max-width: 640px) {
+    #navbar-collapse .nav > li {
+        text-align: center;
+    }
+
+    .leaflet-fusesearch-panel .close {
+        width: 10px;
+        height: 10px;
+        font-size: 13pt;
+        right: 10px;
+        top: 10px;
+    }
+}
+
 @media screen and (max-width: 640px) and (orientation:landscape) {
-    #sidebar #categories li > a img {
+    #sidebar #categories li > img {
         margin: 0px;
     }
 }
@@ -271,6 +285,12 @@ textarea.form-control {
     .leaflet-bottom.leaflet-right {
         width: 60%;
         text-align: right;
+    }
+
+    .leaflet-fusesearch-panel .close {
+        width: 15px;
+        height: 15px;
+        font-size: 20pt;
     }
 
     .leaflet-container .leaflet-control-attribution {
@@ -294,12 +314,18 @@ textarea.form-control {
         margin: 0px 2px 0px 2px;
     }
 
-    #sidebar #categories li > a span {
+    #sidebar #categories li > span {
         display: none;
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 979px) {
+    .navbar-nav > li > a {
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 80%;
+    }
+
     .tooltip.right {
         left: 200px !important;
     }
