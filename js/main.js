@@ -1,9 +1,19 @@
 
 $(document).ready(function() {
 
-  var markersSlim, markersFELCV, markersFELCC, markersPM, markersFEVAP, markersIDIF, markersSUT, markersJUD, markersSPT;
+  var home = [-15.887, -66.292];
+  var zoom = 6;
+
+  var markers = [];
+  var polygonFillColors = ['#F7751E', '#E612D8', '#44AB11', '#A5E62B', '#E6D62B', '#1196DE', '#F26480', '#D1C327', '#F03A2D'];
+  var polygonColors = ['#F7751E', '#E612D8', '#44AB11', '#A5E62B', '#E6D62B', '#1196DE', '#F26480', '#D1C327', '#F03A2D'];
+
   var mapBounds, latNE = -90, lngNE = -180, latSW = 0, lngSW = 0;
   var paddingTL = [0, 90];
+
+  var fuseDataFeatures = [];
+  var fuseIndexFeatures = ['departamento', 'municipio', 'direccion'];
+
   var url = "<iframe width='@W' height='@H' frameBorder='0' src='@SRC'></iframe>" +
      "<p><a href='@SRC'>Ver este mapa en pantalla completa</a></p>";
 
@@ -78,7 +88,7 @@ $(document).ready(function() {
   tileLayers[tileLayerDefault].addTo(map);
   L.control.layers(tileLayers).addTo(map);
   if (!map.restoreView()) {
-    map.setView([-15.887, -66.292], 6);
+    map.setView(home, zoom);
   }
 
   // Adding hash for position in url
@@ -127,48 +137,6 @@ $(document).ready(function() {
       }
     }]
   }).addTo(map);
-
-  // Adding Fuse Search Control
-  var fuseSearchCtrl = L.control.fuseSearch({
-    position: 'topright',
-    title: 'Buscar',
-    placeholder: 'Busca tu municipio',
-    threshold: 0.3,
-    showInvisibleFeatures: true,
-    showResultFct: function(feature, container) {
-      var lng = feature.geometry.coordinates[0];
-      var lat = feature.geometry.coordinates[1];
-      container.setAttribute('data-marker-id', feature.layer._leaflet_id);
-      container.setAttribute('data-lat', lat);
-      container.setAttribute('data-lng', lng);
-
-      container.addEventListener('click', function() {
-        map.setView([lat, lng], 16);
-        if (map._layers[feature.layer._leaflet_id]) {
-          map._layers[feature.layer._leaflet_id].fire('click');
-        }
-      });
-
-      var node = document.createElement('strong');
-      node.setAttribute('class', 'title');
-      var text = document.createTextNode(feature.properties.institucion);
-      node.appendChild(text);
-      container.appendChild(node);
-
-      node = document.createElement('br');
-      container.appendChild(node);
-
-      text = document.createTextNode(
-        feature.properties.direccion +
-        ', Municipio ' + feature.properties.municipio +
-        ', Departamento ' + feature.properties.departamento
-      );
-      container.appendChild(text);
-    }
-  });
-  map.addControl(fuseSearchCtrl);
-
-  var fuseIndexFeatures = ['departamento', 'municipio', 'direccion'];
 
   /* Overlay Layers */
   function pointToLayer(feature, latlng) {
@@ -321,391 +289,257 @@ $(document).ready(function() {
     mapBounds = L.latLngBounds(L.latLng(latSW,lngSW), L.latLng(latNE,lngNE));
   }
 
+  function createMarkerClusterGroup(iconClass, polygonFillColor, polygonColor) {
+    return L.markerClusterGroup({
+      iconCreateFunction: function (cluster) {
+        return new L.DivIcon({
+          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
+          className: 'marker-cluster marker-cluster-' + iconClass,
+          iconSize: new L.Point(40, 40)
+        });
+      },
+      zoomToBoundsOnClick: false,
+      polygonOptions: {
+        fillColor: polygonFillColor,
+        color: polygonColor,
+        weight: 1,
+        opacity: 0.7,
+        fillOpacity: 0.5
+      }
+    });
+  }
+
   /* Get Data */
-  $.getJSON("data/slim.geojson", function (data) {
-    var layer = L.geoJson(data, {
-      pointToLayer: pointToLayer,
-      onEachFeature: onEachFeature
-    });
+  $.when(
+    $.getJSON("data/slim.geojson"),
+    $.getJSON("data/felcv.geojson"),
+    $.getJSON("data/felcc.geojson"),
+    $.getJSON("data/public-ministry.geojson"),
+    $.getJSON("data/fevap.geojson"),
+    $.getJSON("data/idif.geojson"),
+    $.getJSON("data/supreme-tribunal.geojson"),
+    $.getJSON("data/judicial-district.geojson"),
+    $.getJSON("data/specialized-tribunal.geojson")
+  ).done(function(data1, data2, data3, data9, data4, data5, data6, data7, data8) {
+    var layer;
+    var countMarkers = 0;
 
-    markersSlim = L.markerClusterGroup({
-      iconCreateFunction: function (cluster) {
-        return new L.DivIcon({
-          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
-          className: 'marker-cluster marker-cluster-poi-1',
-          iconSize: new L.Point(40, 40)
-        });
-      },
-      zoomToBoundsOnClick: false,
-      polygonOptions: {
-        fillColor: '#F7751E',
-        color: '#F7751E',
-        weight: 1,
-        opacity: 0.7,
-        fillOpacity: 0.5
-      }
-    });
+    // data = slim
+    if (data1) {
+      layer = L.geoJson(data1, { pointToLayer: pointToLayer, onEachFeature: onEachFeature });
 
-    markersSlim.on('clusterclick', function (a) {
-      a.layer.zoomToBounds();
-    });
+      markers[1] = createMarkerClusterGroup('poi1', polygonFillColors[0], polygonColors[0]);
+      markers[1].on('clusterclick', function (a) { a.layer.zoomToBounds(); });
 
-    markersSlim.addLayer(layer);
-    map.addLayer(markersSlim);
-    setMapBounds(markersSlim.getBounds());
+      markers[1].addLayer(layer);
+      map.addLayer(markers[1]);
+      setMapBounds(markers[1].getBounds());
+
+      $("#checkbox1").prop('checked', true);
+      countMarkers++;
+
+      fuseDataFeatures = fuseDataFeatures.concat(data1[0].features);
+    }
+
+    // data2 = felcv
+    if (data2) {
+      layer = L.geoJson(data2, { pointToLayer: pointToLayer, onEachFeature: onEachFeature });
+
+      markers[2] = createMarkerClusterGroup('poi2', polygonFillColors[1], polygonColors[1]);
+      markers[2].on('clusterclick', function (a) { a.layer.zoomToBounds(); });
+
+      markers[2].addLayer(layer);
+      map.addLayer(markers[2]);
+      setMapBounds(markers[2].getBounds());
+
+      $("#checkbox2").prop('checked', true);
+      countMarkers++;
+
+      fuseDataFeatures = fuseDataFeatures.concat(data2[0].features);
+    }
+
+    // data3 = felcc
+    if (data3) {
+      layer = L.geoJson(data3, { pointToLayer: pointToLayer, onEachFeature: onEachFeature });
+
+      markers[3] = createMarkerClusterGroup('poi3', polygonFillColors[2], polygonColors[2]);
+      markers[3].on('clusterclick', function (a) { a.layer.zoomToBounds(); });
+
+      markers[3].addLayer(layer);
+      map.addLayer(markers[3]);
+      setMapBounds(markers[3].getBounds());
+
+      $("#checkbox3").prop('checked', true);
+      countMarkers++;
+
+      fuseDataFeatures = fuseDataFeatures.concat(data3[0].features);
+    }
+
+    // data9 = public-ministry
+    if (data9) {
+      layer = L.geoJson(data9, { pointToLayer: pointToLayer, onEachFeature: onEachFeature });
+
+      markers[9] = createMarkerClusterGroup('poi9', polygonFillColors[8], polygonColors[8]);
+      markers[9].on('clusterclick', function (a) { a.layer.zoomToBounds(); });
+
+      markers[9].addLayer(layer);
+      map.addLayer(markers[9]);
+      setMapBounds(markers[9].getBounds());
+
+      $("#checkbox9").prop('checked', true);
+      countMarkers++;
+
+      fuseDataFeatures = fuseDataFeatures.concat(data9[0].features);
+    }
+
+    // data4 = fevap
+    if (data4) {
+      layer = L.geoJson(data4, { pointToLayer: pointToLayer, onEachFeature: onEachFeature });
+
+      markers[4] = createMarkerClusterGroup('poi4', polygonFillColors[3], polygonColors[3]);
+      markers[4].on('clusterclick', function (a) { a.layer.zoomToBounds(); });
+
+      markers[4].addLayer(layer);
+      map.addLayer(markers[4]);
+      setMapBounds(markers[4].getBounds());
+
+      $("#checkbox4").prop('checked', true);
+      countMarkers++;
+
+      fuseDataFeatures = fuseDataFeatures.concat(data4[0].features);
+    }
+
+    // data5 = idif
+    if (data5) {
+      layer = L.geoJson(data5, { pointToLayer: pointToLayer, onEachFeature: onEachFeature });
+
+      markers[5] = createMarkerClusterGroup('poi5', polygonFillColors[4], polygonColors[4]);
+      markers[5].on('clusterclick', function (a) { a.layer.zoomToBounds(); });
+
+      markers[5].addLayer(layer);
+      map.addLayer(markers[5]);
+      setMapBounds(markers[5].getBounds());
+
+      $("#checkbox5").prop('checked', true);
+      countMarkers++;
+
+      fuseDataFeatures = fuseDataFeatures.concat(data5[0].features);
+    }
+
+    // data6 = supreme-tribunal
+    if (data6) {
+      layer = L.geoJson(data6, { pointToLayer: pointToLayer, onEachFeature: onEachFeature });
+
+      markers[6] = createMarkerClusterGroup('poi6', polygonFillColors[5], polygonColors[5]);
+      markers[6].on('clusterclick', function (a) { a.layer.zoomToBounds(); });
+
+      markers[6].addLayer(layer);
+      map.addLayer(markers[6]);
+      setMapBounds(markers[6].getBounds());
+
+      $("#checkbox6").prop('checked', true);
+      countMarkers++;
+
+      fuseDataFeatures = fuseDataFeatures.concat(data6[0].features);
+    }
+
+    // data7 = judicial-district
+    if (data7) {
+      layer = L.geoJson(data7, { pointToLayer: pointToLayer, onEachFeature: onEachFeature });
+
+      markers[7] = createMarkerClusterGroup('poi7', polygonFillColors[6], polygonColors[6]);
+      markers[7].on('clusterclick', function (a) { a.layer.zoomToBounds(); });
+
+      markers[7].addLayer(layer);
+      map.addLayer(markers[7]);
+      setMapBounds(markers[7].getBounds());
+
+      $("#checkbox7").prop('checked', true);
+      countMarkers++;
+
+      fuseDataFeatures = fuseDataFeatures.concat(data7[0].features);
+    }
+
+    // data = specialized-tribunal
+    if (data8) {
+      layer = L.geoJson(data8, { pointToLayer: pointToLayer, onEachFeature: onEachFeature });
+
+      markers[8] = createMarkerClusterGroup('poi8', polygonFillColors[7], polygonColors[7]);
+      markers[8].on('clusterclick', function (a) { a.layer.zoomToBounds(); });
+
+      markers[8].addLayer(layer);
+      map.addLayer(markers[8]);
+      setMapBounds(markers[8].getBounds());
+
+      $("#checkbox8").prop('checked', true);
+      countMarkers++;
+
+      fuseDataFeatures = fuseDataFeatures.concat(data8[0].features);
+    }
+
+    if (countMarkers == 9) {
+      $("#cb0").prop('checked', true);
+    }
+
+    fuseSearchCtrl.indexFeatures(fuseDataFeatures, fuseIndexFeatures);
+
     if (!map.restoreView()) {
       map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
     }
-
-    $("#checkbox1").prop('checked', true);
-
-    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
   });
 
-  $.getJSON("data/felcv.geojson", function (data) {
-    var layer = L.geoJson(data, {
-      pointToLayer: pointToLayer,
-      onEachFeature: onEachFeature
-    });
+  // Adding Fuse Search Control
+  var fuseSearchCtrl = L.control.fuseSearch({
+    position: 'topright',
+    title: 'Buscar',
+    placeholder: 'Busca tu municipio',
+    threshold: 0.3,
+    showInvisibleFeatures: true,
+    showResultFct: function(feature, container) {
+      var lng = feature.geometry.coordinates[0];
+      var lat = feature.geometry.coordinates[1];
+      container.setAttribute('data-marker-id', feature.layer._leaflet_id);
+      container.setAttribute('data-lat', lat);
+      container.setAttribute('data-lng', lng);
 
-    markersFELCV = L.markerClusterGroup({
-      iconCreateFunction: function (cluster) {
-        return new L.DivIcon({
-          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
-          className: 'marker-cluster marker-cluster-poi-2',
-          iconSize: new L.Point(40, 40)
-        });
-      },
-      zoomToBoundsOnClick: false,
-      polygonOptions: {
-        fillColor: '#E612D8',
-        color: '#E612D8',
-        weight: 1,
-        opacity: 0.7,
-        fillOpacity: 0.5
-      }
-    });
+      container.addEventListener('click', function() {
+        map.setView([lat, lng], 16);
+        if (map._layers[feature.layer._leaflet_id]) {
+          map._layers[feature.layer._leaflet_id].fire('click');
+        }
+      });
 
-    markersFELCV.on('clusterclick', function (a) {
-      a.layer.zoomToBounds();
-    });
+      var node = document.createElement('strong');
+      node.setAttribute('class', 'title');
+      var text = document.createTextNode(feature.properties.institucion);
+      node.appendChild(text);
+      container.appendChild(node);
 
-    markersFELCV.addLayer(layer);
-    map.addLayer(markersFELCV);
-    setMapBounds(markersFELCV.getBounds());
-    if (!map.restoreView()) {
-      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
+      node = document.createElement('br');
+      container.appendChild(node);
+
+      text = document.createTextNode(
+        feature.properties.direccion +
+        ', Municipio ' + feature.properties.municipio +
+        ', Departamento ' + feature.properties.departamento
+      );
+      container.appendChild(text);
     }
-
-    $("#checkbox2").prop('checked', true);
-
-    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
   });
-
-  $.getJSON("data/felcc.geojson", function (data) {
-    var layer = L.geoJson(data, {
-      pointToLayer: pointToLayer,
-      onEachFeature: onEachFeature
-    });
-
-    markersFELCC = L.markerClusterGroup({
-      iconCreateFunction: function (cluster) {
-        return new L.DivIcon({
-          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
-          className: 'marker-cluster marker-cluster-poi-3',
-          iconSize: new L.Point(40, 40)
-        });
-      },
-      zoomToBoundsOnClick: false,
-      polygonOptions: {
-        fillColor: '#44AB11',
-        color: '#44AB11',
-        weight: 1,
-        opacity: 0.7,
-        fillOpacity: 0.5
-      }
-    });
-
-    markersFELCC.on('clusterclick', function (a) {
-      a.layer.zoomToBounds();
-    });
-
-    markersFELCC.addLayer(layer);
-    map.addLayer(markersFELCC);
-    setMapBounds(markersFELCC.getBounds());
-    if (!map.restoreView()) {
-      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
-    }
-
-    $("#checkbox3").prop('checked', true);
-
-    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
-  });
-
-  $.getJSON("data/public-ministry.geojson", function (data) {
-    var layer = L.geoJson(data, {
-      pointToLayer: pointToLayer,
-      onEachFeature: onEachFeature
-    });
-
-    markersPM = L.markerClusterGroup({
-      iconCreateFunction: function (cluster) {
-        return new L.DivIcon({
-          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
-          className: 'marker-cluster marker-cluster-poi-9',
-          iconSize: new L.Point(40, 40)
-        });
-      },
-      zoomToBoundsOnClick: false,
-      polygonOptions: {
-        fillColor: '#F03A2D',
-        color: '#F03A2D',
-        weight: 1,
-        opacity: 0.7,
-        fillOpacity: 0.5
-      }
-    });
-
-    markersPM.on('clusterclick', function (a) {
-      a.layer.zoomToBounds();
-    });
-
-    markersPM.addLayer(layer);
-    map.addLayer(markersPM);
-    setMapBounds(markersPM.getBounds());
-    if (!map.restoreView()) {
-      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
-    }
-
-    $("#checkbox9").prop('checked', true);
-
-    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
-  });
-
-  $.getJSON("data/fevap.geojson", function (data) {
-    var layer = L.geoJson(data, {
-      pointToLayer: pointToLayer,
-      onEachFeature: onEachFeature
-    });
-
-    markersFEVAP = L.markerClusterGroup({
-      iconCreateFunction: function (cluster) {
-        return new L.DivIcon({
-          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
-          className: 'marker-cluster marker-cluster-poi-4',
-          iconSize: new L.Point(40, 40)
-        });
-      },
-      zoomToBoundsOnClick: false,
-      polygonOptions: {
-        fillColor: '#A5E62B',
-        color: '#A5E62B',
-        weight: 1,
-        opacity: 0.7,
-        fillOpacity: 0.5
-      }
-    });
-
-    markersFEVAP.on('clusterclick', function (a) {
-      a.layer.zoomToBounds();
-    });
-
-    markersFEVAP.addLayer(layer);
-    map.addLayer(markersFEVAP);
-    setMapBounds(markersFEVAP.getBounds());
-    if (!map.restoreView()) {
-      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
-    }
-
-    $("#checkbox4").prop('checked', true);
-
-    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
-  });
-
-  $.getJSON("data/idif.geojson", function (data) {
-    var layer = L.geoJson(data, {
-      pointToLayer: pointToLayer,
-      onEachFeature: onEachFeature
-    });
-
-    markersIDIF = L.markerClusterGroup({
-      iconCreateFunction: function (cluster) {
-        return new L.DivIcon({
-          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
-          className: 'marker-cluster marker-cluster-poi-5',
-          iconSize: new L.Point(40, 40)
-        });
-      },
-      zoomToBoundsOnClick: false,
-      polygonOptions: {
-        fillColor: '#E6D62B',
-        color: '#E6D62B',
-        weight: 1,
-        opacity: 0.7,
-        fillOpacity: 0.5
-      }
-    });
-
-    markersIDIF.on('clusterclick', function (a) {
-      a.layer.zoomToBounds();
-    });
-
-    markersIDIF.addLayer(layer);
-    map.addLayer(markersIDIF);
-    setMapBounds(markersIDIF.getBounds());
-    if (!map.restoreView()) {
-      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
-    }
-
-    $("#checkbox5").prop('checked', true);
-
-    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
-  });
-
-  $.getJSON("data/supreme-tribunal.geojson", function (data) {
-    var layer = L.geoJson(data, {
-      pointToLayer: pointToLayer,
-      onEachFeature: onEachFeature
-    });
-
-    markersSUT = L.markerClusterGroup({
-      iconCreateFunction: function (cluster) {
-        return new L.DivIcon({
-          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
-          className: 'marker-cluster marker-cluster-poi-6',
-          iconSize: new L.Point(40, 40)
-        });
-      },
-      zoomToBoundsOnClick: false,
-      polygonOptions: {
-        fillColor: '#1196DE',
-        color: '#1196DE',
-        weight: 1,
-        opacity: 0.7,
-        fillOpacity: 0.5
-      }
-    });
-
-    markersSUT.on('clusterclick', function (a) {
-      a.layer.zoomToBounds();
-    });
-
-    markersSUT.addLayer(layer);
-    map.addLayer(markersSUT);
-    setMapBounds(markersSUT.getBounds());
-    if (!map.restoreView()) {
-      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
-    }
-
-    $("#checkbox6").prop('checked', true);
-
-    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
-  });
-
-  $.getJSON("data/judicial-district.geojson", function (data) {
-    var layer = L.geoJson(data, {
-      pointToLayer: pointToLayer,
-      onEachFeature: onEachFeature
-    });
-
-    markersJUD = L.markerClusterGroup({
-      iconCreateFunction: function (cluster) {
-        return new L.DivIcon({
-          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
-          className: 'marker-cluster marker-cluster-poi-7',
-          iconSize: new L.Point(40, 40)
-        });
-      },
-      zoomToBoundsOnClick: false,
-      polygonOptions: {
-        fillColor: '#F26480',
-        color: '#F26480',
-        weight: 1,
-        opacity: 0.7,
-        fillOpacity: 0.5
-      }
-    });
-
-    markersJUD.on('clusterclick', function (a) {
-      a.layer.zoomToBounds();
-    });
-
-    markersJUD.addLayer(layer);
-    map.addLayer(markersJUD);
-    setMapBounds(markersJUD.getBounds());
-    if (!map.restoreView()) {
-      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
-    }
-
-    $("#checkbox7").prop('checked', true);
-
-    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
-  });
-
-  $.getJSON("data/specialized-tribunal.geojson", function (data) {
-    var layer = L.geoJson(data, {
-      pointToLayer: pointToLayer,
-      onEachFeature: onEachFeature
-    });
-
-    markersSPT = L.markerClusterGroup({
-      iconCreateFunction: function (cluster) {
-        return new L.DivIcon({
-          html: '<div><span>' + cluster.getChildCount() + '</span></div>',
-          className: 'marker-cluster marker-cluster-poi-8',
-          iconSize: new L.Point(40, 40)
-        });
-      },
-      zoomToBoundsOnClick: false,
-      polygonOptions: {
-        fillColor: '#D1C327',
-        color: '#D1C327',
-        weight: 1,
-        opacity: 0.7,
-        fillOpacity: 0.5
-      }
-    });
-
-    markersSPT.on('clusterclick', function (a) {
-      a.layer.zoomToBounds();
-    });
-
-    markersSPT.addLayer(layer);
-    map.addLayer(markersSPT);
-    setMapBounds(markersSPT.getBounds());
-    if (!map.restoreView()) {
-      map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
-    }
-
-    $("#checkbox8").prop('checked', true);
-
-    fuseSearchCtrl.indexFeatures(data, fuseIndexFeatures);
-  });
+  map.addControl(fuseSearchCtrl);
 
   /* Events */
   $("#cb0").click(function (e) {
     if ($(this).is(':checked')) {
-      map.addLayer(markersSlim);
-      map.addLayer(markersFELCV);
-      map.addLayer(markersFELCC);
-      map.addLayer(markersPM);
-      map.addLayer(markersFEVAP);
-      map.addLayer(markersIDIF);
-      map.addLayer(markersSUT);
-      map.addLayer(markersJUD);
-      map.addLayer(markersSPT);
+      for (var i in markers) {
+        map.addLayer(markers[i]);
+      }
       map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
       $("input:checkbox[id^=checkbox]").prop('checked', true);
     } else {
-      map.removeLayer(markersSlim);
-      map.removeLayer(markersFELCV);
-      map.removeLayer(markersFELCC);
-      map.removeLayer(markersPM);
-      map.removeLayer(markersFEVAP);
-      map.removeLayer(markersIDIF);
-      map.removeLayer(markersSUT);
-      map.removeLayer(markersJUD);
-      map.removeLayer(markersSPT);
+      for (var j in markers) {
+        map.removeLayer(markers[j]);
+      }
       $("input:checkbox[id^=checkbox]").prop('checked', false);
     }
     $(this).prop('checked');
@@ -713,96 +547,96 @@ $(document).ready(function() {
 
   $("#checkbox1").change(function (e) {
     if ($(this).is(':checked')) {
-      map.addLayer(markersSlim);
+      map.addLayer(markers[1]);
       map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
     } else {
-      map.removeLayer(markersSlim);
+      map.removeLayer(markers[1]);
     }
     $(this).prop('checked');
   });
 
   $("#checkbox2").change(function (e) {
     if ($(this).is(':checked')) {
-      map.addLayer(markersFELCV);
+      map.addLayer(markers[2]);
       map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
     } else {
-      map.removeLayer(markersFELCV);
+      map.removeLayer(markers[2]);
     }
     $(this).prop('checked');
   });
 
   $("#checkbox3").change(function (e) {
     if ($(this).is(':checked')) {
-      map.addLayer(markersFELCC);
+      map.addLayer(markers[3]);
       map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
     } else {
-      map.removeLayer(markersFELCC);
+      map.removeLayer(markers[3]);
     }
     $(this).prop('checked');
   });
 
   $("#checkbox9").change(function (e) {
     if ($(this).is(':checked')) {
-      map.addLayer(markersPM);
+      map.addLayer(markers[9]);
       map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
     } else {
-      map.removeLayer(markersPM);
+      map.removeLayer(markers[9]);
     }
     $(this).prop('checked');
   });
 
   $("#checkbox4").change(function (e) {
     if ($(this).is(':checked')) {
-      map.addLayer(markersFEVAP);
+      map.addLayer(markers[4]);
       map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
     } else {
-      map.removeLayer(markersFEVAP);
+      map.removeLayer(markers[4]);
     }
     $(this).prop('checked');
   });
 
   $("#checkbox5").change(function (e) {
     if ($(this).is(':checked')) {
-      map.addLayer(markersIDIF);
+      map.addLayer(markers[5]);
       map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
     } else {
-      map.removeLayer(markersIDIF);
+      map.removeLayer(markers[5]);
     }
     $(this).prop('checked');
   });
 
   $("#checkbox6").change(function (e) {
     if ($(this).is(':checked')) {
-      map.addLayer(markersSUT);
+      map.addLayer(markers[6]);
       map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
     } else {
-      map.removeLayer(markersSUT);
+      map.removeLayer(markers[6]);
     }
     $(this).prop('checked');
   });
 
   $("#checkbox7").change(function (e) {
     if ($(this).is(':checked')) {
-      map.addLayer(markersJUD);
+      map.addLayer(markers[7]);
       map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
     } else {
-     map.removeLayer(markersJUD);
+     map.removeLayer(markers[7]);
     }
     $(this).prop('checked');
   });
 
   $("#checkbox8").change(function (e) {
     if ($(this).is(':checked')) {
-      map.addLayer(markersSPT);
+      map.addLayer(markers[8]);
       map.fitBounds(mapBounds, { paddingTopLeft: paddingTL });
     } else {
-      map.removeLayer(markersSPT);
+      map.removeLayer(markers[8]);
     }
     $(this).prop('checked');
   });
 
   $("input:checkbox[id^=checkbox]").change(function (e) {
-    count = 0;
+    var count = 0;
 
     $("input:checkbox[id^=checkbox]:checked").each(function () {
       count++;
