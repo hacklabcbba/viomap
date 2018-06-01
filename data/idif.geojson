@@ -1,1 +1,11 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[-67.53709,-16.37843]},"properties":{"symbol":"bigcity_1","color":"#e6d62b","institucion":"Instituto de Investigaciones Forenses","departamento":"La Paz","municipio":"La Paz","direccion":"Calle Indaburo No. 945","telefono1":"2-2406068, 2-2407623","fax1":""}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-65.2573,-19.0482]},"properties":{"symbol":"bigcity_1","color":"#e6d62b","institucion":"Instituto de Investigaciones Forenses","departamento":"Chuquisaca","municipio":"Sucre","direccion":"Calle Bolívar No. 737","telefono1":"4-6439526","fax1":"4-6439528"}}]}
+{"type":"FeatureCollection","features":[
+                                        
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-67.53709,-16.37843]},"properties":{"symbol":"bigcity_1","color":"#e6d62b","institucion":"Instituto de Investigaciones Forenses","departamento":"La Paz","municipio":"La Paz","direccion":"Calle Indaburo No. 945","telefono1":"2-2406068, 2-2407623","fax1":""}},
+                                        
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-65.7541,-19.5882]},"properties":{"symbol":"bigcity_1","color":"#e6d62b","institucion":"Instituto de Investigaciones Forenses","departamento":"Potosí","municipio":"Potosí","direccion":"CALLE JUNIN Y MATOS","telefono1":"62-22389","fax1":""}},
+                                        
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-66.2018,-17.3809]},"properties":{"symbol":"bigcity_1","color":"#e6d62b","institucion":"Instituto de Investigaciones Forenses","departamento":"Cochabamba","municipio":"Cochabamba","direccion":"Tadeo Haenke y Alberth Einstein Zona Coña Coña. (Micro 111, E. ll)","telefono1":"4795958","fax1":""}},
+                                        
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-65.2573,-19.0482]},"properties":{"symbol":"bigcity_1","color":"#e6d62b","institucion":"Instituto de Investigaciones Forenses","departamento":"Chuquisaca","municipio":"Sucre","direccion":"Calle Bolívar No. 737","telefono1":"4-6439526","fax1":"4-6439528"}}
+                                        
+                                        ]}
